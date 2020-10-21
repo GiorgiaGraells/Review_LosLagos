@@ -39,10 +39,22 @@ Spectral characterrization and comparison among lakes in @delosRiosSpectral
 
 ### Ecosystem functioning and services
 
-Chusquea fenology in @delaFuenteChusquea
+Chusquea fenology in @delaFuenteChusquea as seen in figure \@ref(fig:Fenology) 
 El área de estudio se ubica en el sector de Antillanca (40º78’S y 72º22’O,
 
-```{r BuffferArea}
+Improvements for the study of volcanic activity [@AmoebaeTephra]
+
+Steam radious of F. cupressoides and the determination of environmental variables that affect its growth... with projections in climate change [@Stem_F]
+
+SUcculence in rain forest [@GodoySucculence]
+Key results – We show that leaves from sun conditions, the environment with higher water demand, have lower SLA (specific leaf area), thicker epidermis and store more water due to a thicker spongy parenchyma, than leaves from shade conditions. Conclusions  –  We  found  high  phenotypic  variation  in  S.  repens at intraspecific level in response to contrasting environmental conditions. This variation reflects a two-fold strategy common in epiphytes: increase water storage and reduce water loss. Furthermore, it suggests that leaf succulence has an adaptive value even in a temperate cold rainforest. We discuss that the occurrence of succulence on a cold rainforest might be explained by a combination of ecological, biogeographic and phylogenetic factors.
+
+macropytes  and  riparian  assemblages  are  not  random,  that means  that  the  regulator  factors  are  deterministic. 
+
+
+They reconstructed stand development on sites affected by these disturbances (complex mosaic of disturbance patterns, including the effects of the strong 1960 earthquake as well as fire and wind disturbance), and compared these patterns with the structure of old-growth forests along an elevation gradient from species-rich montane rain forest to mono-typic subalpine Nothofagusforests
+
+```{r Fenology}
 knitr::include_graphics("Fenology.png")
 ```
 
