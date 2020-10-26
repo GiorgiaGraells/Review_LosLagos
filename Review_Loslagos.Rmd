@@ -28,14 +28,36 @@ Vicente Perez Rozales National park VPRNP
 Alerce Andino national park AANP
 lago Llanquihue National Reserve
 
+- social
+migracion entre regiones y desarrollo (http://www.scielo.org.mx/pdf/pp/v24n97/2448-7147-pp-24-97-85.pdf)
+Mujeres emprendedoras en la region de los lagos :Los resultados indican que las emprendedoras reportan niveles de Inteligencia emocional alto en las dimensiones percepción y regulación emocional. (Veliz et al 2019).
+estilo de liderazgo de dirigentes sindicales (https://www.redalyc.org/jatsRepo/339/33958034003/index.html)
+THE ADVANTAGES OF USING LOCAL LABOUR MARKETS IN THE STUDY OF INTRAREGIONAL SOCIAL INEQUALITIES: THE CASE OF LOS LAGOS, CHILE
+
+- carbon emision in near cities and woodplaces dependencies high level of pollution
+
+- natural events perturbations: volcano activities and earthquakes
+
+como registros de tephra
+earthquake 1960 en valdivia (https://www.nature.com/articles/s41467-018-05989-6)
+
+
+- historical reconstruction: arqueological sites. 
+
+Obsidian sources and distribution in Patagonia, southernmost SouthAmerica (http://geode.colorado.edu/~geolsci/facultyweb/sternpdf/stern%202017%20Obsidian%20in%20Patagonia%20Quat%20International.pdf)
+
+
 ### Methodology
 
 A systematic review of scientific literature was made searching in the Web of Science. Keywords usead at topic level were: "Puyehue National Park" or "Vicente Perez Rozales National Park" or "Alerce Andino National Park".  resulted in 19 journal articles.
 
-
+Second search: 
+park and sourraoundings, most of Los lagos región leaving out coastal systems and in particular Chiloe island.
+    
 ### Hydrology
 
 Spectral characterrization and comparison among lakes in @delosRiosSpectral
+We show that annual runoffis highly sensitive to the relative area of FPto NF: ratios of FP to NF areas of 10%, 50% and 90% would lead to 3%,−18% and−40% changes inmean annual runoff, respectively.(Alvarez-Garreton et al 2019)
 
 ### Ecosystem functioning and services
 
