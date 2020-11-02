@@ -7,12 +7,31 @@ output:
 bibliography: References.bib
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, comment=FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(patchwork)
+library(ggplot2)
 ```
 
-### Introduction
 
+```{r}
+DF <- read_csv("WebScience_Ref.csv")
+```
+
+# Introduction
+
+1. Establish importance of the fild- provide background, keywords- present the problem 
+[Stablish the importance of this research topic]
+Las areas protegidas corresponden a la mejor forma de proteger los ambientes 
+
+[Provide general background information] 
+la integración entre áreas protegidas y comunidades locales no ha demostrado ser del todo exitosa (Brown, 2002).
+cuatro de las seis categorías de áreas protegidas de la Unión Internacional para la Conservación de la Naturaleza (UICN) refuerzan la conservación estricta, debido a que al interior de las áreas protegidas sólo está permitido el uso no consuntivo de los recursos naturales (Brown, 2002). Esta situación se ve favorecida pues gran parte de las áreas protegidas se encuentran en lugares remotos y muy distantes de los centros de desarrollo de la sociedad actual (Joppa & Pfaff, 2009) y, por lo tanto, sin mayores vinculaciones con el contexto territorial en que se ubican.
+
+[Stablish the importance of this research topic, more specific/detailed way] 
+Los Lagos Region
+Ecosistemas de chile: Luebert y Pliscoff (2017)
 Southern Chile...
 Los Lagos Region is called because...
 this area sustain xx protected areas: xx National Parks, xx National Reserves, and xx others
@@ -20,46 +39,176 @@ this area sustain xx protected areas: xx National Parks, xx National Reserves, a
 protected areas as xx and xx area under the supervision of the National Forestry Corporation or CONAF. This entity has the adminstration ...
 Currently SNASPE
 
-la integración entre áreas protegidas y comunidades locales no ha demostrado ser del todo exitosa (Brown, 2002).
-cuatro de las seis categorías de áreas protegidas de la Unión Internacional para la Conservación de la Naturaleza (UICN) refuerzan la conservación estricta, debido a que al interior de las áreas protegidas sólo está permitido el uso no consuntivo de los recursos naturales (Brown, 2002). Esta situación se ve favorecida pues gran parte de las áreas protegidas se encuentran en lugares remotos y muy distantes de los centros de desarrollo de la sociedad actual (Joppa & Pfaff, 2009) y, por lo tanto, sin mayores vinculaciones con el contexto territorial en que se ubican.
 
+[Provide general background information, more specific/detailed way]
+los lagos region presents :
 Puyehue national Park PNP
 Vicente Perez Rozales National park VPRNP
 Alerce Andino national park AANP
-lago Llanquihue National Reserve
 
-- social
-migracion entre regiones y desarrollo (http://www.scielo.org.mx/pdf/pp/v24n97/2448-7147-pp-24-97-85.pdf)
-Mujeres emprendedoras en la region de los lagos :Los resultados indican que las emprendedoras reportan niveles de Inteligencia emocional alto en las dimensiones percepción y regulación emocional. (Veliz et al 2019).
-estilo de liderazgo de dirigentes sindicales (https://www.redalyc.org/jatsRepo/339/33958034003/index.html)
-THE ADVANTAGES OF USING LOCAL LABOUR MARKETS IN THE STUDY OF INTRAREGIONAL SOCIAL INEQUALITIES: THE CASE OF LOS LAGOS, CHILE
+
+According to Ministery of environment of Chile, Puyehue National Park (PNP), Vicente Perez Rozales National park VPRNP, Alerce Andino national park AANP are evergreen bioms. The three National parks
+present andean temperate forest of Nothofagus dombeyi y Saxegothaea conspicua (NT)- 53.42% protected and interior forest of Nothofagus nitida y Podocarpus nubigena ecosystems (LC)- 17.09% protected. 
+
+
+lago Llanquihue National Reserve
+    
+2. Previous an current research and contributions 
+[Describe general problem area or the current research focus of the field] 
+Desccripcion del ecosistema 
+parece q hay mas investigacion en la costa 
+Estudios al pasado, zona rica en historia
 
 - carbon emision in near cities and woodplaces dependencies high level of pollution
 
+
+
+- historical reconstruction: arqueological sites. 
+
+There are many arquelogical sites present in Los lagos region. One of the most important of them is Monte Verde area that comprehend two yaciminetos and was the first area showing human rest dated in 14, 500 year BP. Changing the concption of population of americas.
+
+
+Even multiple sites have showed obsidian sources and distribution in Patagonia. (http://geode.colorado.edu/~geolsci/facultyweb/sternpdf/stern%202017%20Obsidian%20in%20Patagonia%20Quat%20International.pdf)
+Obsidian it is an extrusive igneus rock and is signal of volcanic activiy area. This rock was valued by old cultures, fractured and used as arrowheads.
+
+
+[Provide transition between the general problem area and the literature review]
+En un sistema que se ha visto modificado constante mente
 - natural events perturbations: volcano activities and earthquakes
+Active Andean volcanism [@SternVolcanism]. Among the larger, more active and/or better known volcanic centers in the SVZ are: Puyehue (2,240 m in PNP), Cordón Caulle (2,236 m; in PNP), Tronador (3,565 m; in VPRNP), Osorno (2,661 m; López-Escober et al., 1992; Petit-Breuilh, 1999), Calbuco (2,015 m; in RNL)
 
 como registros de tephra
 earthquake 1960 en valdivia (https://www.nature.com/articles/s41467-018-05989-6)
 
 
-- historical reconstruction: arqueological sites. 
+3. Locate the gap-describe the proble to address-present a prediction to be tested 
+[Provide brief overview of key research projects in this area]
+hasta donde estas areas serán capaces de proteger a las especies en el futuro considderando el cambio climatico y la respuesta de las distintass especies
 
-Obsidian sources and distribution in Patagonia, southernmost SouthAmerica (http://geode.colorado.edu/~geolsci/facultyweb/sternpdf/stern%202017%20Obsidian%20in%20Patagonia%20Quat%20International.pdf)
+dificultad de proyeccion, los planes son antiguos (VPRNP 2015, PNP 2008, AANP 1997)
 
 
-### Methodology
+[Describe gaps in the research] 
+Necesidad de concoer el presente para proyectar el futuro
+There are two
+that area particularly important in the context of the present proposal: 1) The need to improve our
+knowledge on the consequences of climate change on freshwater ecosystems, integrating biodiversity
+dimension with hydrological ones, and 2) the importance of monitoring and adequately include climate
+change into the PAs managing plans. Both aspects were included in the updated NDC of Chile, so there is
+explicit national commitment to tackle both recommendations.
 
-A systematic review of scientific literature was made searching in the Web of Science. Keywords usead at topic level were: "Puyehue National Park" or "Vicente Perez Rozales National Park" or "Alerce Andino National Park".  resulted in 19 journal articles.
 
-Second search: 
-park and sourraoundings, most of Los lagos región leaving out coastal systems and in particular Chiloe island.
+[Decribe paper itself]
+In order to create a baseline of sytudies in this area we made a revision of scientif literature carry out in these three protected areas and its surroundings in Los lagos Region
+
+4. Describe the present paper 
+[Give details about the methodology reported in the paper]
+We made a systematic review of research in the Web of Knowledge database in two parts: searching by the names of the national parks (elegidos para este trabajo) and a broader area of Southern Chile.
+
+[Announces the findings]
+The results helped to understand focussed areas of studied and those in which more research is needed.
+
+
+
+
+
+
+
+- social
+
+Considering changes in Chile during the last 30 years, Los lagos region present  fisheries an acuacultere growth in comparision qwith the rest of the country [@Soto-alvaradoDesarrollo]. This is mainly to salmoniculture activity in the region.
+
+
+Mujeres emprendedoras en la region de los lagos :Los resultados indican que las emprendedoras reportan niveles de Inteligencia emocional alto en las dimensiones percepción y regulación emocional. (Veliz et al 2019).
+estilo de liderazgo de dirigentes sindicales (https://www.redalyc.org/jatsRepo/339/33958034003/index.html)
+THE ADVANTAGES OF USING LOCAL LABOUR MARKETS IN THE STUDY OF INTRAREGIONAL SOCIAL INEQUALITIES: THE CASE OF LOS LAGOS, CHILE
+
+
+Objective:
+Will focus our systematic review geographicaly in the Andes mountain chain and central vally, and not coastal mountain chain and coast.
+
+
+
+# Methodology
+
+A systematic review of literature was performed through the Web of Science database. Two eligibility criteria were performed: 1. including the name of the national Parks of interes in this study, including keywords used at topic level: "Puyehue National Park" or "Vicente Perez Rozales National Park" or "Alerce Andino National Park", and 2. Geographic areas surrounding the National Parks, using keywords at topic level: "South Central Chile" or "North Chilean Patagonia" or "Los Lagos Region". The period of the search included from 1975 until October 2020. Selection of articles follow prisma flow diagram. Grey-literature was not incorporated in the selection.
+
+Articles selected were categorized by publication year, source title, keywords used, Area of study, study location, objective,      methodology, process, and study object
+
+
+Methodology includes field surveys for samples as meassurements taken, field collection implies taking a sample and precess it at the lab.
+
+
+We focus our findings in Los lagos región research and andean studies, leaving out coastal systems and in particular Chiloe island.
     
-### Hydrology
+# Results
+
+A total of  `r nrow(DF)` articles were selected in this review. From those `r DF %>% dplyr::filter(`Keywords used`=="Name of parks") %>% nrow()` articles were find from National parks names searching and `r DF %>% dplyr::filter(`Keywords used`=="Close area") %>% nrow()` articles from searching nearby areas od the parks.
+```{r}
+Pub_year <-ggplot(DF) + geom_bar(aes(x = `Publication Year`))+  labs(y="Number of articles", x="Publication year")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))
+Pub_year
+```
+
+
+
+
+
+
+The search by name of national parks resulted in 18 journal articles, while with the second part of the search we found xxx articles.
+## Hydrology
+
+```{r}
+DF_Location <- DF %>%  group_by(`Study location`) %>% summarise(n = n()) %>% ungroup() %>% dplyr::filter(!is.na(`Study location`)) %>% 
+  mutate(`Study location`=fct_reorder(`Study location`, -n))
+
+#Location <-ggplot(DF_Location) + geom_col(aes(x = `Study location`, y=n)) +labs(y="Number of articles", x="Study location")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) 
+
+DF_Location2 <- DF_Location %>% 
+  mutate(`Study zone`= case_when(`Study location` %in% c("2 regions", "3 regions", "4 regions", "5 regions", "More than 5 regions")~"Various regions of Chile",  `Study location` %in% c("PNP", "AANP", "VPRNP")~"National Parks", `Study location` %in% c("Adjacent to PNP", "Adjacent to AANP", "Adjacent to VPRNP")~"Adjacent areas to NP", `Study location` %in% c("Andes of Los Rios Region", "Neuquen, Argentina", "Argentinian andes")~"Similar ecosystems", `Study location` %in% c("Los Lagos Region", "Chile", "Chile and Argentina")~"Larger areas that comprise the NP")) %>% mutate(`Study zone`= str_wrap(`Study zone`, 18))
+                                
+Location2 <-ggplot(DF_Location2, aes(x = fct_reorder(`Study zone`,n, .desc=TRUE), y = n, group = `Study location`)) + geom_col(aes(fill=`Study zone`), position="dodge", color="black") + geom_text(aes(label = `Study location`), size=4, position=position_dodge(0.9), angle=90,vjust=0.5, hjust=-0.04 ) + labs(y="Number of articles", x="Study locations")  + theme_classic()+ ylim(c(0,47))+theme(legend.position = "none")+ scale_fill_brewer(palette = "Dark2") + theme(text=element_text(size=18,  family="Times"), axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+
+Location2
+
+```
+
+```{r}
+DF_Area <- DF %>%  group_by(`Area of study`) %>% summarise(n = n()) %>% ungroup() %>% mutate(`Area of study`= str_wrap(`Area of study`, 24))
+
+Area <-ggplot(DF_Area) + geom_col(aes(x = `Area of study`, y=n)) +labs(y="Number of articles", x="Area of study")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) 
+
+Area
+```
+
+
+
+
+
+
+
+```{r}
+DF_Methodology <- DF %>%  group_by(Methodology) %>% summarise(n = n()) %>% ungroup() %>% dplyr::filter(!is.na(Methodology)) %>% mutate(Methodology=fct_reorder(Methodology, -n))
+
+p1 <-ggplot(DF_Methodology) + geom_col(aes(x =Methodology , y=n)) +labs(y="Number of articles", x="Methodoloogy")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+
+p1
+
+# DF_Methodology2 <- DF %>%  group_by(Methodology, `Area of study`) %>% summarise(n = n()) %>% ungroup()
+# 
+# p2 <- ggplot(DF_Methodology2) + geom_col(aes(x =Methodology , y=n)) +labs(y="Number of articles", x="Methodoloogy")  + theme_classic()+  facet_wrap(~`Area of study`)+ theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+# 
+# patchwork <- p1 + p2
+# patchwork + plot_annotation(tag_levels = 'A')
+
+
+```
+
+
 
 Spectral characterrization and comparison among lakes in @delosRiosSpectral
 We show that annual runoffis highly sensitive to the relative area of FPto NF: ratios of FP to NF areas of 10%, 50% and 90% would lead to 3%,−18% and−40% changes inmean annual runoff, respectively.(Alvarez-Garreton et al 2019)
 
-### Ecosystem functioning and services
+## Ecosystem functioning and services
 
 Chusquea fenology in @delaFuenteChusquea as seen in figure \@ref(fig:Fenology) 
 El área de estudio se ubica en el sector de Antillanca (40º78’S y 72º22’O,
@@ -80,7 +229,7 @@ They reconstructed stand development on sites affected by these disturbances (co
 knitr::include_graphics("Fenology.png")
 ```
 
-### Socio-ecology
+## Socio-ecology
 
 Turism and peoples movement in @SozaAmigoTurism
 
@@ -100,10 +249,38 @@ Low participation and separation from the protected area which has not incorpora
 knitr::include_graphics("Mapa_social.png")
 ```
 
+```{r Volcanos}
+knitr::include_graphics("Volcanos.png")
+```
+
+## Freshwater biodiversity
+
+## Conservation priorization -Climate change
+
+# Discussion 
 
 
-### Freshwater biodiversity
+Latitudinal patterns in plant biodiversity [@BanisterLatitudinal] shows 
+at 40°S there are more than 800 species, based on a bibliographic review of existing floristic studies at 2012.
 
-### Conservation priorization -Climate change
+
+
+ La estructura y composición homogénea de las plantaciones forestales promueven una mayor propagación del fuego en comparación con los bosques nativos deciduos de Nothofagus, que tienden a tener menor cantidad de incendios por presentar un combustible más heterogéneo y con mayor contenido de hu-medad (Gómez-González et al., 2019; McWethy et al., 2018). Dado que la principal fuente de ignición (>90%) de  los  incendios  forestales  en  Chile  se  asocia  con  la  actividad  humana  (accidental  o  intencional),  sectores  con vegetación más cercanos a centros poblados presentan mayor probabilidad de ocurrencia de incendios forestales (Gómez-González et al., 2019; McWethy et al., 2018). Los sectores más australes también han visto un incremento en incendios catastróficos. La particularidad de estos eventos es que suelen abarcar una su-perficie mucho mayor y generalmente afectan ecosistemas nativos, lo que por razones de acceso, topografía y  clima,  hacen  a  estos  incendios  muy  difíciles  de  controlar,  sumado  al  hecho  de  que  ocurren  en  zonas  con  escaso material para su combate oportuno. Acá podemos destacar los incendios en el Parque Nacional Torres del Paine en 2012 (cerca de 17.000 ha), Reserva Nacional China Muerta de 2015 (cerca de 3.700 ha) y Colonia Sur, Cochrane en 2019 (cerca de 15.000 ha).
+
+
+
+There are just a few studies in hydrology in the region, although there are some more characterization including the valdivian forest [@LittleWatershed].
+
+freshwater: we did not consider dideases in in chilean salmon industry [@RozasAmoebic]
+
+Although we contemplate andean studies here, volcanic activity could create microhabitats more similar to areas in another region or with another climate ???
+Remarkably consistent thermal state [@RotmanThermal]
+
+plantas de embotrium y actividad volcanica [@DelgadoEmbothrium]
+plant invasion in Climatic and socio-economic factors determine thelevel of invasion by alien plants in Chile [@FuentesInvasion]
+
+Comparative morphology of annual shoots in seedlings of five Nothofagus species from Argentinian patagonia [@RaffaeleMorphology]
+
+A Multiscale Method for AssessingVegetation Baseline of Environmental [@PauchardMultiscale]
 
 ### References
