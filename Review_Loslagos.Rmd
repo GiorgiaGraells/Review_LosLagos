@@ -1,5 +1,5 @@
 ---
-title: "Review_Ms"
+title: "Review_Ms. Todo menos figuras"
 author: "Giorgia Graells"
 output:
   bookdown::word_document2:
@@ -7,8 +7,8 @@ output:
 bibliography: References.bib
 ---
 
-```{r setup, include=FALSE, comment=FALSE, message=FALSE, warning=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+```{r setup}
+knitr::opts_chunk$set(echo = FALSE, include=FALSE, comment=FALSE, message=FALSE, warning=FALSE)
 library(tidyverse)
 library(patchwork)
 library(ggplot2)
@@ -99,7 +99,8 @@ explicit national commitment to tackle both recommendations.
 
 
 [Decribe paper itself]
-In order to create a baseline of sytudies in this area we made a revision of scientif literature carry out in these three protected areas and its surroundings in Los lagos Region
+In order identify the elements that allow 
+we create a baseline of sytudies in this area we made a revision of scientif literature carry out in these three protected areas and its surroundings in Los lagos Region
 
 4. Describe the present paper 
 [Give details about the methodology reported in the paper]
@@ -109,7 +110,8 @@ We made a systematic review of research in the Web of Knowledge database in two 
 The results helped to understand focussed areas of studied and those in which more research is needed.
 
 
-
+aim: as a concrete possibility to generate a methodology to include climate Change into PAs planning, from their creation to their management and administration, assessing their value as well as their
+vulnerabilities at landscape scales
 
 
 
@@ -124,27 +126,68 @@ estilo de liderazgo de dirigentes sindicales (https://www.redalyc.org/jatsRepo/3
 THE ADVANTAGES OF USING LOCAL LABOUR MARKETS IN THE STUDY OF INTRAREGIONAL SOCIAL INEQUALITIES: THE CASE OF LOS LAGOS, CHILE
 
 
-Objective:
-Will focus our systematic review geographicaly in the Andes mountain chain and central vally, and not coastal mountain chain and coast.
 
 
 
 # Methodology
 
-A systematic review of literature was performed through the Web of Science database. Two eligibility criteria were performed: 1. including the name of the national Parks of interes in this study, including keywords used at topic level: "Puyehue National Park" or "Vicente Perez Rozales National Park" or "Alerce Andino National Park", and 2. Geographic areas surrounding the National Parks, using keywords at topic level: "South Central Chile" or "North Chilean Patagonia" or "Los Lagos Region". The period of the search included from 1975 until October 2020. Selection of articles follow prisma flow diagram. Grey-literature was not incorporated in the selection.
+1. Overview-purpose of the work-give source of material/equipment used 
+[General overview of this section]
 
-Articles selected were categorized by publication year, source title, keywords used, Area of study, study location, objective,      methodology, process, and study object
+In order to identify research developed in the focus area, a systematic review of literature was performed through the Web of Science database. Information was categorized according to research areas presented in this project.
+
+[Provide background information and justification]
+Will focus our systematic review geographicaly in the Andes mountain chain and central vally, and not coastal mountain chain and coast.
 
 
-Methodology includes field surveys for samples as meassurements taken, field collection implies taking a sample and precess it at the lab.
 
 
+[Provide an overview of the procedure/method itself]
+
+Two eligibility criteria were performed: 1. including the name of the National Parks of interes, using keywords at topic level: "Puyehue National Park" or "Vicente Perez Rozales National Park" or "Alerce Andino National Park", and 2. Geographic areas surrounding the National Parks, using keywords at topic level: "South Central Chile" or "North Chilean Patagonia" or "Los Lagos Region". The period of the search included from 1975 until October 2020. Selection of articles followed prisma flow diagram. Grey-literature was not incorporated in the selection.
+
+
+
+2. Details about materials and methods- justify choices 
+[Provide details about what was done and used and shows that care was taken] 
+
+Articles selected were categorized by publication year, source title, keywords used, area of study, study location, objective,      methodology, process, and study object. 
+
+
+
+[Continuing to describe what was done in detail, using languajge which comunicate that care was taken]
+
+Area of study included Ecosystem functioning and services, Freshwater biodiversity, Hydrology,  "Social-ecological, and also complementary areas as  Arqueological, Biogeography, Climate, Environmental conditions, Exotic species, Paleoecology, Seismiology, and Species description.
+
+Study location encompas categories such as AANP, PNP, and  VPRNP, group by National Parks;  Adjacent to AANP, Adjacent to PNP, Adjacent to VPRNP, Andes of Los Rios Region, and Neuquen, Argentina  group by similar ecosystems; Los Rios region, 2 regions, 3 regions, 4 regions,  5 regions, More than 5 regions, Chile, Chile and Argentina, group by larger areas including the NP; Los Lagos Region, Valdivia group by close to NP but not same ecosystem. 
+
+Methodology classified according to how data was obtain
+
+The category called proccess implies biological, ecological or physical  
+
+3. Relate to other studies 
+[Describe what was done by referring to existing mehods in the literature] 
 We focus our findings in Los lagos región research and andean studies, leaving out coastal systems and in particular Chiloe island.
+
+
+[Provide more detailed information about the method and show that was a good choice]
+4. Indicate where problems occurred 
+[Mention possible difficulty in the methodology]
+
     
 # Results
 
-A total of  `r nrow(DF)` articles were selected in this review. From those `r DF %>% dplyr::filter(`Keywords used`=="Name of parks") %>% nrow()` articles were find from National parks names searching and `r DF %>% dplyr::filter(`Keywords used`=="Close area") %>% nrow()` articles from searching nearby areas od the parks.
-```{r}
+1. Revisting the research aim/existing research
+
+2. General overview of results
+
+A total of  `r nrow(DF)` articles were selected in this review. From those ` r DF %>% dplyr::filter(`Keywords used`=="Name of parks") %>% nrow()` articles were find from National parks names searching and ` r DF %>% dplyr::filter(`Keywords used` =="Close area") %>%  nrow()` articles from searching nearby areas od the parks. 
+
+3. Invitations to view results
+In general terms, articles have been growing in number, however there are years that clearly show a decline in publications (Fig \@ref(fig: Years)). 
+
+
+```{r Years}
 Pub_year <-ggplot(DF) + geom_bar(aes(x = `Publication Year`))+  labs(y="Number of articles", x="Publication year")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))
 Pub_year
 ```
@@ -154,33 +197,38 @@ Pub_year
 
 
 
-The search by name of national parks resulted in 18 journal articles, while with the second part of the search we found xxx articles.
-## Hydrology
+From the total of articles, only ` r ((DF %>% dplyr::filter(`Study location` %in% c("AANP", "PNP", "VPRNP")) %>% nrow())/nrow(DF))*100`% (Fig \@ref(fig: Locations)), where ` r DF %>% dplyr::filter(`Study location` == "PNP") %>% nrow()` articles were carry out in PNP, and only ` r DF %>% dplyr::filter(`Study location` == "AAPN") %>% nrow()` in AAPN and ` r DF %>% dplyr::filter(`Study location` == "VPRPN") %>% nrow()` in VPRPN.  Adjacents areas to NP comprehended a ` r ((DF %>% dplyr::filter(`Study location` %in%  c("Adjacent to PNP", "Adjacent to AANP", "Adjacent to VPRNP") %>% nrow())/nrow(DF))*100`% of the studies. 
 
-```{r}
+```{r Locations}
 DF_Location <- DF %>%  group_by(`Study location`) %>% summarise(n = n()) %>% ungroup() %>% dplyr::filter(!is.na(`Study location`)) %>% 
   mutate(`Study location`=fct_reorder(`Study location`, -n))
 
-#Location <-ggplot(DF_Location) + geom_col(aes(x = `Study location`, y=n)) +labs(y="Number of articles", x="Study location")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) 
-
 DF_Location2 <- DF_Location %>% 
-  mutate(`Study zone`= case_when(`Study location` %in% c("2 regions", "3 regions", "4 regions", "5 regions", "More than 5 regions")~"Various regions of Chile",  `Study location` %in% c("PNP", "AANP", "VPRNP")~"National Parks", `Study location` %in% c("Adjacent to PNP", "Adjacent to AANP", "Adjacent to VPRNP")~"Adjacent areas to NP", `Study location` %in% c("Andes of Los Rios Region", "Neuquen, Argentina", "Argentinian andes")~"Similar ecosystems", `Study location` %in% c("Los Lagos Region", "Chile", "Chile and Argentina")~"Larger areas that comprise the NP")) %>% mutate(`Study zone`= str_wrap(`Study zone`, 18))
+  mutate(`Study zone`= case_when(`Study location` %in% c("3 regions", "4 regions", "5 regions", "More than 5 regions")~"Various regions of Chile",  `Study location` %in% c("PNP", "AANP", "VPRNP")~"National Parks", `Study location` %in% c("Adjacent to PNP", "Adjacent to AANP", "Adjacent to VPRNP")~"Adjacent areas to NP", `Study location` %in% c("2 regions", "Andes of Los Rios Region", "Neuquen, Argentina", "Argentinian andes")~"Similar ecosystems", `Study location` %in% c("Los Lagos Region")~"Larger areas that comprise the NP", `Study location` %in% c("Chile", "Chile and Argentina")~"Global studies")) %>%
+  mutate(`Study zone`= str_wrap(`Study zone`, 18))
                                 
-Location2 <-ggplot(DF_Location2, aes(x = fct_reorder(`Study zone`,n, .desc=TRUE), y = n, group = `Study location`)) + geom_col(aes(fill=`Study zone`), position="dodge", color="black") + geom_text(aes(label = `Study location`), size=4, position=position_dodge(0.9), angle=90,vjust=0.5, hjust=-0.04 ) + labs(y="Number of articles", x="Study locations")  + theme_classic()+ ylim(c(0,47))+theme(legend.position = "none")+ scale_fill_brewer(palette = "Dark2") + theme(text=element_text(size=18,  family="Times"), axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
-
+Location2 <-ggplot(DF_Location2, aes(x = fct_reorder(`Study zone`,n, .desc=TRUE), y = n, group = `Study location`)) + geom_col(aes(fill=`Study zone`), position="dodge", color="black") + geom_text(aes(label = `Study location`), size=4, position=position_dodge(0.9), angle=90,vjust=0.5, hjust=-0.04 ) + labs(y="Number of articles", x="Study locations")  + theme_classic()+ ylim(c(0,66))+theme(legend.position = "none")+ scale_fill_brewer(palette = "Dark2") + theme(text=element_text(size=18,  family="Times"), axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 Location2
-
 ```
 
-```{r}
-DF_Area <- DF %>%  group_by(`Area of study`) %>% summarise(n = n()) %>% ungroup() %>% mutate(`Area of study`= str_wrap(`Area of study`, 24))
+Among areas of study in this revision, ecosystem functionning and services are the most frecuent with an  ` r ((DF %>% dplyr::filter(`Area of study`=="Ecosystem functioning and services") %>% nrow() )/nrow(DF) )*100` % (Fig \@ref(fig: Areas)). The same area has been studied in the three NP, however its proportion in PNP is notably higher than the other NP.
 
-Area <-ggplot(DF_Area) + geom_col(aes(x = `Area of study`, y=n)) +labs(y="Number of articles", x="Area of study")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) 
+```{r Areas, fig.height=10, fig.width=8}
+DF_Area <- DF %>%  group_by(`Area of study`, `Study location`) %>% summarise(n = n()) %>% ungroup() %>%
+  mutate(`Area of study`= str_wrap(`Area of study`, 24)) %>% dplyr::filter(!is.na(`Area of study`))
 
-Area
+p1 <-ggplot(DF_Area) + geom_col(aes(x = `Area of study`, y=n)) +labs(y="Number of articles", x="Area of study")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) 
+
+DF_Area2 <- DF_Area %>% dplyr::filter(`Study location` %in% c("PNP", "VPRNP", "AANP"))
+p2 <- ggplot(DF_Area2) + geom_col(aes(x = `Area of study`, y=n)) +labs(y="Number of articles", x="Area of study")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) + facet_wrap(~`Study location`, scales="free_x")
+
+p1/p2
 ```
 
 
+Data collected form the field is abundant  ` r ((DF %>% dplyr::filter(`Mehodology` %in% c("Field survey", "Field collection", "Field experiment")) %>% nrow() )/nrow(DF) )*100` % (Fig \@ref(fig: Areas)).
+
+Field collection included mehods sucha asdendrochronology, electric fishing.
 
 
 
@@ -189,28 +237,95 @@ Area
 ```{r}
 DF_Methodology <- DF %>%  group_by(Methodology) %>% summarise(n = n()) %>% ungroup() %>% dplyr::filter(!is.na(Methodology)) %>% mutate(Methodology=fct_reorder(Methodology, -n))
 
-p1 <-ggplot(DF_Methodology) + geom_col(aes(x =Methodology , y=n)) +labs(y="Number of articles", x="Methodoloogy")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+DF_Methodology <- DF_Methodology %>% 
+  mutate(General_methods= case_when(
+    Methodology %in% c("Field collection", "dendrochronology", "Electric fishing")~"Field collection",  
+    Methodology %in% c("Field survey", "Sampling stations")~"Field survey", 
+    Methodology %in% c("Field experiment", "Transplant experiment", "Seedling experiment")~"Field experiment", 
+    Methodology %in% c("Communicational strategy", "Discussion", "Quantitative and qualitative methods", "Survey", "Interview")~"Social methods", 
+    Methodology %in% c("Modeling", "Simulations", "spatially explicit model", "Multivariate model")~"Modeling", 
+    Methodology %in% c("Chile", "Chile and Argentina")~"Global studies",
+    Methodology %in% c("Genetic analysis", "Reconstruction of mtDNA")~"Genetic analysis",
+    Methodology %in% c("Review of literature")~"Review of literature")) %>%
+  mutate(General_methods= str_wrap(General_methods, 18))
 
+
+p1 <-ggplot(DF_Methodology, aes(x = fct_reorder(General_methods, n, .desc=TRUE), y = n, group = Methodology)) + geom_col(aes(fill=General_methods), position="dodge", color="black") + geom_text(aes(label =Methodology), size=4, position=position_dodge(0.9), angle=90,vjust=0.5, hjust=-0.04 ) + labs(y="Number of articles", x="Study locations")  + theme_classic()+ ylim(c(0,66))+theme(legend.position = "none")+ scale_fill_brewer(palette = "Dark2") + theme(text=element_text(size=18,  family="Times"), axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 p1
-
-# DF_Methodology2 <- DF %>%  group_by(Methodology, `Area of study`) %>% summarise(n = n()) %>% ungroup()
-# 
-# p2 <- ggplot(DF_Methodology2) + geom_col(aes(x =Methodology , y=n)) +labs(y="Number of articles", x="Methodoloogy")  + theme_classic()+  facet_wrap(~`Area of study`)+ theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
-# 
-# patchwork <- p1 + p2
-# patchwork + plot_annotation(tag_levels = 'A')
 
 
 ```
 
 
 
+4. Specific/key results in details
+
+```{r Process, fig.height=10}
+DF_Process <- DF %>%  group_by(`Area of study`, Process, Methodology, `Study object`) %>% summarise(n = n()) %>% ungroup() %>% 
+  dplyr::filter(!is.na(`Area of study`))
+#%>% mutate(`Area of study`= str_wrap(`Area of study`, 24)) %>% 
+
+plot_process <-ggplot(DF_Process) + geom_col(aes(x = Process, y=n)) +labs(y="Number of articles", x="Processes studied")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) + facet_wrap(~`Area of study`, scales="free_x")
+plot_process
+```
+
+
+
+```{r}
+DF_object <- DF %>%  group_by(`Study object`) %>% summarise(n = n()) %>% ungroup() %>% dplyr::filter(!is.na(`Study object`)) %>% mutate(`Study object`=fct_reorder(`Study object`, -n))
+
+DF_object <- DF_object %>% 
+  mutate(General_object= case_when(
+    `Study object` %in% c("People", "Urban areas")~"Social",  
+    `Study object` %in% c("Aegorhinus", "Austrocedrus", "Bird species","Chusquea", "Didymosphenia", "Dromiciops", "F. cupressoides", "Lichen", "Nothofagus", "Fishes",  "Salmonids", "Liolaemus", "Wild boar")~"Species", 
+    `Study object` %in% c("Lakes", "Groundwater Storage", "runoff", "Soil", "watershed")~"Geographic elements", 
+    `Study object` %in% c("Native forest")~"Ecosystem",
+    `Study object` %in% c("Precipitation", "Rock art", "Fires","Particulate matter" )~"a",
+    `Study object` %in% c("Aquatic plants" )~"Group of plants",
+    `Study object` %in% c("Crustacean", "Evergreen trees")~"b")) %>%
+  mutate(General_object= str_wrap(General_object, 18))
+
+
+p1 <-ggplot(DF_object, aes(x = fct_reorder(General_object, n, .desc=TRUE), y = n, group = `Study object`)) + geom_col(aes(fill=General_object), position="dodge", color="black") + geom_text(aes(label =`Study object`), size=4, position=position_dodge(0.9), angle=90,vjust=0.5, hjust=-0.04 ) + labs(y="Number of articles", x="Study locations")  + theme_classic()+ ylim(c(0,66))+theme(legend.position = "none")+ scale_fill_brewer(palette = "Dark2") + theme(text=element_text(size=18,  family="Times"), axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+p1
+
+
+```
+
+## Hydrology
+
+From the total of articles centered on hydrology, 
+
+```{r Hydrology, fig.height=9}
+DF_Hydro <- DF %>%  group_by(`Area of study`, Process, Methodology, `Study object`) %>% summarise(n = n()) %>% ungroup() %>%
+  dplyr::filter(`Area of study`== "Hydrology")
+#%>% mutate(`Area of study`= str_wrap(`Area of study`, 24)) %>% dplyr::filter(!is.na(`Area of study`))
+
+Hydro1 <- ggplot(DF_Hydro) + geom_col(aes(x = Process, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) 
+Hydro2 <- ggplot(DF_Hydro) + geom_col(aes(x = Methodology, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) 
+Hydro3 <- ggplot(DF_Hydro) + geom_col(aes(x = `Study object`, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 0, vjust = 1, hjust=0.5)) 
+(Hydro1 + Hydro2)/Hydro3
+```
+
 Spectral characterrization and comparison among lakes in @delosRiosSpectral
 We show that annual runoffis highly sensitive to the relative area of FPto NF: ratios of FP to NF areas of 10%, 50% and 90% would lead to 3%,−18% and−40% changes inmean annual runoff, respectively.(Alvarez-Garreton et al 2019)
 
+
+
 ## Ecosystem functioning and services
 
-Chusquea fenology in @delaFuenteChusquea as seen in figure \@ref(fig:Fenology) 
+```{r Ecosys, fig.height=9}
+DF_Ecosys <- DF %>%  group_by(`Area of study`, Process, Methodology, `Study object`) %>% summarise(n = n()) %>% ungroup() %>%
+  dplyr::filter(`Area of study`== "Ecosystem functioning and services")
+#%>% mutate(`Area of study`= str_wrap(`Area of study`, 24)) %>% dplyr::filter(!is.na(`Area of study`))
+
+Ecosys1 <- ggplot(DF_Ecosys) + geom_col(aes(x = Process, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) 
+Ecosys2 <- ggplot(DF_Ecosys) + geom_col(aes(x = Methodology, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) 
+Ecosys3 <- ggplot(DF_Ecosys) + geom_col(aes(x = `Study object`, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 0, vjust = 1, hjust=0.5)) 
+(Ecosys1 + Ecosys2)/Ecosys3
+```
+
+Chusquea fenology in @delaFuenteChusquea 
 El área de estudio se ubica en el sector de Antillanca (40º78’S y 72º22’O,
 
 Improvements for the study of volcanic activity [@AmoebaeTephra]
@@ -225,11 +340,20 @@ macropytes  and  riparian  assemblages  are  not  random,  that means  that  the
 
 They reconstructed stand development on sites affected by these disturbances (complex mosaic of disturbance patterns, including the effects of the strong 1960 earthquake as well as fire and wind disturbance), and compared these patterns with the structure of old-growth forests along an elevation gradient from species-rich montane rain forest to mono-typic subalpine Nothofagusforests
 
-```{r Fenology}
-knitr::include_graphics("Fenology.png")
-```
 
-## Socio-ecology
+## Social-ecological
+Socio-ecological research included quantitative and qualitative social methods which includes people's surveys, interviews and articles of discission based on etnography.
+
+```{r Social, fig.height=9}
+DF_Social <- DF %>%  group_by(`Area of study`, Process, Methodology, `Study object`) %>% summarise(n = n()) %>% ungroup() %>%
+  dplyr::filter(`Area of study`== "Social-ecological")
+#%>% mutate(`Area of study`= str_wrap(`Area of study`, 24)) %>% dplyr::filter(!is.na(`Area of study`))
+
+Social1 <- ggplot(DF_Social) + geom_col(aes(x = Process, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) 
+Social2 <- ggplot(DF_Social) + geom_col(aes(x = Methodology, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) 
+Social3 <- ggplot(DF_Social) + geom_col(aes(x = `Study object`, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 0, vjust = 1, hjust=0.5)) 
+(Social1 + Social2)/Social3
+```
 
 Turism and peoples movement in @SozaAmigoTurism
 
@@ -239,25 +363,57 @@ The results show that the chang-es in the economic structure had improve the mai
 
 Social actors in AANP and LLNR buffer in @mardones_social
 
-The study was focused in the buffer zone of figure \@ref(fig:BufferArea)  
+The study was focused in the buffer zone 
 El estudio combina el análisis cualitativo del mapeo de actores (MDA) con el mé-todo cuantitativo del análisis de redes sociales (ARS).
 La inves-tigación utiliza una aproximación sociométrica al análisis de redes sociales, el cual se refiere al estudio de las propiedades estructurales de una red, tales como densidad y cohesión (Marín, Gelcich, Castilla, & Berkes, 2012). 
 Social studies mention haigh fragmentations of social network according to economic sectors (agriculture, artisal fisheries, turism, among others ). 
 Low participation and separation from the protected area which has not incorporated the community 
 
-```{r BuffferArea}
-knitr::include_graphics("Mapa_social.png")
-```
-
-```{r Volcanos}
-knitr::include_graphics("Volcanos.png")
-```
 
 ## Freshwater biodiversity
 
+```{r Fresh, fig.height=9}
+DF_Fresh <- DF %>%  group_by(`Area of study`, Process, Methodology, `Study object`) %>% summarise(n = n()) %>% ungroup() %>%
+  dplyr::filter(`Area of study`== "Freshwater biodiversity")
+#%>% mutate(`Area of study`= str_wrap(`Area of study`, 24)) %>% dplyr::filter(!is.na(`Area of study`))
+
+Fresh1 <- ggplot(DF_Fresh) + geom_col(aes(x = Process, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) 
+Fresh2 <- ggplot(DF_Fresh) + geom_col(aes(x = Methodology, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) 
+Fresh3 <- ggplot(DF_Fresh) + geom_col(aes(x = `Study object`, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 0, vjust = 1, hjust=0.5)) 
+(Fresh1 + Fresh2)/Fresh3
+```
+
+
 ## Conservation priorization -Climate change
 
+5. Comparisons with results in other research
+6. problems with results
+7. Possible implications with results
+
+
+
+
 # Discussion 
+
+1. Revisting previous research- summarise 
+[Revisit previous research] 
+[Revisit Introduction to recall specific weakness in methodology used in previous studies]
+
+2. Mapping 
+[Revisit methodology used in this study] 
+[Revisit and summarise the results] 
+[Show where and how the present work fits into the research “map” in this field]
+
+3. Achivements/contributions- refining implications 
+[Recall an aspect of the results that represents a postitive achievement or contribution of this work] 
+[Focus in the meaning and implications of the achievements in this work] 
+[Note if one of the achievement or contributions of the work is a novelty] 
+[Describe implications of the results, including possible applications]
+
+4. Limitations-current and future work-applications 
+[Describe limitations which should direct future research] 
+[Suggest a specific area to be addressed in future work]
+
 
 
 Latitudinal patterns in plant biodiversity [@BanisterLatitudinal] shows 
@@ -282,5 +438,8 @@ plant invasion in Climatic and socio-economic factors determine thelevel of inva
 Comparative morphology of annual shoots in seedlings of five Nothofagus species from Argentinian patagonia [@RaffaeleMorphology]
 
 A Multiscale Method for AssessingVegetation Baseline of Environmental [@PauchardMultiscale]
+
+Los Lagos es definida como una “Región sin Territorio, ya que las provincias que la forman (Osorno, Llanquihue, Chiloé y Palena) no comparten una noción común de territorio, ni menos una agenda regional común” (Montecinos, 2009, p. 24).
+Modificacion de la actividad economica en la region producto de la entrada de la industria del salmon ha  generado un cambio cultural, donde predomina una dependdencia del mercado externo.
 
 ### References
