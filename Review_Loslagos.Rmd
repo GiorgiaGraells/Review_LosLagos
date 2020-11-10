@@ -158,7 +158,9 @@ We focus our findings in Los lagos región research and andean studies, leaving 
 
 
 [Provide more detailed information about the method and show that was a good choice]
+
 4. Indicate where problems occurred 
+
 [Mention possible difficulty in the methodology]
 
     
@@ -192,40 +194,45 @@ DF_Location <- DF %>%  group_by(`Study location`) %>% summarise(n = n()) %>% ung
 
 DF_Location2 <- DF_Location %>% 
   mutate(`Study zone`= case_when(`Study location` %in% c("3 regions", "4 regions", "5 regions", "More than 5 regions")~"Various regions of Chile",  `Study location` %in% c("PNP", "AANP", "VPRNP")~"National Parks", `Study location` %in% c("Adjacent to PNP", "Adjacent to AANP", "Adjacent to VPRNP")~"Adjacent areas to NP", `Study location` %in% c("2 regions", "Andes of Los Rios Region", "Neuquen, Argentina", "Argentinian andes")~"Similar ecosystems", `Study location` %in% c("Los Lagos Region")~"Larger areas that comprise the NP", `Study location` %in% c("Chile", "Chile and Argentina")~"Global studies")) %>%
-  mutate(`Study zone`= str_wrap(`Study zone`, 18))
+  mutate(`Study zone`= str_wrap(`Study zone`, 15))
                                 
-Location2 <-ggplot(DF_Location2, aes(x = fct_reorder(`Study zone`,n, .desc=TRUE), y = n, group = `Study location`)) + geom_col(aes(fill=`Study zone`), position="dodge", color="black") + geom_text(aes(label = `Study location`), size=4, position=position_dodge(0.9), angle=90,vjust=0.5, hjust=-0.04 ) + labs(y="Number of articles", x="Study locations")  + theme_classic()+ ylim(c(0,66))+theme(legend.position = "none")+ scale_fill_brewer(palette = "Dark2") + theme(text=element_text(size=18,  family="Times"), axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+Location2 <-ggplot(DF_Location2, aes(x = fct_reorder(`Study zone`,n, .desc=TRUE), y = n, group = `Study location`)) + geom_col(aes(fill=`Study zone`), position="dodge", color="black") + geom_text(aes(label = `Study location`), size=4, position=position_dodge(0.9), angle=90,vjust=0.5, hjust=-0.04 ) + labs(y="Number of articles", x="Study locations")  + theme_classic()+ ylim(c(0,66))+theme(legend.position = "none")+ scale_fill_brewer(palette = "Dark2") + theme(text=element_text(size=18,  family="Times"), axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 Location2
 ```
 
-Among areas of study in this revision, ecosystem functionning and services are the most frecuent with an  ` r ((DF %>% dplyr::filter(`Area of study`=="Ecosystem functioning and services") %>% nrow() )/nrow(DF) )*100` % (Fig \@ref(fig: Areas)). The same area has been studied in the three NP, however its proportion in PNP is notably higher than the other NP.
+
+Most of the study areas ar mention in less than 20 articles in this revision, however ecosystem functionning and services highlights with its number of articles published ` r ((DF %>% dplyr::filter(`Area of study`=="Ecosystem functioning and services") %>% nrow() )/nrow(DF) )*100` % of the total (Fig \@ref(fig: Areas)). Ecosystem functionning and services has been studied in the three NP, however its proportion in PNP is notably higher than the other NP.
 
 ```{r Areas, fig.height=10, fig.width=8}
-DF_Area <- DF %>%  group_by(`Area of study`, `Study location`) %>% summarise(n = n()) %>% ungroup() %>%
-  mutate(`Area of study`= str_wrap(`Area of study`, 24)) %>% dplyr::filter(!is.na(`Area of study`)) 
-
-DF_Area <- DF_Area %>% 
-  mutate(`Biger Area of study`= case_when(`Area of study` %in% c("Arqueological","Paleoecology" )~"Archaeology and Paleoecology",
+DF_Area <- DF %>% 
+  mutate(`Area of study2`= case_when(`Area of study` %in% c("Arqueological","Paleoecology" )~"Archaeology and Paleoecology",
                                           `Area of study` %in% c("Climate","Environmental conditions", "Seismiology" )~ "Climate and environment",
                                           `Area of study` %in% c("Biogeography","Species", "Exotic species" )~ "Species and distribution",
-                                          `Area of study` %in% "Ecosystem functioning and services" ~ "Ecosystem",
+                                         `Area of study` %in%  "Ecosystem functioning and services" ~ "Ecosystem func. & servic.",
                                           `Area of study` %in% "Freshwater biodiversity" ~ "Freshwater biodiversity",
                                           `Area of study` %in% "Hydrology" ~ "Hydrology",
-                                          `Area of study` %in% "Social-ecological" ~ "Social-ecology"))
+                                          `Area of study` %in% "Social-ecological" ~ "Social-ecology")) %>% 
+  mutate(`Area of study2`= str_wrap(`Area of study2`, 15)) %>% 
+  group_by(`Area of study2`) %>% summarise(n = n()) %>% ungroup() %>%
+   dplyr::filter(!is.na(`Area of study2`))
+
+p1 <-ggplot(DF_Area) + geom_col(aes(x = fct_reorder(`Area of study2`, desc(n)), y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle =90, vjust = 0.5, hjust=1)) 
 
 
-p1 <-ggplot(DF_Area) + geom_col(aes(x = `Biger Area of study`, y=n)) +labs(y="Number of articles", x="Area of study")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) 
-
-DF_Area2 <- DF_Area %>% dplyr::filter(`Study location` %in% c("PNP", "VPRNP", "AANP")) %>% 
-    mutate(`Biger Area of study`= case_when(`Area of study` %in% c("Arqueological","Paleoecology" )~"Archaeology and Paleoecology",
+DF_Area2 <- DF %>% dplyr::filter(`Study location` %in% c("PNP", "VPRNP", "AANP")) %>% 
+   mutate(`Area of study2`= case_when(`Area of study` %in% c("Arqueological","Paleoecology" )~"Archaeology and Paleoecology",
                                           `Area of study` %in% c("Climate","Environmental conditions", "Seismiology" )~ "Climate and environment",
                                           `Area of study` %in% c("Biogeography","Species", "Exotic species" )~ "Species and distribution",
-                                          `Area of study` %in% c("Ecosystem functioning and services") ~ "Ecosystem",
-                                          `Area of study` %in% c("Freshwater biodiversity") ~ "Freshwater biodiversity",
-                                          `Area of study` %in% c("Hydrology") ~ "Hydrology",
-                                          `Area of study` %in% c("Social-ecological") ~ "Social-ecology"))
+                                         `Area of study` %in%  "Ecosystem functioning and services" ~ "Ecosystem func. & servic.",
+                                          `Area of study` %in% "Freshwater biodiversity" ~ "Freshwater biodiversity",
+                                          `Area of study` %in% "Hydrology" ~ "Hydrology",
+                                          `Area of study` %in% "Social-ecological" ~ "Social-ecology")) %>% 
+  mutate(`Area of study2`= str_wrap(`Area of study2`, 15)) %>% 
+  group_by(`Area of study2`, `Study location`) %>% summarise(n = n()) %>% ungroup() %>%
+   dplyr::filter(!is.na(`Area of study2`))
+  
 
-p2 <- ggplot(DF_Area2) + geom_col(aes(x = `Biger Area of study`, y=n)) +labs(y="Number of articles", x="Area of study")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) + facet_wrap(~`Study location`, scales="free_x")
+p2 <- ggplot(DF_Area2) + geom_col(aes(x = fct_reorder(`Area of study2`, desc(n)), y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + facet_wrap(~`Study location`, scales="free_x")
 
 p1/p2
 ```
@@ -233,26 +240,19 @@ p1/p2
 
 Data collected form the field is abundant  ` r ((DF %>% dplyr::filter(`Mehodology` %in% c("Field survey", "Field collection", "Field experiment")) %>% nrow() )/nrow(DF) )*100` % (Fig \@ref(fig: Areas)).
 
-Field collection included mehods sucha asdendrochronology, electric fishing.
-
-
-
-
-
 ```{r}
-DF_Methodology <- DF %>%  group_by(Methodology) %>% summarise(n = n()) %>% ungroup() %>% dplyr::filter(!is.na(Methodology)) %>% mutate(Methodology=fct_reorder(Methodology, -n))
-
-DF_Methodology <- DF_Methodology %>% 
+DF <- DF %>% 
   mutate(General_methods= case_when(
     Methodology %in% c("Field collection", "dendrochronology", "Electric fishing")~"Field collection",  
     Methodology %in% c("Field survey", "Sampling stations")~"Field survey", 
-    Methodology %in% c("Field experiment", "Transplant experiment", "Seedling experiment")~"Field experiment", 
+    Methodology %in% c("Field experiment", "Transplant experiment", "Seedling experiment", "Stratigraphy")~"Field experiment", 
     Methodology %in% c("Communicational strategy", "Discussion", "Quantitative and qualitative methods", "Survey", "Interview")~"Social methods", 
-    Methodology %in% c("Modeling", "Simulations", "spatially explicit model", "Multivariate model")~"Modeling", 
+    Methodology %in% c("Correlations","Modeling", "Multivariate model", "Remote sensing","Simulations", "spatially explicit model")~"Modeling", 
     Methodology %in% c("Chile", "Chile and Argentina")~"Global studies",
-    Methodology %in% c("Genetic analysis", "Reconstruction of mtDNA")~"Genetic analysis",
-    Methodology %in% c("Review of literature")~"Review of literature")) %>%
-  mutate(General_methods= str_wrap(General_methods, 18))
+    Methodology %in% c("Isotopes","Genetic analysis", "Reconstruction of mtDNA")~"Molecular analysis",
+    Methodology %in% c("Review of literature")~"Review of literature"))
+
+DF_Methodology <- DF %>%  group_by(Methodology, General_methods) %>% summarise(n = n()) %>% ungroup() %>% dplyr::filter(!is.na(Methodology)) %>% mutate(Methodology=fct_reorder(Methodology, -n)) %>% mutate(General_methods= str_wrap(General_methods, 16))
 
 
 p1 <-ggplot(DF_Methodology, aes(x = fct_reorder(General_methods, n, .desc=TRUE), y = n, group = Methodology)) + geom_col(aes(fill=General_methods), position="dodge", color="black") + geom_text(aes(label =Methodology), size=4, position=position_dodge(0.9), angle=90,vjust=0.5, hjust=-0.04 ) + labs(y="Number of articles", x="Study locations")  + theme_classic()+ ylim(c(0,66))+theme(legend.position = "none")+ scale_fill_brewer(palette = "Dark2") + theme(text=element_text(size=18,  family="Times"), axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
@@ -260,19 +260,12 @@ p1
 
 
 ```
+Field collection included mehods sucha asdendrochronology, electric fishing.
 
 
+Modeling category included correlational, multivariete , and spatially explicit models
 
-4. Specific/key results in details
 
-```{r Process, fig.height=10}
-DF_Process <- DF %>%  group_by(`Area of study`, Process, Methodology, `Study object`) %>% summarise(n = n()) %>% ungroup() %>% 
-  dplyr::filter(!is.na(`Area of study`))
-#%>% mutate(`Area of study`= str_wrap(`Area of study`, 24)) %>% 
-
-plot_process <-ggplot(DF_Process) + geom_col(aes(x = Process, y=n)) +labs(y="Number of articles", x="Processes studied")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) + facet_wrap(~`Area of study`, scales="free_x")
-plot_process
-```
 
 
 
@@ -281,13 +274,13 @@ DF_object <- DF %>%  group_by(`Study object`) %>% summarise(n = n()) %>% ungroup
 
 DF_object <- DF_object %>% 
   mutate(General_object= case_when(
-    `Study object` %in% c("People", "Urban areas")~"Social",  
-    `Study object` %in% c("Aegorhinus", "Austrocedrus", "Bird species","Chusquea", "Didymosphenia", "Dromiciops", "F. cupressoides", "Lichen", "Nothofagus", "Fishes",  "Salmonids", "Liolaemus", "Wild boar")~"Species", 
-    `Study object` %in% c("Lakes", "Groundwater Storage", "runoff", "Soil", "watershed")~"Geographic elements", 
-    `Study object` %in% c("Native forest")~"Ecosystem",
-    `Study object` %in% c("Precipitation", "Rock art", "Fires","Particulate matter" )~"a",
+    `Study object` %in% c("People", "Urban areas")~"Human",  
+    `Study object` %in% c("Aegorhinus", "Austrocedrus", "Bird species","Chusquea", "Craspedacusta","Didymosphenia", "Dromiciops", "F. cupressoides", "Lichen", "Nothofagus",   "Salmonids", "Liolaemus", "Wild boar")~"Species", 
+    `Study object` %in% c( "Groundwater Storage", "Lakes", "runoff", "Soil","Streams", "watershed")~"Geographic elements", 
+    `Study object` %in% c("Forest","Native forest")~"Ecosystem",
+    `Study object` %in% c("Fires","Particulate matter","Precipitation", "Rock art")~"Physical conditions",
     `Study object` %in% c("Aquatic plants" )~"Group of plants",
-    `Study object` %in% c("Crustacean", "Evergreen trees")~"b")) %>%
+    `Study object` %in% c("Bird species","Fishes","Crustacean", "Evergreen trees", "Nothofagus")~"Communities")) %>%
   mutate(General_object= str_wrap(General_object, 18))
 
 
@@ -297,17 +290,21 @@ p1
 
 ```
 
+
+4. Specific/key results in details
+
+
 ## Hydrology
 
 From the total of articles centered on hydrology, 
 
 ```{r Hydrology, fig.height=9}
-DF_Hydro <- DF %>%  group_by(`Area of study`, Process, Methodology, `Study object`) %>% summarise(n = n()) %>% ungroup() %>%
+DF_Hydro <- DF %>%  group_by(`Area of study`, Process, General_methods, `Study object`) %>% summarise(n = n()) %>% ungroup() %>%
   dplyr::filter(`Area of study`== "Hydrology")
 #%>% mutate(`Area of study`= str_wrap(`Area of study`, 24)) %>% dplyr::filter(!is.na(`Area of study`))
 
-Hydro1 <- ggplot(DF_Hydro) + geom_col(aes(x = Process, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) 
-Hydro2 <- ggplot(DF_Hydro) + geom_col(aes(x = Methodology, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) 
+Hydro1 <- ggplot(DF_Hydro) + geom_col(aes(x = Process, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
+Hydro2 <- ggplot(DF_Hydro) + geom_col(aes(x = General_methods, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
 Hydro3 <- ggplot(DF_Hydro) + geom_col(aes(x = `Study object`, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 0, vjust = 1, hjust=0.5)) 
 (Hydro1 + Hydro2)/Hydro3
 ```
@@ -319,14 +316,20 @@ We show that annual runoffis highly sensitive to the relative area of FPto NF: r
 
 ## Ecosystem functioning and services
 
-```{r Ecosys, fig.height=9}
-DF_Ecosys <- DF %>%  group_by(`Area of study`, Process, Methodology, `Study object`) %>% summarise(n = n()) %>% ungroup() %>%
+Field collection methods registered in ecosystem functioning and services included activities such as dendrochronological samples, 
+Field surveys methods area a lot
+Field experiment methods included seedling and transplant experiments.
+
+
+
+```{r Ecosys, fig.height=12}
+DF_Ecosys <- DF %>%  group_by(`Area of study`, Process, General_methods, `Study object`) %>% summarise(n = n()) %>% ungroup() %>%
   dplyr::filter(`Area of study`== "Ecosystem functioning and services")
 #%>% mutate(`Area of study`= str_wrap(`Area of study`, 24)) %>% dplyr::filter(!is.na(`Area of study`))
 
-Ecosys1 <- ggplot(DF_Ecosys) + geom_col(aes(x = Process, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) 
-Ecosys2 <- ggplot(DF_Ecosys) + geom_col(aes(x = Methodology, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) 
-Ecosys3 <- ggplot(DF_Ecosys) + geom_col(aes(x = `Study object`, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 0, vjust = 1, hjust=0.5)) 
+Ecosys1 <- ggplot(DF_Ecosys) + geom_col(aes(x = Process, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
+Ecosys2 <- ggplot(DF_Ecosys) + geom_col(aes(x = General_methods, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
+Ecosys3 <- ggplot(DF_Ecosys) + geom_col(aes(x = `Study object`, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
 (Ecosys1 + Ecosys2)/Ecosys3
 ```
 
@@ -349,13 +352,14 @@ They reconstructed stand development on sites affected by these disturbances (co
 ## Social-ecological
 Socio-ecological research included quantitative and qualitative social methods which includes people's surveys, interviews and articles of discission based on etnography.
 
+
 ```{r Social, fig.height=9}
-DF_Social <- DF %>%  group_by(`Area of study`, Process, Methodology, `Study object`) %>% summarise(n = n()) %>% ungroup() %>%
+DF_Social <- DF %>%  group_by(`Area of study`, Process, General_methods, `Study object`) %>% summarise(n = n()) %>% ungroup() %>%
   dplyr::filter(`Area of study`== "Social-ecological")
 #%>% mutate(`Area of study`= str_wrap(`Area of study`, 24)) %>% dplyr::filter(!is.na(`Area of study`))
 
-Social1 <- ggplot(DF_Social) + geom_col(aes(x = Process, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) 
-Social2 <- ggplot(DF_Social) + geom_col(aes(x = Methodology, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) 
+Social1 <- ggplot(DF_Social) + geom_col(aes(x = Process, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
+Social2 <- ggplot(DF_Social) + geom_col(aes(x = General_methods, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
 Social3 <- ggplot(DF_Social) + geom_col(aes(x = `Study object`, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 0, vjust = 1, hjust=0.5)) 
 (Social1 + Social2)/Social3
 ```
@@ -377,13 +381,15 @@ Low participation and separation from the protected area which has not incorpora
 
 ## Freshwater biodiversity
 
+Field collection methods registered in freshwater biodiversity included activities such as electric fishing and sampling stations.
+
 ```{r Fresh, fig.height=9}
-DF_Fresh <- DF %>%  group_by(`Area of study`, Process, Methodology, `Study object`) %>% summarise(n = n()) %>% ungroup() %>%
+DF_Fresh <- DF %>%  group_by(`Area of study`, Process, General_methods, `Study object`) %>% summarise(n = n()) %>% ungroup() %>%
   dplyr::filter(`Area of study`== "Freshwater biodiversity")
 #%>% mutate(`Area of study`= str_wrap(`Area of study`, 24)) %>% dplyr::filter(!is.na(`Area of study`))
 
-Fresh1 <- ggplot(DF_Fresh) + geom_col(aes(x = Process, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) 
-Fresh2 <- ggplot(DF_Fresh) + geom_col(aes(x = Methodology, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) 
+Fresh1 <- ggplot(DF_Fresh) + geom_col(aes(x = Process, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
+Fresh2 <- ggplot(DF_Fresh) + geom_col(aes(x = General_methods, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
 Fresh3 <- ggplot(DF_Fresh) + geom_col(aes(x = `Study object`, y=n)) +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 0, vjust = 1, hjust=0.5)) 
 (Fresh1 + Fresh2)/Fresh3
 ```
@@ -402,23 +408,40 @@ Fresh3 <- ggplot(DF_Fresh) + geom_col(aes(x = `Study object`, y=n)) +labs(y="Num
 
 1. Revisting previous research- summarise 
 [Revisit previous research] 
+A large number of articles centred in southern Chile are focossed in perturbations in that area of study. This studies mention aspects as volcanic activities, siesmology
+
 [Revisit Introduction to recall specific weakness in methodology used in previous studies]
 
 2. Mapping 
 [Revisit methodology used in this study] 
+Review of literature in 
+
 [Revisit and summarise the results] 
+COMO LLAMA PABLO A LAS AREAS DE ESTUDIO?
+
 [Show where and how the present work fits into the research “map” in this field]
 
 3. Achivements/contributions- refining implications 
 [Recall an aspect of the results that represents a postitive achievement or contribution of this work] 
-[Focus in the meaning and implications of the achievements in this work] 
+This review allow to recognize the studies carry out in these three national parks and the research in the area in theirs surroundings
+we found that most research are focused in native forest regeneration, groth and succession, showing a bias in forestry potential of native forest
+
+[Focus in the meaning and implications of the achievements in this work]
+
+
 [Note if one of the achievement or contributions of the work is a novelty] 
+
 [Describe implications of the results, including possible applications]
+These knowledge allow to generate a baseline to work in the future
 
 4. Limitations-current and future work-applications 
 [Describe limitations which should direct future research] 
-[Suggest a specific area to be addressed in future work]
+The bias in ecosystem functioning and services limitate the develop in other areas
 
+Furture research should be develop in those areas that are less studied
+
+[Suggest a specific area to be addressed in future work]
+Climate change scenarios
 
 
 Latitudinal patterns in plant biodiversity [@BanisterLatitudinal] shows 
