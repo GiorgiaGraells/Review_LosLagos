@@ -27,53 +27,53 @@ Las areas protegidas corresponden a la mejor forma de proteger los ambientes
 
 [Provide general background information] 
 la integración entre áreas protegidas y comunidades locales no ha demostrado ser del todo exitosa (Brown, 2002).
-cuatro de las seis categorías de áreas protegidas de la Unión Internacional para la Conservación de la Naturaleza (UICN) refuerzan la conservación estricta, debido a que al interior de las áreas protegidas sólo está permitido el uso no consuntivo de los recursos naturales (Brown, 2002). 
 
 [Stablish the importance of this research topic, more specific/detailed way] 
-Esta situación se ve favorecida pues gran parte de las áreas protegidas se encuentran en lugares remotos y muy distantes de los centros de desarrollo de la sociedad actual (Joppa & Pfaff, 2009) y, por lo tanto, sin mayores vinculaciones con el contexto territorial en que se ubican.
-
+cuatro de las seis categorías de áreas protegidas de la Unión Internacional para la Conservación de la Naturaleza (UICN) refuerzan la conservación estricta, debido a que al interior de las áreas protegidas sólo está permitido el uso no consuntivo de los recursos naturales (Brown, 2002). 
 
 [Provide general background information, more specific/detailed way]
+Most of the protected areas area located in remoted places what improve protection. However, being away of develped urban centers (centros de desarrollo de la sociedad actual ) makes that sorruended communities to protected areas do not have, in most of the cases, nexux with the territory (Joppa & Pfaff, 2009) 
+
+This presents a disconection betwwen local communities
 Sin embargo, esto tambien conlleva al desconocimineto de elementos que pueden ser claves por falta de investigaciones
 tambien los problemas que conllevva a las comunidades el abandono or parte de las autoridades.
-
     
-2. Previous an current research and contributions 
+2. Previous and current research and contributions 
 
 [Describe general problem area or the current research focus of the field] 
-In Chile, Los Lagos region is called because...
+In southern Chile there is a several number of protected areas. Los lagos region, is named given there aer more than xx lakes in its area.
+This region presents one of the bigest growth in  fisheries an acuacultere growth in comparision qwith the rest of the country during the last 30 years [@Soto-alvaradoDesarrollo].
+There is an important area of research focusssed in arquelogical studies because of Monte verde yaciminetos (Science), area that change the conception of population of America with human rest dated in 14, 500 year BP , and numerous historical reconstructions.
 
-Considering changes in Chile during the last 30 years, Los lagos region present  fisheries an acuacultere growth in comparision qwith the rest of the country [@Soto-alvaradoDesarrollo]. This is mainly to salmoniculture activity in the region.
-
-
-- carbon emision in near cities and woodplaces dependencies high level of pollution
-
-- historical reconstruction: arqueological sites. 
-
-There are many arquelogical sites present in Los lagos region. One of the most important of them is Monte Verde area that comprehend two yaciminetos and was the first area showing human rest dated in 14, 500 year BP. Changing the concption of population of americas.
-
-
-Even multiple sites have showed obsidian sources and distribution in Patagonia. (http://geode.colorado.edu/~geolsci/facultyweb/sternpdf/stern%202017%20Obsidian%20in%20Patagonia%20Quat%20International.pdf)
-Obsidian it is an extrusive igneus rock and is signal of volcanic activiy area. This rock was valued by old cultures, fractured and used as arrowheads.
-
-En un sistema que se ha visto modificado constante mente
-- natural events perturbations: volcano activities and earthquakes
-Active Andean volcanism [@SternVolcanism]. Among the larger, more active and/or better known volcanic centers in the SVZ are: Puyehue (2,240 m in PNP), Cordón Caulle (2,236 m; in PNP), Tronador (3,565 m; in VPRNP), Osorno (2,661 m; López-Escober et al., 1992; Petit-Breuilh, 1999), Calbuco (2,015 m; in RNL)
-
-como registros de tephra
-earthquake 1960 en valdivia (https://www.nature.com/articles/s41467-018-05989-6)
-
-
+Ecosistemas de chile: Luebert y Pliscoff (2017)
+WPADB
 
 [Provide transition between the general problem area and the literature review]
 this area sustain xx protected areas: xx National Parks, xx National Reserves, and xx others
 Protected areas as xx and xx area under the supervision of the National Forestry Corporation or CONAF. 
 Three of those are andean national parks: Puyehue National Park (PNP), Vicente Perez Rozales National Park (VPRNP), Alerce Andino national park (AANP). 
 
+The ecosystems in this area have been modified by continuos natural evvents such as volcanic activity and earthquakes.
+Active Andean volcanism [@SternVolcanism]. Among the larger, more active and/or better known volcanic centers in the SVZ are: Puyehue (2,240 m in PNP), Cordón Caulle (2,236 m; in PNP), Tronador (3,565 m; in VPRNP), Osorno (2,661 m; López-Escober et al., 1992; Petit-Breuilh, 1999), Calbuco (2,015 m; in RNL)
+earthquake 1960 en valdivia (https://www.nature.com/articles/s41467-018-05989-6)
 
 
 
-Ecosistemas de chile: Luebert y Pliscoff (2017)
+
+- carbon emision in near cities and woodplaces dependencies high level of pollution
+
+Even multiple sites have showed obsidian sources and distribution in Patagonia. (http://geode.colorado.edu/~geolsci/facultyweb/sternpdf/stern%202017%20Obsidian%20in%20Patagonia%20Quat%20International.pdf)
+Obsidian it is an extrusive igneus rock and is signal of volcanic activiy area. This rock was valued by old cultures, fractured and used as arrowheads.
+
+como registros de tephra
+
+
+
+
+
+
+
+
 
 
 3. Locate the gap-describe the proble to address-present a prediction to be tested 
@@ -95,12 +95,8 @@ dimension with hydrological ones, and 2) the importance of monitoring and adequa
 change into the PAs managing plans. Both aspects were included in the updated NDC of Chile, so there is
 explicit national commitment to tackle both recommendations.
 
-
 [Decribe paper itself]
-In order identify the elements that allow 
-we create a baseline of sytudies in this area we made a revision of scientif literature carry out in these three protected areas and its surroundings in Los lagos Region
-
-that allow a baseline to project scenarios of climate change to systematic conservation planning in PA
+This review revist the ecological literature carry out in these three protected areas and its surroundings in Los lagos Region in order to generate a bese line that allow to proyect scenarios of climate change to systematic conservation planning in PA
 
 4. Describe the present paper 
 [Give details about the methodology reported in the paper]
@@ -167,6 +163,7 @@ We focus our findings in Los lagos región research and andean studies, leaving 
 # Results
 
 1. Revisting the research aim/existing research
+
 
 2. General overview of results
 
