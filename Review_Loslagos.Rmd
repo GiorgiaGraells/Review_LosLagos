@@ -23,30 +23,56 @@ DF <- read_csv("WebScience_Ref.csv")
 
 1. Establish importance of the fild- provide background, keywords- present the problem 
 [Stablish the importance of this research topic]
-Las areas protegidas corresponden a la mejor forma de proteger los ambientes 
+Protected areas (PA) are one of the most effective elements to protect biodiversity. 
 
-[Provide general background information] 
-la integración entre áreas protegidas y comunidades locales no ha demostrado ser del todo exitosa (Brown, 2002).
+[Provide general background information]
+However, future of biological and landscape conservation not only need planned increment in the number of PA, but also effectiveness in terms of strategic allocation of management and economic efforts [@le2013protected; @watson2014performance].
 
 [Stablish the importance of this research topic, more specific/detailed way] 
-cuatro de las seis categorías de áreas protegidas de la Unión Internacional para la Conservación de la Naturaleza (UICN) refuerzan la conservación estricta, debido a que al interior de las áreas protegidas sólo está permitido el uso no consuntivo de los recursos naturales (Brown, 2002). 
+This is why the last decades aspect as economic limitations and the impact on local stakeholders are been taking into account in order to decrate news PA and not only its selection based in ecological knowledge [@borrini2004indigenous, Brown, 2002?].
 
 [Provide general background information, more specific/detailed way]
+However, even ecological knowledge have needed the expnsion to different areas that resume its complexity in order to face calimate change
+
+
+2. Previous and current research and contributions 
+[Describe general problem area or the current research focus of the field] 
+
+Sudamerica count with more relative % of PA , %  of the area are PA...
+
+Chile has xxx Pa in its extention. However, as most of the PA these areas are located in remoted places, 
+
+Local communities can present conflicts with PA because 1. they depend on the resources and some PA reinforce strict conservation (Brown, 2002), 2. there are not conection with Pa making that sorruended communities do not have, in most of the cases, nexux with the territory (Joppa & Pfaff, 2009- por areas remotas creo).
+
+makes  or they depend on them 
+
+Los lagos region, is named given there aer more than xx lakes in its area.
+This region presents one of the bigest growth in fisheries an acuacultere growth in comparision qwith the rest of the country during the last 30 years [@Soto-alvaradoDesarrollo].
+Ecosistemas de chile: Luebert y Pliscoff (2017)
+la integración entre áreas protegidas y comunidades locales no ha demostrado ser del todo exitosa (Brown, 2002).
+
+
+
+
+
+
+WPADB
+
+ Sin embargo, 
+metas aichi
+
+cuatro de las seis categorías de áreas protegidas de la Unión Internacional para la Conservación de la Naturaleza (UICN) refuerzan la conservación estricta, debido a que al interior de las áreas protegidas sólo está permitido el uso no consuntivo de los recursos naturales (Brown, 2002). 
+
+
 Most of the protected areas area located in remoted places what improve protection. However, being away of develped urban centers (centros de desarrollo de la sociedad actual ) makes that sorruended communities to protected areas do not have, in most of the cases, nexux with the territory (Joppa & Pfaff, 2009) 
 
 This presents a disconection betwwen local communities
 Sin embargo, esto tambien conlleva al desconocimineto de elementos que pueden ser claves por falta de investigaciones
 tambien los problemas que conllevva a las comunidades el abandono or parte de las autoridades.
     
-2. Previous and current research and contributions 
 
-[Describe general problem area or the current research focus of the field] 
-In southern Chile there is a several number of protected areas. Los lagos region, is named given there aer more than xx lakes in its area.
-This region presents one of the bigest growth in  fisheries an acuacultere growth in comparision qwith the rest of the country during the last 30 years [@Soto-alvaradoDesarrollo].
-There is an important area of research focusssed in arquelogical studies because of Monte verde yaciminetos (Science), area that change the conception of population of America with human rest dated in 14, 500 year BP , and numerous historical reconstructions.
 
-Ecosistemas de chile: Luebert y Pliscoff (2017)
-WPADB
+
 
 [Provide transition between the general problem area and the literature review]
 this area sustain xx protected areas: xx National Parks, xx National Reserves, and xx others
@@ -108,9 +134,9 @@ The results helped to understand focussed areas of studied and those in which mo
 
 aim: as a concrete possibility to generate a methodology to include climate Change into PAs planning, from their creation to their management and administration, assessing their value as well as their
 vulnerabilities at landscape scales
+Aunque sudamerica posee un gran porcentaje de pa, es necesario identificar el tipo de investigaciones que estas ha reunido para definir sus tendencias, gaps y ver hacia donde apuntar para poder desarrollar herramientas que permitan generar una correcta planificacion systematica que incluya todas la reas necesarias (o la mayoria) para enfrentarnos al cambio climatico y poder resguardar la biodiversidad biologica del sur de CHile.
 
-
-
+ building  systematic  planning  process
 
 # Methodology
 
