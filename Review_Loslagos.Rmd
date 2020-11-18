@@ -39,32 +39,25 @@ However, even ecological knowledge have needed the expnsion to different areas t
 [Describe general problem area or the current research focus of the field] 
 
 Sudamerica count with more relative % of PA , %  of the area are PA...
+Chile has 211 PA in its extention including 187 of them with a national jurisdiction, 
+and only 24 international (Ramsar Site, Wetland of International Importance, Biosphere Reserve, and UNESCO-MAB Biosphere Reserve ). 
 
-Chile has xxx Pa in its extention. However, as most of the PA these areas are located in remoted places, 
+Los Lagos region, is named given this region has the largest proportion of lake area in the country, with 52 lakes over 3Km2, and a total area of  	2.850 . It has a total of  828.708 of population (Censo 2017) and an extension of 48,583.60 Km2.
+Los lagos region has 21 PA that includes 37,529 Km2 of surface [@ProtectedAreas].
 
-Local communities can present conflicts with PA because 1. they depend on the resources and some PA reinforce strict conservation (Brown, 2002), 2. there are not conection with Pa making that sorruended communities do not have, in most of the cases, nexux with the territory (Joppa & Pfaff, 2009- por areas remotas creo).
 
-makes  or they depend on them 
-
-Los lagos region, is named given there aer more than xx lakes in its area.
-This region presents one of the bigest growth in fisheries an acuacultere growth in comparision qwith the rest of the country during the last 30 years [@Soto-alvaradoDesarrollo].
 Ecosistemas de chile: Luebert y Pliscoff (2017)
+
+According to aichi these areas are.... 
+however...
+probably because...
+basarse en esta parte:
+-PA intervenes with growing economic activities : This region presents one of the bigest growth in fisheries an acuacultere growth in comparision qwith the rest of the country during the last 30 years [@Soto-alvaradoDesarrollo]. Importantes actividades económicas se desarrollan en Los Lagos, en actividades principalmente vinculadas al sector primario de la economía: la ganadería, la acuicultura, la industria forestal [@BNC_LosLagos]
+as most of the PA these areas are located in remoted places, 
 la integración entre áreas protegidas y comunidades locales no ha demostrado ser del todo exitosa (Brown, 2002).
-
-
-
-
-
-
-WPADB
-
- Sin embargo, 
-metas aichi
-
+Local communities can present conflicts with PA because 1. they depend on the resources and some PA reinforce strict conservation (Brown, 2002), 2. there are not conection with Pa making that sorruended communities do not have, in most of the cases, nexux with the territory (Joppa & Pfaff, 2009- por areas remotas), or 
 cuatro de las seis categorías de áreas protegidas de la Unión Internacional para la Conservación de la Naturaleza (UICN) refuerzan la conservación estricta, debido a que al interior de las áreas protegidas sólo está permitido el uso no consuntivo de los recursos naturales (Brown, 2002). 
-
-
-Most of the protected areas area located in remoted places what improve protection. However, being away of develped urban centers (centros de desarrollo de la sociedad actual ) makes that sorruended communities to protected areas do not have, in most of the cases, nexux with the territory (Joppa & Pfaff, 2009) 
+Most of the protected areas area located in remoted places what improve protection. However, being away of develped urban centers (centros de desarrollo de la sociedad actual ) makes that sorruended communities to protected areas do not have, in most of the cases, nexux with the territory (Joppa & Pfaff, 2009) ))
 
 This presents a disconection betwwen local communities
 Sin embargo, esto tambien conlleva al desconocimineto de elementos que pueden ser claves por falta de investigaciones
@@ -76,29 +69,7 @@ tambien los problemas que conllevva a las comunidades el abandono or parte de la
 
 [Provide transition between the general problem area and the literature review]
 this area sustain xx protected areas: xx National Parks, xx National Reserves, and xx others
-Protected areas as xx and xx area under the supervision of the National Forestry Corporation or CONAF. 
 Three of those are andean national parks: Puyehue National Park (PNP), Vicente Perez Rozales National Park (VPRNP), Alerce Andino national park (AANP). 
-
-The ecosystems in this area have been modified by continuos natural evvents such as volcanic activity and earthquakes.
-Active Andean volcanism [@SternVolcanism]. Among the larger, more active and/or better known volcanic centers in the SVZ are: Puyehue (2,240 m in PNP), Cordón Caulle (2,236 m; in PNP), Tronador (3,565 m; in VPRNP), Osorno (2,661 m; López-Escober et al., 1992; Petit-Breuilh, 1999), Calbuco (2,015 m; in RNL)
-earthquake 1960 en valdivia (https://www.nature.com/articles/s41467-018-05989-6)
-
-
-
-
-- carbon emision in near cities and woodplaces dependencies high level of pollution
-
-Even multiple sites have showed obsidian sources and distribution in Patagonia. (http://geode.colorado.edu/~geolsci/facultyweb/sternpdf/stern%202017%20Obsidian%20in%20Patagonia%20Quat%20International.pdf)
-Obsidian it is an extrusive igneus rock and is signal of volcanic activiy area. This rock was valued by old cultures, fractured and used as arrowheads.
-
-como registros de tephra
-
-
-
-
-
-
-
 
 
 
@@ -106,37 +77,25 @@ como registros de tephra
 
 [Provide brief overview of key research projects in this area]
 
-Even when there is research carry out in natural areas in southern Chile, there is not projections of climate chage in order to corservation planning to the future of protected areas
-hasta donde estas areas serán capaces de proteger a las especies en el futuro considderando el cambio climatico y la respuesta de las distintass especies
-
-dificultad de proyeccion, los planes son antiguos (VPRNP 2015, PNP 2008, AANP 1997)
-
+PNP, VPRNP, and AANP as all national PA in Chile are under the supervision and adminstration of the National Forestry Corporation CONAF). They count with management plans (2008, 2015, and 1997, respectibly), which provides a very carfull compilation of information, however they have not been correctly updated and lack of the changes that have occurred in the last years. For example, between 1995-2016 native forests in this area have suffer important losses because of land use changes (mostly land modification to grassland and shrubs, and substitution) (Marquet P. A., A. Altamirano, M. T. K. Arroyo, M. Fernández, S. Gelcich, K.  Górski,  E.  Habit,  A.  Lara,  A.  Maass,  A.  Pauchard,  P.  Pliscoff,  H.  Samaniego y C. Smith-Ramírez (editores) (2019). Biodiversidad y cambio climático en Chile: Evidencia científica para la toma de decisiones. Informe de   la   mesa   de   Biodiversidad.   Santiago:   Comité   Científico   COP25; Ministerio de Ciencia, Tecnología, Conocimiento e Innovación.).
 
 [Describe gaps in the research] 
-Necesidad de concoer el presente para proyectar el futuro
-There are two
-that area particularly important in the context of the present proposal: 1) The need to improve our
-knowledge on the consequences of climate change on freshwater ecosystems, integrating biodiversity
-dimension with hydrological ones, and 2) the importance of monitoring and adequately include climate
-change into the PAs managing plans. Both aspects were included in the updated NDC of Chile, so there is
-explicit national commitment to tackle both recommendations.
+
+Considering this area presents an increment of vulnerability in front of climate change, there is a need to incorporate different components of ecological knowledge as well the interaction with local communities in these PA in order to generete projections of climate chage to develop corservation plans to the future.
+
 
 [Decribe paper itself]
-This review revist the ecological literature carry out in these three protected areas and its surroundings in Los lagos Region in order to generate a bese line that allow to proyect scenarios of climate change to systematic conservation planning in PA
+This review revist the ecological literature carry out in these three protected areas and its surroundings in Los lagos Region in order to generate a base line that allow to proyect scenarios of climate change to systematic conservation planning in PA.
 
 4. Describe the present paper 
 [Give details about the methodology reported in the paper]
-We made a systematic review of research in the Web of Knowledge database in two parts: searching by the names of the national parks (elegidos para este trabajo) and a broader area of Southern Chile.
+We made a systematic review of research in the Web of Knowledge database in two parts:1. searching by the names of the three PA:PNP, VPRNP, and AANP, and 2. serching by the greographical area of Southern Chile.
 
 [Announces the findings]
-The results helped to understand focussed areas of studied and those in which more research is needed.
+We identified tendencies and gaps in research developed in these three National Parks, and a vision on where to focus new studies that allow systematic conservation plans that includes xx to deal with climate change and ensure the biodiversity in southern Chile.
 
+incluir: possibility to generate a methodology to include climate Change into PAs planning, from their creation to their management and administration, assessing their value as well as their vulnerabilities at landscape scales
 
-aim: as a concrete possibility to generate a methodology to include climate Change into PAs planning, from their creation to their management and administration, assessing their value as well as their
-vulnerabilities at landscape scales
-Aunque sudamerica posee un gran porcentaje de pa, es necesario identificar el tipo de investigaciones que estas ha reunido para definir sus tendencias, gaps y ver hacia donde apuntar para poder desarrollar herramientas que permitan generar una correcta planificacion systematica que incluya todas la reas necesarias (o la mayoria) para enfrentarnos al cambio climatico y poder resguardar la biodiversidad biologica del sur de CHile.
-
- building  systematic  planning  process
 
 # Methodology
 
@@ -146,7 +105,7 @@ Aunque sudamerica posee un gran porcentaje de pa, es necesario identificar el ti
 In order to identify research developed in the focus area, a systematic review of literature was performed through the Web of Science database. Information was categorized according to research areas presented in this project.
 
 [Provide background information and justification]
-Will focus our systematic review geographicaly in the Andes mountain chain and central vally, and not coastal mountain chain and coast.
+We focus our systematic review geographicaly in the Andes mountain chain and central vally, and not coastal mountain chain and coast.
 
 
 
@@ -431,26 +390,31 @@ Fresh3 <- ggplot(DF_Fresh) + geom_col(aes(x = `Study object`, y=n)) +labs(y="Num
 
 1. Revisting previous research- summarise 
 [Revisit previous research] 
-A large number of articles centred in southern Chile are focossed in perturbations in that area of study. This studies mention aspects as volcanic activities, siesmology
+The area of study that includes the tree national parks has been modified by continuos natural events such as volcanic activity, with  volcanic centers such as Puyehue (2,240 m in PNP), Cordón Caulle (2,236 m; in PNP), Tronador (3,565 m; in VPRNP), Osorno (2,661 m; López-Escober et al., 1992; Petit-Breuilh, 1999) [@SternVolcanism], and earthquakes as Valdivia in 1960.  (https://www.nature.com/articles/s41467-018-05989-6)
+
 
 [Revisit Introduction to recall specific weakness in methodology used in previous studies]
+no hay estudios en cambio climatico y se ncesesita saber que hay para poder preparse para el cambio climatico
+
 
 2. Mapping 
 [Revisit methodology used in this study] 
 Review of literature in 
 
 [Revisit and summarise the results] 
-COMO LLAMA PABLO A LAS AREAS DE ESTUDIO?
+Studies were focussed in ecosystems functioning and services with special developed in forestry aspects such as growth, sucession and regeneration, showing a bias in forestry economical potential of native forest.
+there is a gap in social-ecological studies that includes local comunities perceptions of national parks and their relationship in terms of interactions.
 
 [Show where and how the present work fits into the research “map” in this field]
 
+
 3. Achivements/contributions- refining implications 
+COSAS ENCONTRADAS EN EL REVIEW POR AREA: QUE SE HA HECHO Y LO BUENO DE ESO
+
 [Recall an aspect of the results that represents a postitive achievement or contribution of this work] 
 This review allow to recognize the studies carry out in these three national parks and the research in the area in theirs surroundings
-we found that most research are focused in native forest regeneration, groth and succession, showing a bias in forestry potential of native forest
 
 [Focus in the meaning and implications of the achievements in this work]
-
 
 [Note if one of the achievement or contributions of the work is a novelty] 
 
@@ -458,21 +422,25 @@ we found that most research are focused in native forest regeneration, groth and
 These knowledge allow to generate a baseline to work in the future
 
 4. Limitations-current and future work-applications 
-[Describe limitations which should direct future research] 
-The bias in ecosystem functioning and services limitate the develop in other areas
+COSAS QUE FALTAN EN CADA AREA Y QUE LIMITA ESA FALTA DE CONOCIMINETO
+TOMANDO EN CONSIDDERACION ESTA INFORMACION SE PUEDE ARMAR UNA PROYECCION MAS CABAL DE LOS EFECTOS DEL CAMBIO CLIMATICO
 
-Furture research should be develop in those areas that are less studied
+[Describe limitations which should direct future research] 
+Socio-ecological studies should contemplate that there is a sentiment described in local sociology studies describing provinces in this region do not share a common notion of territory or a regional common agenda. This has been explain as cultural changes as a product of economic activities such as salmoniculture, where the dependency of international marckets predominates (Montecinos, 2009, p. 24).
+
 
 [Suggest a specific area to be addressed in future work]
-Climate change scenarios
 
 
 Latitudinal patterns in plant biodiversity [@BanisterLatitudinal] shows 
 at 40°S there are more than 800 species, based on a bibliographic review of existing floristic studies at 2012.
 
+There is a gap in fire studies even when the region present an important area in forestry plantations.
+this is important because the structure and composistion of forest plantations promotes more fires than native forest of Nothofagus (Gómez-González et al., 2019; McWethy et al., 2018).
+
+Fire events in similar areas (low access, topography, and climate) have covered large areas and affected native ecosystems. Fires in Parque Nacional Torres del Paine en 2012 (cerca de 17.000 ha), Reserva Nacional China Muerta de 2015 (cerca de 3.700 ha) y Colonia Sur, Cochrane en 2019 (cerca de 15.000 ha) were very difficult to control (Arroyo, M. T. K., A. Pauchard, D. Alarcón, J. Armesto, F. Bozinovic, R. Bustamante, C. Echeverría, S. A. Estay, R. A. García, A. Gaxiola, M. Mi-randa, P. Pliscoff, D. Rozas, C. Salas-Eljatib y R. Rozzi (2019). «Impactos del cambio climático en la biodiversidad y las funciones ecosistémicas en Chile». En P. A. Marquet et al. (editores), Biodiversidad y cambio climático en Chile: Evidencia científica para la toma de decisiones. Informe de la mesa de Biodiversidad. Santiago: Comité Científico  COP25; Mi-nisterio de Ciencia, Tecnología, Conocimiento e Innovación.)
 
 
- La estructura y composición homogénea de las plantaciones forestales promueven una mayor propagación del fuego en comparación con los bosques nativos deciduos de Nothofagus, que tienden a tener menor cantidad de incendios por presentar un combustible más heterogéneo y con mayor contenido de hu-medad (Gómez-González et al., 2019; McWethy et al., 2018). Dado que la principal fuente de ignición (>90%) de  los  incendios  forestales  en  Chile  se  asocia  con  la  actividad  humana  (accidental  o  intencional),  sectores  con vegetación más cercanos a centros poblados presentan mayor probabilidad de ocurrencia de incendios forestales (Gómez-González et al., 2019; McWethy et al., 2018). Los sectores más australes también han visto un incremento en incendios catastróficos. La particularidad de estos eventos es que suelen abarcar una su-perficie mucho mayor y generalmente afectan ecosistemas nativos, lo que por razones de acceso, topografía y  clima,  hacen  a  estos  incendios  muy  difíciles  de  controlar,  sumado  al  hecho  de  que  ocurren  en  zonas  con  escaso material para su combate oportuno. Acá podemos destacar los incendios en el Parque Nacional Torres del Paine en 2012 (cerca de 17.000 ha), Reserva Nacional China Muerta de 2015 (cerca de 3.700 ha) y Colonia Sur, Cochrane en 2019 (cerca de 15.000 ha).
 
 
 
@@ -490,7 +458,9 @@ Comparative morphology of annual shoots in seedlings of five Nothofagus species 
 
 A Multiscale Method for AssessingVegetation Baseline of Environmental [@PauchardMultiscale]
 
-Los Lagos es definida como una “Región sin Territorio, ya que las provincias que la forman (Osorno, Llanquihue, Chiloé y Palena) no comparten una noción común de territorio, ni menos una agenda regional común” (Montecinos, 2009, p. 24).
-Modificacion de la actividad economica en la region producto de la entrada de la industria del salmon ha  generado un cambio cultural, donde predomina una dependdencia del mercado externo.
+
+
+
+
 
 ### References
