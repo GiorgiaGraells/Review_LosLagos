@@ -1,6 +1,6 @@
 ---
 title: "Los Lagos Region, a systematic review"
-author: "Giorgia Graells"
+author: "Giorgia Graells" 
 output:
   word_document:
     reference_docx: "Para_Template.docx"
@@ -8,7 +8,7 @@ bibliography: References.bib
 ---
 
 ```{r setup, error=FALSE, include=FALSE, results= FALSE }
-knitr::opts_chunk$set(echo = FALSE, include=FALSE, comment=FALSE, message=FALSE, warning=FALSE)
+knitr::opts_chunk$set(echo = FALSE, comment=FALSE, message=FALSE, warning=FALSE)
 library(tidyverse)
 library(patchwork)
 library(ggplot2)
@@ -17,6 +17,7 @@ library(ggplot2)
 
 ```{r}
 DF <- read_csv("WebScience_Ref.csv")
+colnames(DF) <- make.names(colnames(DF))
 ```
 
 # Introduction
@@ -151,7 +152,7 @@ We focus our findings in Los lagos región research and andean studies, leaving 
 
 2. General overview of results
 
-A total of  `r nrow(DF)` articles were selected in this review.
+A total of  `r nrow(DF)` articles were selected in this review. From those `r (DF %>% dplyr::filter(Keywords.used=="Name of parks") %>% nrow())` articles were find from National parks names searching ,
 
 ```{r}
 # From those ` r DF %>% dplyr::filter(`Keywords used`=="Name of parks") %>% nrow()` articles were find from National parks names searching and ` r DF %>% dplyr::filter(`Keywords used` =="Close area") %>%  nrow()` articles from searching nearby areas od the parks. 
@@ -162,7 +163,7 @@ In general terms, articles have been growing in number, however there are years 
 
 
 ```{r}
-Pub_year <-ggplot(DF) + geom_bar(aes(x = `Publication Year`))+  labs(y="Number of articles", x="Publication year")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))
+Pub_year <-ggplot(DF) + geom_bar(aes(x = Publication.Year))+  labs(y="Number of articles", x="Publication year")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))
 Pub_year
 ```
 
