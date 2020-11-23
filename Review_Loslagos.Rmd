@@ -26,36 +26,36 @@ LosLagos <-read_csv("PACL_LL.csv")
 
 
 # Introduction
-Protected areas (PA) are one of the most effective elements to prevent extinctions hence conserve biological diversity. 
-One of the strategic targets of the Convention of Biological Conservation is "By 2020, at least 17 per cent of terrestrial and inland water, and 10 per cent of coastal and marine areas, especially areas of particular importance for biodiversity and ecosystem services, are conserved through effectively and equitably managed, ecologically representative and well connected systems of protected areas..."
-According to this, it has been a discussion about how future of biological and landscape conservation not only need planned increment in the number of PA, but also effectiveness in terms of strategic allocation of management and economic efforts [@le2013protected; @watson2014performance].
-This is why the last decades aspect as economic limitations and the impact on local stakeholders are been taking into account in order to decrate news PA and not only its selection based in ecological knowledge [@borrini2004indigenous, Brown, 2002?].
+
+One of the strategic targets of the Convention of Biological Conservation is "By 2020, at least 17% of terrestrial and inland water, and 10% of coastal and marine areas, especially areas of particular importance for biodiversity and ecosystem services, are conserved through effectively and equitably managed, ecologically representative and well connected systems of protected areas...". 
+This emphasizes not only that protected areas (PA) are one of the most effective elements to prevent extinctions hence conserve biological diversity, also 
+future of biological and landscape conservation need planned increment in the number of PA and effectiveness in terms of strategic allocation of management and economic efforts [@le2013protected; @watson2014performance].
+This is why the last decades aspect as economic limitations and the impact on local stakeholders are been taking into account in order to decrate news PA and not only a selection based in ecological knowledge [@borrini2004indigenous, Brown, 2002?].
 However, even ecological knowledge have needed the expansion to different areas that resume its complexity in order to face climate change in the future.
 
 
-Sudamerica counts with more relative % of PA , %  of the area are PA...
-Chile has 211 PA in its extension, including 187 of them with national jurisdiction. There are only 24 PA international, incluiding two categories Ramsar Site, Wetland of International Importance and Biosphere Reserve, and UNESCO-MAB Biosphere Reserve. 
+Sudamerica counts with more relative % of PA , thta any other area int he world.
+In Chile, there are 211 PA in its extension, including 187 of them with national jurisdiction. There are only 24 PA international, incluiding two categories Ramsar Site, Wetland of International Importance and Biosphere Reserve, and UNESCO-MAB Biosphere Reserve. 
 In southern Chile, Los Lagos Region is named given this region has the largest proportion of lakes area in the country, with 52 lakes over 3Km2, and a total area of	2.850 Km2. It has a population of 828.708 (Censo 2017) and an extension of 48,583.60 Km2.
-This region bases its economy in activities related to primary sectors: livestock, aquiculture and forestry industry [@BNC_LosLagos]. Even more, Los lagos presents one of the bigest growth in fisheries an acuacultere growth in comparision with the rest of the country during the last 30 years [@Soto-alvaradoDesarrollo]. 
+This region bases its economy in activities related to primary sectors: livestock, aquiculture and forestry industry [@BNC_LosLagos]. Even more, Los Lagos Region presents one of the bigest growth in fisheries an acuaculture growth in comparision with the rest of the country during the last 30 years [@Soto-alvaradoDesarrollo]. 
 
-Los lagos region has 21 PA that includes 37,529 Km2 of surface [@ProtectedAreas]. From those,  `r LosLagos %>% dplyr::filter(DESIG %in% c("Monumento Natural", "Parque Nacional")) %>% nrow()` correspond to National parks and Natural Monuments which are IUCN categories that reinforce strict conservation (Brown, 2002). This addded to most of the PA are located in remote places, being away of develped urban centers. That makes sorrounded communities to PA do not have, in most of the cases, nexux with the territory (Joppa & Pfaff, 2009)
-The integration between PAs and local communities it has not been smooth in southern Chile (Brown, 2002). However tourism has presented an poptunity to reconect the economy with nature since...
+Los Lagos Region has 21 PA that includes 37,529 Km2 of surface [@ProtectedAreas]. ojo dato
+An even when includes a large part of the territory and turims of nature is a growing activity (), there has been a disconection with local communities.
+This could be because from those 21 PA in the Region, `r LosLagos %>% dplyr::filter(DESIG %in% c("Monumento Natural", "Parque Nacional")) %>% nrow()` correspond to National parks and Natural Monuments which are IUCN categories that reinforce strict conservation (Brown, 2002). 
+Remoteness of PA can generate disconnection, given most of the PA are located in remote places, people from develped urban centers do not have, in most of the cases, nexux with the PA and their territory (Joppa & Pfaff, 2009). Or even a social phenomena, where cultural changes as a product of economic activities such as salmoniculture, where the dependency of international markets predominates, transform people in this region do not share a common notion of territory or a regional common agenda (Montecinos, 2009, p. 24)
 
-correspondeAccording to aichi these areas are.... 
-This presents a disconection betwwen local communities
-Sin embargo, esto tambien conlleva al desconocimineto de elementos que pueden ser claves por falta de investigaciones
 
 [Provide transition between the general problem area and the literature review]
+correspondeAccording to aichi these areas are.... 
+Sin embargo, esto tambien conlleva al desconocimineto de elementos que pueden ser claves por falta de investigaciones
+
 
 3. Locate the gap-describe the proble to address-present a prediction to be tested 
 
 [Provide brief overview of key research projects in this area]
-Los Lagos Region presents three Andean National Parks: Puyehue National Park (PNP), Vicente Perez Rozales National Park (VPRNP), and Alerce Andino National Park (AANP). PNP, VPRNP, and AANP as all national PA in Chile are under the supervision and adminstration of the National Forestry Corporation CONAF). They count with management plans (2008, 2015, and 1997, respectibly), which provides a very carfull compilation of information. However, thesedocuments have not been correctly updated and lack of the changes that have occurred in the last years. For example, between 1995-2016 native forests in this area have suffer important losses because of land use changes (mostly land modification to grassland and shrubs, and substitution) 
-The area presents an increment of vulnerability in front of climate change (Marquet P. A., A. Altamirano, M. T. K. Arroyo, M. Fernández, S. Gelcich, K.  Górski,  E.  Habit,  A.  Lara,  A.  Maass,  A.  Pauchard,  P.  Pliscoff,  H.  Samaniego y C. Smith-Ramírez (editores) (2019). Biodiversidad y cambio climático en Chile: Evidencia científica para la toma de decisiones. Informe de   la   mesa   de   Biodiversidad.   Santiago:   Comité   Científico   COP25; Ministerio de Ciencia, Tecnología, Conocimiento e Innovación.).. Because of this, there is a need to incorporate different components of ecological knowledge as well the interaction with local communities in these PA in order to generete projections of climate chage to develop conservation plans to the future.
-
-This review revist the ecological literature carry out in these three protected areas and its surroundings in Los lagos Region in order to generate a base line that allow to proyect scenarios of climate change to systematic conservation planning in PA.
-
-4. Describe the present paper 
+Los Lagos Region presents three Andean National Parks: Puyehue National Park (PNP), Vicente Perez Rozales National Park (VPRNP), and Alerce Andino National Park (AANP). PNP, VPRNP, and AANP as all national PA in Chile are under the supervision and adminstration of the National Forestry Corporation CONAF). They count with management plans (2008, 2015, and 1997, respectibly), which provides a very carfull compilation of information. However, thesedocuments have not been correctly updated and lack of the changes that have occurred in the last years. For example, between 1995-2016 native forests in this area have suffer important losses because of land use changes (mostly land modification to grassland and shrubs, and substitution). 
+The area presents an increment of vulnerability in front of climate change [@marquet2019biodiversidad]. Because of this, there is a need to incorporate different components of ecological knowledge as well the interaction with local communities in these PA in order to generet projections of climate chage to develop conservation plans to the future.
+This review revist the ecological literature carry out in these three protected areas and its surroundings in Los Lagos Region in order to generate a base line that allow to proyect scenarios of climate change to systematic conservation planning in PA.
 
 We made a systematic review of research in the Web of Knowledge database searching by the names of the three PA: PNP, VPRNP, and AANP; andby the greographical area of Southern Chile.
 Doing so, we were able to identified tendencies and gaps in research developed in these three National Parks. We could defined a vision on where to focus new studies that allow systematic conservation plans that includes information to deal with climate change and ensure the biological diversity in Southern Chile.
@@ -66,26 +66,17 @@ incluir: possibility to generate a methodology to include climate Change into PA
 # Methodology
 
 1. Overview-purpose of the work-give source of material/equipment used 
-[General overview of this section]
 In order to identify research developed in the focus area, a systematic review of literature was performed through the Web of Science database. Information was categorized according to research areas presented in this project.
-
-[Provide background information and justification]
-We focus our systematic review geographicaly in the Andes mountain chain and central vally, and not coastal mountain chain and coast.
-
-[Provide an overview of the procedure/method itself]
-Two eligibility criteria were performed: 1. including the name of the National Parks of interes, using keywords at topic level: "Puyehue National Park" or "Vicente Perez Rozales National Park" or "Alerce Andino National Park", and 2. Geographic areas surrounding the National Parks, using keywords at topic level: "South Central Chile" or "North Chilean Patagonia" or "Los Lagos Region". The period of the search included from 1975 until October 2020. Selection of articles followed prisma flow diagram. Grey-literature was not incorporated in the selection.
+Two eligibility criteria were performed: 1. including the name of the National Parks of interest, using keywords at topic level: "Puyehue National Park" or "Vicente Perez Rozales National Park" or "Alerce Andino National Park", and 2. Geographic areas surrounding the National Parks, using keywords at topic level: "South Central Chile" or "North Chilean Patagonia" or "Los Lagos Region". The period of the search included from 1975 until October 2020. Selection of articles followed prisma flow diagram. Grey-literature was not incorporated in the selection.
 
 2. Details about materials and methods- justify choices 
 [Provide details about what was done and used and shows that care was taken] 
-Articles selected were categorized by publication year, source title, keywords used, area of study, study location, objective, methodology, process, and study object. 
-
-[Continuing to describe what was done in detail, using languajge which comunicate that care was taken]
+Articles selected were categorized by publication year, source title, keywords used, and categories created for the purpose of this review: area of study, study location,  methodology, process, and study object, *and objective.*
 Area of study included Archaeology & Paleoecology, Climate & environment, Ecosystem functioning & services, Freshwater biodiversity, Hydrology, Social-ecology, and Species & distribution.
-
-Study location encompas categories such as the three National Parks of interest: AANP, PNP, and  VPRNP; adjacents areas to NP: Adjacent to AANP, Adjacent to PNP, Adjacent to VPRNP; similar ecosystems to NP:  Andes of Los Rios Region, Argentinian andes, and Neuquen in Argentina; Larger areas that comprise NP: Los Lagos Region, 2 regions, 3 regions, 4 regions,  5 regions, More than 5 regions; Global studies: Chile, Chile & Argentina; and Close urban centers: Valdivia
-
-[Methodology classified according to how data was obtain]
-The category called proccess implies biological, ecological or physical  
+Study location encompased categories such as the three National Parks of interest: AANP, PNP, and  VPRNP; adjacents areas to NP: Adjacent to AANP, Adjacent to PNP, Adjacent to VPRNP; similar ecosystems to NP:  Andes of Los Rios Region, Argentinian andes, and Neuquen in Argentina; Larger areas that comprise NP: Los Lagos Region, 2 regions, 3 regions, 4 regions,  5 regions, More than 5 regions; Global studies: Chile, Chile & Argentina; and Close urban centers: Valdivia
+Methodology
+The category called proccess implies biological, ecological or physical 
+study object:
 
 3. Relate to other studies 
 [Describe what was done by referring to existing mehods in the literature] 
@@ -100,14 +91,13 @@ We focus our findings in Los Lagos región research and andean studies, leaving 
 
 1. Revisting the research aim/existing research
 2. General overview of results
-A total of  `r nrow(DF)` articles were selected in this review. From those `r (DF %>% dplyr::filter(Keywords.used=="Name of parks") %>% nrow())` articles were find from National parks names searching and `r (DF %>% dplyr::filter(Keywords.used =="Close area") %>%  nrow())` articles from searching nearby areas od the parks. 
 
-3. Invitations to view results
-In general terms, articles have been growing in number, however there are years that clearly show a decline in publications (Fig \@ref(fig: Years)). 
+A total of  `r nrow(DF)` articles were selected in this review. From those `r (DF %>% dplyr::filter(Keywords.used=="Name of parks") %>% nrow())` articles were find from the three National Parks and `r (DF %>% dplyr::filter(Keywords.used =="Close area") %>%  nrow())` articles from searching nearby areas of them. 
+In general terms, number of articles have been increasin during the years, however there are a few years that clearly show a striking decrease in publications (Fig \@ref(Years)). 
 
 
-```{r Years}
-Pub_year <-ggplot(DF) + geom_bar(aes(x = Publication.Year))+  labs(y="Number of articles", x="Publication year")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))
+```{r Years, fig.cap="temporal distribution of articles according to keywords used in this review of literature", fig.width=8}
+Pub_year <-ggplot(DF) + geom_bar(aes(x = Publication.Year, fill=Keywords.used))+  labs(y="Number of articles", x="Publication year")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ scale_fill_manual(values = c('#d8b365','#5ab4ac'))
 Pub_year
 ```
 
