@@ -66,12 +66,14 @@ incluir: possibility to generate a methodology to include climate Change into PA
 # Methodology
 
 1. Overview-purpose of the work-give source of material/equipment used 
+
 In order to identify research developed in the focus area, a systematic review of literature was performed through the Web of Science database. Information was categorized according to research areas presented in this project.
 Two eligibility criteria were performed: 1. including the name of the National Parks of interest, using keywords at topic level: "Puyehue National Park" or "Vicente Perez Rozales National Park" or "Alerce Andino National Park", and 2. Geographic areas surrounding the National Parks, using keywords at topic level: "South Central Chile" or "North Chilean Patagonia" or "Los Lagos Region". The period of the search included from 1975 until October 2020. Selection of articles followed prisma flow diagram. Grey-literature was not incorporated in the selection.
 
 2. Details about materials and methods- justify choices 
+
 [Provide details about what was done and used and shows that care was taken] 
-Articles selected were categorized by publication year, source title, keywords used, and categories created for the purpose of this review: area of study, study location,  methodology, process, and study object, *and objective.*
+Articles selected were categorized by publication year, source title, keywords used, and categories created for the purpose of this review: area of study, study location,  methodology, process, and study object, **and objective.**
 Area of study included Archaeology & Paleoecology, Climate & environment, Ecosystem functioning & services, Freshwater biodiversity, Hydrology, Social-ecology, and Species & distribution.
 Study location encompased categories such as the three National Parks of interest: AANP, PNP, and  VPRNP; adjacents areas to NP: Adjacent to AANP, Adjacent to PNP, Adjacent to VPRNP; similar ecosystems to NP:  Andes of Los Rios Region, Argentinian andes, and Neuquen in Argentina; Larger areas that comprise NP: Los Lagos Region, 2 regions, 3 regions, 4 regions,  5 regions, More than 5 regions; Global studies: Chile, Chile & Argentina; and Close urban centers: Valdivia
 Methodology
@@ -79,38 +81,42 @@ The category called proccess implies biological, ecological or physical
 study object:
 
 3. Relate to other studies 
+
 [Describe what was done by referring to existing mehods in the literature] 
+
 We focus our findings in Los Lagos región research and andean studies, leaving out coastal systems and in particular Chiloe island.
 
 [Provide more detailed information about the method and show that was a good choice]
 
-4. Indicate where problems occurred 
+4. Indicate where problems occurred
+
 [Mention possible difficulty in the methodology]
 
 # Results
 
 1. Revisting the research aim/existing research
+
 2. General overview of results
 
 A total of  `r nrow(DF)` articles were selected in this review. From those `r (DF %>% dplyr::filter(Keywords.used=="Name of parks") %>% nrow())` articles were find from the three National Parks and `r (DF %>% dplyr::filter(Keywords.used =="Close area") %>%  nrow())` articles from searching nearby areas of them. 
-In general terms, number of articles have been increasin during the years, however there are a few years that clearly show a striking decrease in publications (Fig \@ref(Years)). 
+In general terms, number of articles have been increasin during the years, however there are a few years that clearly show a striking decrease in publications (Fig \@ref(fig:Years)). 
 
 
-```{r Years, fig.cap="temporal distribution of articles according to keywords used in this review of literature", fig.width=8}
+```{r Years, fig.cap="Temporal distribution of articles according to keywords used in this review of literature", fig.width=8}
 Pub_year <-ggplot(DF) + geom_bar(aes(x = Publication.Year, fill=Keywords.used))+  labs(y="Number of articles", x="Publication year")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ scale_fill_manual(values = c('#d8b365','#5ab4ac'))
 Pub_year
 ```
 
 
 
-From the total of articles, only `r (((DF %>% dplyr::filter(Study.location %in% c("AANP", "PNP", "VPRNP")) %>% nrow())/nrow(DF))*100)` % where carry ount in the National parks of interest (Fig \@ref(fig: Locations)). `r (DF %>% dplyr::filter(Study.location == "PNP") %>% nrow())` articles were carry out in PNP, and only `r (DF %>% dplyr::filter(Study.location == "AANP") %>% nrow())` in AAPN and `r (DF %>% dplyr::filter(Study.location == "VPRNP") %>% nrow())` in VPRPN.
-Adjacents areas to NP comprehended a `r ((DF %>% dplyr::filter(Study.location %in%  c("Adjacent to PNP", "Adjacent to AANP", "Adjacent to VPRNP")) %>% nrow())/nrow(DF)*100)` % of the studies. 
+From the articules carry out in the NP of interest, only `r (DF %>% dplyr::filter(Study.location == "PNP") %>% nrow())` articles were carry out in PNP, `r (DF %>% dplyr::filter(Study.location == "AANP") %>% nrow())` in AAPN and `r (DF %>% dplyr::filter(Study.location == "VPRNP") %>% nrow())` in VPRPN.
+Adjacents areas to NP comprehended a `r ((DF %>% dplyr::filter(Study.location %in%  c("Adjacent to PNP", "Adjacent to AANP", "Adjacent to VPRNP")) %>% nrow())/nrow(DF)*100)` % of the studies. Most of the articles studied larger areas that comprises Los lagos Region and in particular some of these NP (`r (DF_Location2 %>% dplyr::filter(Study.zone == "Larger areas that comprise NPs") %>% nrow())`). 
 
 
 
 
 
-```{r Locations}
+```{r Locations, fig.width=8}
 DF_Location <- DF %>%  group_by(Study.location) %>% summarise(n = n()) %>% ungroup() %>% dplyr::filter(!is.na(Study.location)) %>% 
   mutate(Study.location=fct_reorder(Study.location, -n))
 
@@ -121,14 +127,14 @@ DF_Location2 <- DF_Location %>%
                                Study.location %in% c("Los Lagos Region", "2 regions","3 regions", "4 regions", "5 regions", "More than 5 regions")~"Larger areas that comprise NPs", 
                                Study.location %in% c("Chile", "Chile and Argentina")~"Global studies",
                                Study.location %in% c("Valdivia")~"Close urban center")) %>%
-  mutate(Study.zone= str_wrap(Study.zone, 15))
+  mutate(Study.zone= str_wrap(Study.zone, 10))
                                 
-Location2 <-ggplot(DF_Location2, aes(x = fct_reorder(Study.zone,n, .desc=TRUE), y = n, group = Study.location)) + geom_col(aes(fill=Study.zone), position="dodge", color="black") + geom_text(aes(label =Study.location), size=4, position=position_dodge(0.9), angle=90,vjust=0.5, hjust=-0.04 ) + labs(y="Number of articles", x="Study locations")  + theme_classic()+ ylim(c(0,66))+theme(legend.position = "none")+ scale_fill_brewer(palette = "Dark2") + theme(text=element_text(size=18,  family="Times"), axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+Location2 <-ggplot(DF_Location2, aes(x = fct_reorder(Study.zone,n, .desc=TRUE), y = n, group = Study.location)) + geom_col(aes(fill=Study.zone), position="stack", color="black") + geom_text(aes(label =Study.location), size=4, position=position_dodge(0.9), angle=90,vjust=0.5, hjust=-0.04 ) + labs(y="Number of articles", x="Study locations")  + theme_classic()+ ylim(c(0,66))+theme(legend.position = "none")+ scale_fill_brewer(palette = "Dark2") + theme(text=element_text(size=18,  family="Times"), axis.text.x = element_text(angle = 0, vjust = 1, hjust=0.5))
 Location2
 ```
 
-
-Most of the study areas ar mention in less than 20 articles in this revision, however ecosystem functionning and services highlights with its number of articles published ` r ((DF %>% dplyr::filter(Area.of.study=="Ecosystem functioning and services") %>% nrow() )/nrow(DF) )*100` % of the total (Fig \@ref(fig: Areas)). Ecosystem functionning and services has been studied in the three NP, however its proportion in PNP is notably higher than the other NP.
+According to study areas, almost half of the studies are focus on ecosystem functionning and services with `r (DF_Area %>% dplyr::filter(Area.of.study2=="Ecosystem functioning and services") %>% nrow())` articles. The rest of the studies does not exced the 20 articles, decresing in number are Climate and environmet, Hydrology, and freshwater biodiversity studies. The rest of the areas have less than 10 articles published (Fig \@ref(fig: Areas)).
+In addition, Ecosystem functionning and services has been studied in the three NP, however its proportion in PNP is notably higher than the other NP. This NP is the only one that shows several areas of study, even with only a few articles. In terms of area of study, Hydrology is the next area to be mention in NP with mention in AANP and PNP.
 
 ```{r Areas, fig.height=10, fig.width=8}
 DF_Area <- DF %>% 
@@ -165,9 +171,12 @@ p1/p2
 ```
 
 
-Data collected form the field is abundant  ` r ((DF %>% dplyr::filter(Mehodology %in% c("Field survey", "Field collection", "Field experiment")) %>% nrow() )/nrow(DF) )*100` % (Fig \@ref(fig: Areas)).
+Data collected from the field is abundant and represents a ` r ((DF %>% dplyr::filter(Mehodology %in% c("Field survey", "Field collection", "Field experiment")) %>% nrow() )/nrow(DF) )*100` % of the studies. Among fiel collection highlights some studies were there is collection of data through methods as dendrochronology (`r DF %>% dplyr::filter(Methodology =="dendrochronology") %>% nrow()` articles) and electric fishing (`r DF %>% dplyr::filter(Methodology =="Electric fishing") %>% nrow()`).  (Fig \@ref(fig: Areas)).
+Modeling category and review of litereature included both 10 articles. Modeling category included correlational, multivariate , and spatially explicit models.
+Social methods that encompases communicational strategies, discussion articles, both quantitative and qualitative methods, surveys, and interviews comprehended only 9 articles.
+The less method used in this review is molecular analysis (only 3 articles), and included isotopes, genetic analysis, and reconstruction of mtDNA.
 
-```{r}
+```{r, fig.width=8}
 DF <- DF %>% 
   mutate(General_methods= case_when(
     Methodology %in% c("Field collection", "dendrochronology", "Electric fishing")~"Field collection",  
@@ -183,23 +192,18 @@ DF <- DF %>%
 
 #p1 <-ggplot(DF_Methodology, aes(x = fct_reorder(General_methods, n, .desc=TRUE), y = n, group = Methodology)) + geom_col(aes(fill=General_methods), position="dodge", color="black") + geom_text(aes(label =Methodology), size=4, position=position_dodge(0.9), angle=90,vjust=0.5, hjust=-0.04 ) + labs(y="Number of articles", x="Study locations")  + theme_classic()+ ylim(c(0,66))+theme(legend.position = "none")+ scale_fill_brewer(palette = "Dark2") + theme(text=element_text(size=18,  family="Times"), axis.text.x = element_text(angle = 90, vjust = 1, hjust=1))
 #p1
-DF_Methodology2 <- DF %>%  group_by(General_methods) %>% summarise(n = n()) %>% ungroup() %>% dplyr::filter(!is.na(General_methods)) %>% mutate(General_methods=fct_reorder(General_methods, -n)) %>% mutate(General_methods= str_wrap(General_methods, 13))
+DF_Methodology2 <- DF %>%  group_by(General_methods) %>% summarise(n = n()) %>% ungroup() %>% dplyr::filter(!is.na(General_methods)) %>% mutate(General_methods=fct_reorder(General_methods, -n)) %>% mutate(General_methods= str_wrap(General_methods, 10))
 
-p2 <-ggplot(DF_Methodology2, aes(x = fct_reorder(General_methods, n, .desc=TRUE), y = n)) + geom_col(position="dodge", color="green") + labs(y="Number of articles", x="Study locations")  + theme_classic()+ ylim(c(0,35))+theme(legend.position = "none") + theme(text=element_text(size=18,  family="Times"), axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+p2 <-ggplot(DF_Methodology2, aes(x = fct_reorder(General_methods, n, .desc=TRUE), y = n)) + geom_col(position="dodge", color="green") + labs(y="Number of articles", x="Study locations")  + theme_classic()+ ylim(c(0,35))+theme(legend.position = "none") + theme(text=element_text(size=18,  family="Times"), axis.text.x = element_text(angle = 0, vjust = 1, hjust=0.5))
 p2
 
 
 ```
-Field collection included mehods sucha asdendrochronology, electric fishing.
-
-
-Modeling category included correlational, multivariete , and spatially explicit models
 
 
 
 
-
-```{r}
+```{r, fig.width=8}
 DF_object <- DF %>%  group_by(Study.object) %>% summarise(n = n()) %>% ungroup() %>% dplyr::filter(!is.na(Study.object)) %>% mutate(Study.object=fct_reorder(Study.object, -n))
 
 DF_object <- DF_object %>% 
@@ -211,10 +215,10 @@ DF_object <- DF_object %>%
     Study.object %in% c("Fires","Particulate matter","Precipitation", "Rock art")~"Physical conditions",
     Study.object %in% c("Aquatic plants" )~"Group of plants",
     Study.object %in% c("Bird species","Fishes","Crustacean", "Evergreen trees", "Nothofagus")~"Communities")) %>%
-  mutate(General_object= str_wrap(General_object, 18))
+  mutate(General_object= str_wrap(General_object, 12))
 
 
-p1 <-ggplot(DF_object, aes(x = fct_reorder(General_object, n, .desc=TRUE), y = n, group = Study.object)) + geom_col(aes(fill=General_object), position="dodge", color="black") + geom_text(aes(label =Study.object), size=4, position=position_dodge(0.9), angle=90,vjust=0.5, hjust=-0.04 ) + labs(y="Number of articles", x="Study locations")  + theme_classic()+ ylim(c(0,66))+theme(legend.position = "none")+ scale_fill_brewer(palette = "Dark2") + theme(text=element_text(size=18,  family="Times"), axis.text.x = element_text(angle = , vjust = 1, hjust=1))
+p1 <-ggplot(DF_object, aes(x = fct_reorder(General_object, n, .desc=TRUE), y = n, group = Study.object)) + geom_col(aes(fill=General_object), position="dodge", color="black") + geom_text(aes(label =Study.object), size=4, position=position_dodge(0.9), angle=90,vjust=0.5, hjust=-0.04 ) + labs(y="Number of articles", x="Study locations")  + theme_classic()+ ylim(c(0,66))+theme(legend.position = "none")+ scale_fill_brewer(palette = "Dark2") + theme(text=element_text(size=18,  family="Times"), axis.text.x = element_text(angle = 0, vjust = 1, hjust=0.5))
 p1
 
 
