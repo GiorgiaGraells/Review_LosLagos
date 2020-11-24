@@ -30,11 +30,10 @@ LosLagos <-read_csv("PACL_LL.csv")
 One of the strategic targets of the Convention of Biological Conservation is "By 2020, at least 17% of terrestrial and inland water, and 10% of coastal and marine areas, especially areas of particular importance for biodiversity and ecosystem services, are conserved through effectively and equitably managed, ecologically representative and well connected systems of protected areas...". 
 This emphasizes not only that protected areas (PA) are one of the most effective elements to prevent extinctions hence conserve biological diversity, also 
 future of biological and landscape conservation need planned increment in the number of PA and effectiveness in terms of strategic allocation of management and economic efforts [@le2013protected; @watson2014performance].
-This is why the last decades aspect as economic limitations and the impact on local stakeholders are been taking into account in order to decrate news PA and not only a selection based in ecological knowledge [@borrini2004indigenous, Brown, 2002?].
-However, even ecological knowledge have needed the expansion to different areas that resume its complexity in order to face climate change in the future.
+This is why the last decades aspects such as economic limitations and the impact on local stakeholders are been taking into account in order to decrate news PA and not only its selection based in ecological knowledge [@borrini2004indigenous, Brown, 2002?].
 
 
-Sudamerica counts with more relative % of PA , thta any other area int he world.
+Sudamerica counts with more relative % of PA , that any other area in the world.
 In Chile, there are 211 PA in its extension, including 187 of them with national jurisdiction. There are only 24 PA international, incluiding two categories Ramsar Site, Wetland of International Importance and Biosphere Reserve, and UNESCO-MAB Biosphere Reserve. 
 In southern Chile, Los Lagos Region is named given this region has the largest proportion of lakes area in the country, with 52 lakes over 3Km2, and a total area of	2.850 Km2. It has a population of 828.708 (Censo 2017) and an extension of 48,583.60 Km2.
 This region bases its economy in activities related to primary sectors: livestock, aquiculture and forestry industry [@BNC_LosLagos]. Even more, Los Lagos Region presents one of the bigest growth in fisheries an acuaculture growth in comparision with the rest of the country during the last 30 years [@Soto-alvaradoDesarrollo]. 
@@ -46,14 +45,14 @@ Remoteness of PA can generate disconnection, given most of the PA are located in
 
 
 [Provide transition between the general problem area and the literature review]
-correspondeAccording to aichi these areas are.... 
-Sin embargo, esto tambien conlleva al desconocimineto de elementos que pueden ser claves por falta de investigaciones
 
+**Considering impacts of PA in local communities and the importance of the expansion of ecological knowledge to areas that resume the complexity of each PA in order to face specific and general perturbations (o considerando la configuracion de cada pa), should be a fundamental step in Chile to assure a correct management and projection of PA to the future.**
+ 
 
 3. Locate the gap-describe the proble to address-present a prediction to be tested 
 
 [Provide brief overview of key research projects in this area]
-Los Lagos Region presents three Andean National Parks: Puyehue National Park (PNP), Vicente Perez Rozales National Park (VPRNP), and Alerce Andino National Park (AANP). PNP, VPRNP, and AANP as all national PA in Chile are under the supervision and adminstration of the National Forestry Corporation CONAF). They count with management plans (2008, 2015, and 1997, respectibly), which provides a very carfull compilation of information. However, thesedocuments have not been correctly updated and lack of the changes that have occurred in the last years. For example, between 1995-2016 native forests in this area have suffer important losses because of land use changes (mostly land modification to grassland and shrubs, and substitution). 
+Among the PA in Los Lagos Region, there are three Andean National Parks: Puyehue National Park (PNP), Vicente Perez Rozales National Park (VPRNP), and Alerce Andino National Park (AANP). PNP, VPRNP, and AANP as all national PA in Chile are under the supervision and adminstration of the National Forestry Corporation CONAF). They count with management plans (2008, 2015, and 1997, respectibly), which provides a very carfull compilation of information. However, these documents have not been correctly updated and lack of the changes that have occurred in the last years. For example, between 1995-2016 native forests in this area have suffer important losses because of land use changes (mostly land modification to grassland and shrubs, and substitution). 
 The area presents an increment of vulnerability in front of climate change [@marquet2019biodiversidad]. Because of this, there is a need to incorporate different components of ecological knowledge as well the interaction with local communities in these PA in order to generet projections of climate chage to develop conservation plans to the future.
 This review revist the ecological literature carry out in these three protected areas and its surroundings in Los Lagos Region in order to generate a base line that allow to proyect scenarios of climate change to systematic conservation planning in PA.
 
@@ -98,8 +97,6 @@ We focus our findings in Los Lagos región research and andean studies, leaving 
 
 2. General overview of results
 
-A total of  `r nrow(DF)` articles were selected in this review. From those `r (DF %>% dplyr::filter(Keywords.used=="Name of parks") %>% nrow())` articles were find from the three National Parks and `r (DF %>% dplyr::filter(Keywords.used =="Close area") %>%  nrow())` articles from searching nearby areas of them. 
-In general terms, number of articles have been increasin during the years, however there are a few years that clearly show a striking decrease in publications (Fig \@ref(fig:Years)). 
 
 
 ```{r Years, fig.cap="Temporal distribution of articles according to keywords used in this review of literature", fig.width=8}
@@ -107,10 +104,9 @@ Pub_year <-ggplot(DF) + geom_bar(aes(x = Publication.Year, fill=Keywords.used))+
 Pub_year
 ```
 
+A total of  `r nrow(DF)` articles were selected in this review. From those `r (DF %>% dplyr::filter(Keywords.used=="Name of parks") %>% nrow())` articles were find from the three National Parks and `r (DF %>% dplyr::filter(Keywords.used =="Close area") %>%  nrow())` articles from searching nearby areas of them. 
+In general terms, number of articles have been increasing during the years, however there are a few years that clearly show a striking decrease in publications (Fig \@ref(fig:Years)). 
 
-
-From the articules carry out in the NP of interest, only `r (DF %>% dplyr::filter(Study.location == "PNP") %>% nrow())` articles were carry out in PNP, `r (DF %>% dplyr::filter(Study.location == "AANP") %>% nrow())` in AAPN and `r (DF %>% dplyr::filter(Study.location == "VPRNP") %>% nrow())` in VPRPN.
-Adjacents areas to NP comprehended a `r ((DF %>% dplyr::filter(Study.location %in%  c("Adjacent to PNP", "Adjacent to AANP", "Adjacent to VPRNP")) %>% nrow())/nrow(DF)*100)` % of the studies. Most of the articles studied larger areas that comprises Los lagos Region and in particular some of these NP (`r (DF_Location2 %>% dplyr::filter(Study.zone == "Larger areas that comprise NPs") %>% nrow())`). 
 
 
 
@@ -133,8 +129,13 @@ Location2 <-ggplot(DF_Location2, aes(x = fct_reorder(Study.zone,n, .desc=TRUE), 
 Location2
 ```
 
-According to study areas, almost half of the studies are focus on ecosystem functionning and services with `r (DF_Area %>% dplyr::filter(Area.of.study2=="Ecosystem functioning and services") %>% nrow())` articles. The rest of the studies does not exced the 20 articles, decresing in number are Climate and environmet, Hydrology, and freshwater biodiversity studies. The rest of the areas have less than 10 articles published (Fig \@ref(fig: Areas)).
-In addition, Ecosystem functionning and services has been studied in the three NP, however its proportion in PNP is notably higher than the other NP. This NP is the only one that shows several areas of study, even with only a few articles. In terms of area of study, Hydrology is the next area to be mention in NP with mention in AANP and PNP.
+
+
+
+From the articules carry out in the NP of interest, only `r (DF %>% dplyr::filter(Study.location == "PNP") %>% nrow())` articles were carry out in PNP, `r (DF %>% dplyr::filter(Study.location == "AANP") %>% nrow())` in AAPN and `r (DF %>% dplyr::filter(Study.location == "VPRNP") %>% nrow())` in VPRPN.
+Adjacents areas to NP comprehended a `r ((DF %>% dplyr::filter(Study.location %in%  c("Adjacent to PNP", "Adjacent to AANP", "Adjacent to VPRNP")) %>% nrow())/nrow(DF)*100) %>% round(2)` % of the studies. Most of the articles studied larger areas that comprises Los lagos Region and in particular some of these NP (`r (DF %>% dplyr::filter(Study.location %in% c("Los Lagos Region", "2 regions","3 regions", "4 regions", "5 regions", "More than 5 regions")) %>% nrow())`). 
+
+
 
 ```{r Areas, fig.height=10, fig.width=8}
 DF_Area <- DF %>% 
@@ -170,11 +171,10 @@ p2 <- ggplot(DF_Area2) + geom_col(aes(x = fct_reorder(Area.of.study2, desc(n)), 
 p1/p2
 ```
 
+According to study areas, almost half of the studies are focus on ecosystem functionning and services with `r (DF_Area %>% dplyr::filter(Area.of.study2=="Ecosystem functioning and services") %>% nrow())` articles. The rest of the studies does not exced the 20 articles, decresing in number are Climate and environmet, Hydrology, and freshwater biodiversity studies. The rest of the areas have less than 10 articles published (Fig \@ref(fig: Areas)).
+In addition, Ecosystem functionning and services has been studied in the three NP, however its proportion in PNP is notably higher than the other NP. This NP is the only one that shows several areas of study, even with only a few articles. In terms of area of study, Hydrology is the next area to be mention in NP with mention in AANP and PNP.
 
-Data collected from the field is abundant and represents a ` r ((DF %>% dplyr::filter(Mehodology %in% c("Field survey", "Field collection", "Field experiment")) %>% nrow() )/nrow(DF) )*100` % of the studies. Among fiel collection highlights some studies were there is collection of data through methods as dendrochronology (`r DF %>% dplyr::filter(Methodology =="dendrochronology") %>% nrow()` articles) and electric fishing (`r DF %>% dplyr::filter(Methodology =="Electric fishing") %>% nrow()`).  (Fig \@ref(fig: Areas)).
-Modeling category and review of litereature included both 10 articles. Modeling category included correlational, multivariate , and spatially explicit models.
-Social methods that encompases communicational strategies, discussion articles, both quantitative and qualitative methods, surveys, and interviews comprehended only 9 articles.
-The less method used in this review is molecular analysis (only 3 articles), and included isotopes, genetic analysis, and reconstruction of mtDNA.
+
 
 ```{r, fig.width=8}
 DF <- DF %>% 
@@ -200,29 +200,47 @@ p2
 
 ```
 
+Data collected from the field is abundant and represents a ` r ((DF %>% dplyr::filter(Mehodology %in% c("Field survey", "Field collection", "Field experiment")) %>% nrow() )/nrow(DF) )*100` % of the studies. Among fiel collection highlights some studies were there is collection of data through methods as dendrochronology (`r DF %>% dplyr::filter(Methodology =="dendrochronology") %>% nrow()` articles) and electric fishing (`r DF %>% dplyr::filter(Methodology =="Electric fishing") %>% nrow()`).  (Fig \@ref(fig: Areas)).
+Modeling category and review of litereature included both 10 articles. Modeling category included correlational, multivariate , and spatially explicit models.
+Social methods that encompases communicational strategies, discussion articles, both quantitative and qualitative methods, surveys, and interviews comprehended only 9 articles.
+The less method used in this review is molecular analysis (only 3 articles), and included isotopes, genetic analysis, and reconstruction of mtDNA.
 
 
 
 ```{r, fig.width=8}
-DF_object <- DF %>%  group_by(Study.object) %>% summarise(n = n()) %>% ungroup() %>% dplyr::filter(!is.na(Study.object)) %>% mutate(Study.object=fct_reorder(Study.object, -n))
+DF_object <- DF %>%  group_by(Study.object) %>% summarise(n = n()) %>% ungroup() %>% dplyr::filter(!is.na(Study.object))
 
 DF_object <- DF_object %>% 
-  mutate(General_object= case_when(
-    Study.object %in% c("People", "Urban areas")~"Human",  
-    Study.object %in% c("Aegorhinus", "Austrocedrus", "Bird species","Chusquea", "Craspedacusta","Didymosphenia", "Dromiciops", "F. cupressoides", "Lichen", "Nothofagus",   "Salmonids", "Liolaemus", "Wild boar")~"Species", 
-    Study.object %in% c( "Groundwater Storage", "Lakes", "runoff", "Soil","Streams", "watershed")~"Geographic elements", 
-    Study.object %in% c("Forest","Native forest")~"Ecosystem",
+  mutate(`General object` = case_when(
+    Study.object %in% c("Household combution","People", "Regional subdivision", "Urban areas")~"Humans",  
+    
+    Study.object %in% c("Aegorhinus",  "Bird species", "Craspedacusta", "Crustacean", "Dromiciops","Fishes","Herpetofauna", "Salmonids", "Liolaemus", "Wild boar", "Woodwasp")~"Animals",
+    
+    Study.object %in% c("Aegorhinus", "Cyanobacteria","Craspedacusta","Didymosphenia",  "Lichen", "Protozoa")~"Algae, bacterias, and protozoa",
+    
+    Study.object %in% c("Aquatic plants", "Chusquea","Embothrium","Ferns" ,"Lichen", "Native vegetation", "Pollen", "Proteaceae", "Sarmienta" )~"Plants",
+    
+    Study.object %in% c("Austrocedrus","Coihue-Rauli-Tepa forest" ,"F. cupressoides", "Forest","Native forest", "Evergreen trees", "Nothofagus", "Coihue-Rauli-Tepa")~"Forest communities",
+    
+    Study.object %in% c("Basins", "Groundwater Storage", "Lakes", "runoff", "Soil","Streams", "watershed")~"Geographic elements", 
+    
     Study.object %in% c("Fires","Particulate matter","Precipitation", "Rock art")~"Physical conditions",
-    Study.object %in% c("Aquatic plants" )~"Group of plants",
-    Study.object %in% c("Bird species","Fishes","Crustacean", "Evergreen trees", "Nothofagus")~"Communities")) %>%
-  mutate(General_object= str_wrap(General_object, 12))
+    Study.object %in% c("Database records", "Spatial proyection")~"Data bases"
+    )) %>%
+  rename(`Study object`=Study.object, `No of articles`=n) %>% 
+  select(`General object`, `Study object`, `No of articles`) 
 
+  
+DF_GenObj <- DF_object %>%  group_by(`General object`) %>% sum(`No of articles` = n()) %>% ungroup()  %>%
+  mutate(`General object`=fct_reorder(`General object`, -n)) %>% mutate(`General object`= str_wrap(`General object`, 10))### arreglar esto con cantidades correctas
 
-p1 <-ggplot(DF_object, aes(x = fct_reorder(General_object, n, .desc=TRUE), y = n, group = Study.object)) + geom_col(aes(fill=General_object), position="dodge", color="black") + geom_text(aes(label =Study.object), size=4, position=position_dodge(0.9), angle=90,vjust=0.5, hjust=-0.04 ) + labs(y="Number of articles", x="Study locations")  + theme_classic()+ ylim(c(0,66))+theme(legend.position = "none")+ scale_fill_brewer(palette = "Dark2") + theme(text=element_text(size=18,  family="Times"), axis.text.x = element_text(angle = 0, vjust = 1, hjust=0.5))
-p1
+p3 <-ggplot(DF_GenObj, aes(x = fct_reorder(`General object`, n, .desc=TRUE), y = n)) + geom_col(position="dodge", color="green") + labs(y="Number of articles", x="Study object")  + theme_classic()+ ylim(c(0,35))+theme(legend.position = "none") + theme(text=element_text(size=18,  family="Times"), axis.text.x = element_text(angle = 0, vjust = 1, hjust=0.5))
+p3
+
 
 
 ```
+
 
 
 4. Specific/key results in details
