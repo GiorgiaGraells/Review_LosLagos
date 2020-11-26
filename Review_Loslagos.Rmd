@@ -28,8 +28,7 @@ LosLagos <-read_csv("PACL_LL.csv")
 # Introduction
 
 One of the strategic targets of the Convention of Biological Conservation is "By 2020, at least 17% of terrestrial and inland water, and 10% of coastal and marine areas, especially areas of particular importance for biodiversity and ecosystem services, are conserved through effectively and equitably managed, ecologically representative and well connected systems of protected areas...". 
-This emphasizes not only that protected areas (PA) are one of the most effective elements to prevent extinctions hence conserve biological diversity, also 
-future of biological and landscape conservation need planned increment in the number of PA and effectiveness in terms of strategic allocation of management and economic efforts [@le2013protected; @watson2014performance].
+This emphasizes not only that protected areas (PA) are one of the most effective elements to prevent extinctions hence conserve biological diversity, also future of biological and landscape conservation need planned increment in the number of PA and effectiveness in terms of strategic allocation of management and economic efforts [@le2013protected; @watson2014performance].
 This is why the last decades aspects such as economic limitations and the impact on local stakeholders are been taking into account in order to decrate news PA and not only its selection based in ecological knowledge [@borrini2004indigenous, Brown, 2002?].
 
 
@@ -72,12 +71,30 @@ Two eligibility criteria were performed: 1. including the name of the National P
 2. Details about materials and methods- justify choices 
 
 [Provide details about what was done and used and shows that care was taken] 
-Articles selected were categorized by publication year, source title, keywords used, and categories created for the purpose of this review: area of study, study location,  methodology, process, and study object, **and objective.**
-Area of study included Archaeology & Paleoecology, Climate & environment, Ecosystem functioning & services, Freshwater biodiversity, Hydrology, Social-ecology, and Species & distribution.
+Articles selected were categorized by publication year, source title, keywords used, and categories created for the purpose of this review: key component, study location, methodology used, process involved, and study object.
+
+Key components categorised articles according to area of study. This classification included Archaeology & Paleoecology, Climate & environment (including studies in climate,environmental conditions, and seismiology), Ecosystem functioning & services, Freshwater biodiversity, Hydrology, Social-ecology, and Species & distribution (including biogeography,species, and exotic species).
+
 Study location encompased categories such as the three National Parks of interest: AANP, PNP, and  VPRNP; adjacents areas to NP: Adjacent to AANP, Adjacent to PNP, Adjacent to VPRNP; similar ecosystems to NP:  Andes of Los Rios Region, Argentinian andes, and Neuquen in Argentina; Larger areas that comprise NP: Los Lagos Region, 2 regions, 3 regions, 4 regions,  5 regions, More than 5 regions; Global studies: Chile, Chile & Argentina; and Close urban centers: Valdivia
-Methodology
-The category called proccess implies biological, ecological or physical 
-study object:
+
+Methodology classified articles based in how data was collected and/or analysed. 
+Methods included data from the field: field survey, field collection (similar a survey but with samples that need further processes to be analysed, such as dendrochronology or electric fishing), field experiment (that requieres modification to one or more conditions in a location, such as transplant or seedling experiments). 
+Other classifications were modeling (including data analysis such as simulations, correlatoinal and multivariate models, and spatial models), molecular analysis (reconstruction of mtDNA, isotopes, and genetic analysys), and reviews of literature.
+There is a category of social methods, that include both quantitative (suurveys an questtionaries) and qualitative (interviews and discussion articles).
+
+Proccess category makes reference to the question behind the articles and implies which is the mechanism studied and resummed a list of 47 options (Table x).  
+
+Study object classification was prepared based onf what is the minimun element studied in each article. This included categories such as 
+humans (household combution, people, and urban areas)
+animals (communities of birds, crustacean, fishes,and herpetofauna; species of aegorhinus, craspedacusta, dromiciops, liolaemus, wild boar, and woodwasp) 
+plants (aquatic plants, chusquea, embothrium, ferns, native vegetation, pollen, proteaceae, sarmienta),   
+other organims (such as cyanobacteria, didymosphenia,  lichens, and protozoa), and 
+forest communities (with focus in one species austrocedrus, F. cupressoides, and Nothofagus; or in more diverse environments as coihue-Rauli-Tepa, forest, native forest, and evergreen trees )
+
+Also included    
+geographic elements (basins, groundwater Storage, lakes, runoff, streams, watershed, and also soil and regional subdivision), physical conditions (fires, precipitation, particulate matter, rock art), and data bases.
+    
+
 
 3. Relate to other studies 
 
@@ -211,9 +228,9 @@ DF <- DF %>%
     
     Study.object %in% c("Cyanobacteria","Didymosphenia",  "Lichen", "Protozoa")~"Other organims",
     
-    Study.object %in% c("Aquatic plants", "Chusquea","Embothrium","Ferns" ,"Lichen", "Native vegetation", "Pollen", "Proteaceae", "Sarmienta" )~"Plants",
+    Study.object %in% c("Aquatic plants", "Chusquea","Embothrium","Ferns", "Native vegetation", "Pollen", "Proteaceae", "Sarmienta" )~"Plants",
     
-    Study.object %in% c("Austrocedrus","Coihue-Rauli-Tepa forest" ,"F. cupressoides", "Forest","Native forest", "Evergreen trees", "Nothofagus", "Coihue-Rauli-Tepa")~"Forest communities",
+    Study.object %in% c("Austrocedrus" ,"F. cupressoides", "Forest","Native forest", "Evergreen trees", "Nothofagus", "Coihue-Rauli-Tepa")~"Forest communities",
     
     Study.object %in% c("Basins", "Groundwater Storage", "Lakes", "runoff", "Soil","Streams", "watershed", "Regional subdivision")~"Geographic elements", 
     
@@ -327,7 +344,7 @@ Climate3 <- ggplot(DF_Climate) + geom_col(aes(x = General_object, y=n), fill="#5
 
 Climate and environmental area is diverse and showed focus in studies related to pollution with a component of social studies and climate in different scales and times. Among the processes studied, pollution is the most mentioned (6 articles), however the amount of publications centred in climate is not less (current climate 2 artricles, climate change 1 article, past climate change 3 articles). Methods used are mostly collections from the field and modeling (41 and 29%, respectibly). Study objects are diverse and involved data bases (5 articles with fire and temperature records or spatial proyections), geographic elements (4 articles, including regional subdivision, lakes and soil), humans (3 articles including people and household combustion), physical conditions (3 articles, including precipitation, fires and particuulate matter)
 
-### Species and distribution	
+### Other key components 
 
 ```{r Species, fig.height=7, fig.width=10, fig.cap="Articles classified as Species and distribution studies. A, study areas. B, Methodologies applied. C, study objects."}
 DF_Species <- DF %>%  group_by(Area.of.study2, Process, General_methods, General_object) %>% summarise(n = n()) %>% ungroup() %>%
@@ -336,10 +353,8 @@ DF_Species <- DF %>%  group_by(Area.of.study2, Process, General_methods, General
 Species1 <- ggplot(DF_Species) + geom_col(aes(x = Process, y=n), fill="#d8b365") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
 Species2 <- ggplot(DF_Species) + geom_col(aes(x = General_methods, y=n), fill="#d8b365") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +ylim(0,3)
 Species3 <- ggplot(DF_Species) + geom_col(aes(x = General_object, y=n), fill="#5ab4ac") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 0, vjust = 1, hjust=0.5)) 
-(Species1 + Species2)/Species3 + plot_annotation(tag_levels = 'A')
+#(Species1 + Species2)/Species3 + plot_annotation(tag_levels = 'A')
 ```
-
-### Archaeology and Paleoecology	
 
 ```{r Paleo, fig.height=7, fig.width=10, fig.cap="Articles classified as Archaeology and Paleoecology studies. A, study areas. B, Methodologies applied. C, study objects."}
 DF_Paleo <- DF %>%  group_by(Area.of.study2, Process, General_methods, General_object) %>% summarise(n = n()) %>% ungroup() %>%
@@ -348,18 +363,13 @@ DF_Paleo <- DF %>%  group_by(Area.of.study2, Process, General_methods, General_o
 Paleo1 <- ggplot(DF_Paleo) + geom_col(aes(x = Process, y=n), fill="#d8b365") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
 Paleo2 <- ggplot(DF_Paleo) + geom_col(aes(x = General_methods, y=n), fill="#d8b365") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +ylim(0,1)
 Paleo3 <- ggplot(DF_Paleo) + geom_col(aes(x = General_object, y=n), fill="#5ab4ac") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 0, vjust = 1, hjust=0.5)) 
-(Paleo1 + Paleo2)/Paleo3 + plot_annotation(tag_levels = 'A')
+#(Paleo1 + Paleo2)/Paleo3 + plot_annotation(tag_levels = 'A')
 ```
 
-## Conservation priorization -Climate change
 
-5. Comparisons with results in other research
-6. problems with results
-
-Projections: Climate change in time
+Species and distribution area focussed mostly in distribution of species, phylogeography ans genetic variability (67% of the articles). More than a half used data from the field and all of the studies found centred in animals. In contrats, archeaology and paleoecology area presented only two articles, one focused in iconography (rock art) and the other centred in past distributions of native forest.
 
 
-7. Possible implications with results
 
 # Discussion 
 
