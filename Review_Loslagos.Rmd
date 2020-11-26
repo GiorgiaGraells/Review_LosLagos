@@ -260,8 +260,6 @@ From the total of articles focused on hydrology (Fig \@ref(fig:Hydrology)), most
 Data from the field (including both field collection and experiments) reaches 5 articles, same as modeling as a methodological resources.
 In terms of objects of study, they are mostly greographic elements (8 articles), where half of them studied lakes. Physical conditions where anly mentionedd in 3 articles, all of them studied precipitations.
 
-**Spectral characterrization and comparison among lakes in @delosRiosSpectral We show that annual runoffis highly sensitive to the relative area of FPto NF: ratios of FP to NF areas of 10%, 50% and 90% would lead to 3%,−18% and−40% changes inmean annual runoff, respectively.(Alvarez-Garreton et al 2019)**
-
 
 ### Ecosystem functioning and services
 
@@ -280,15 +278,6 @@ Ecosys3 <- ggplot(DF_Ecosys) + geom_col(aes(x = General_object, y=n), fill="#5ab
 Ecosystem functioning and services are very diverse in processes studied and aspects related to growth (21 articles), regeneration (9 articles), and succession (6 articles) were the most frecuent to find. In terms of methods used, most of the data comes from the field (90%), being the field survey the most adopted by researchers (25 articles), second field collection with 15 articles and third field experiment with 14 articles.
 Study objects in this area are mostly related to forest communities (40 articles). From those, higlights nothofagus forests and native forest (20 and 15 articles, respetibly). 
 
-Chusquea fenology in @delaFuenteChusquea 
-Improvements for the study of volcanic activity [@AmoebaeTephra]
-Steam radious of F. cupressoides and the determination of environmental variables that affect its growth... with projections in climate change [@Stem_F]
-SUcculence in rain forest [@GodoySucculence]
-Key results – We show that leaves from sun conditions, the environment with higher water demand, have lower SLA (specific leaf area), thicker epidermis and store more water due to a thicker spongy parenchyma, than leaves from shade conditions. Conclusions  –  We  found  high  phenotypic  variation  in  S.  repens at intraspecific level in response to contrasting environmental conditions. This variation reflects a two-fold strategy common in epiphytes: increase water storage and reduce water loss. Furthermore, it suggests that leaf succulence has an adaptive value even in a temperate cold rainforest. We discuss that the occurrence of succulence on a cold rainforest might be explained by a combination of ecological, biogeographic and phylogenetic factors.
-
-macropytes  and  riparian  assemblages  are  not  random,  that means  that  the  regulator  factors  are  deterministic. 
-
-They reconstructed stand development on sites affected by these disturbances (complex mosaic of disturbance patterns, including the effects of the strong 1960 earthquake as well as fire and wind disturbance), and compared these patterns with the structure of old-growth forests along an elevation gradient from species-rich montane rain forest to mono-typic subalpine Nothofagusforests
 
 ### Freshwater biodiversity
 
@@ -322,23 +311,45 @@ Social3 <- ggplot(DF_Social) + geom_col(aes(x = General_object, y=n), fill="#5ab
 (Social1 + Social2)/Social3 + plot_annotation(tag_levels = 'A')
 ```
 
-Socio-ecological research included quantitative and qualitative social methods which includes people's surveys, interviews and articles of discission based on etnography.
+Socio-ecological research is scarse and processes studied are diverse. However there is a notable environmental concern reflected in aspects as collective action, conservation, participation and political-ecology that involve more than a half of the studies. Methodology involved in this studies are mostly social methods (5 articles), which included quantitative and qualitative such as people's surveys, interviews and articles of discission based on etnography, and they are all based in research on people.
 
-Turism and peoples movement in @SozaAmigoTurism
+### Climate and environment	
 
-conection with PNP with thre cities valdivia, Osorno y Puerto Montt (154.716, 147.826, and 220.143 of urban population respectibly, according to 2017 Census, Chile )
-The results show that the chang-es in the economic structure had improve the main sectors of the centers, weakening the potential development of the Park. Especially the lacks of connectivity development and the small supply of good and services of the Park are the main constraint that arise from the analysis to increase the number and length of visits. 
+```{r Climate, fig.height=7, fig.width=10, fig.cap="Articles classified as Climate and environment studies. A, study areas. B, Methodologies applied. C, study objects."}
+DF_Climate <- DF %>%  group_by(Area.of.study2, Process, General_methods, General_object) %>% summarise(n = n()) %>% ungroup() %>%
+  dplyr::filter(Area.of.study2== "Climate and environment") %>% mutate(Process= str_wrap(Process, 20)) %>% mutate(General_methods= str_wrap(General_methods, 15)) 
+  
+Climate1 <- ggplot(DF_Climate) + geom_col(aes(x = Process, y=n), fill="#d8b365") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
+Climate2 <- ggplot(DF_Climate) + geom_col(aes(x = General_methods, y=n), fill="#d8b365") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +ylim(0,7)
+Climate3 <- ggplot(DF_Climate) + geom_col(aes(x = General_object, y=n), fill="#5ab4ac") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 0, vjust = 1, hjust=0.5)) 
+(Climate1 + Climate2)/Climate3 + plot_annotation(tag_levels = 'A')
+```
 
+Climate and environmental area is diverse and showed focus in studies related to pollution with a component of social studies and climate in different scales and times. Among the processes studied, pollution is the most mentioned (6 articles), however the amount of publications centred in climate is not less (current climate 2 artricles, climate change 1 article, past climate change 3 articles). Methods used are mostly collections from the field and modeling (41 and 29%, respectibly). Study objects are diverse and involved data bases (5 articles with fire and temperature records or spatial proyections), geographic elements (4 articles, including regional subdivision, lakes and soil), humans (3 articles including people and household combustion), physical conditions (3 articles, including precipitation, fires and particuulate matter)
 
-Social actors in AANP and LLNR buffer in @mardones_social
+### Species and distribution	
 
-The study was focused in the buffer zone 
-El estudio combina el análisis cualitativo del mapeo de actores (MDA) con el mé-todo cuantitativo del análisis de redes sociales (ARS).
-La inves-tigación utiliza una aproximación sociométrica al análisis de redes sociales, el cual se refiere al estudio de las propiedades estructurales de una red, tales como densidad y cohesión (Marín, Gelcich, Castilla, & Berkes, 2012). 
-Social studies mention haigh fragmentations of social network according to economic sectors (agriculture, artisal fisheries, turism, among others ). 
-Low participation and separation from the protected area which has not incorporated the community 
+```{r Species, fig.height=7, fig.width=10, fig.cap="Articles classified as Species and distribution studies. A, study areas. B, Methodologies applied. C, study objects."}
+DF_Species <- DF %>%  group_by(Area.of.study2, Process, General_methods, General_object) %>% summarise(n = n()) %>% ungroup() %>%
+  dplyr::filter(Area.of.study2== "Species and distribution") %>% mutate(Process= str_wrap(Process, 20)) %>% mutate(General_methods= str_wrap(General_methods, 15)) 
+  
+Species1 <- ggplot(DF_Species) + geom_col(aes(x = Process, y=n), fill="#d8b365") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
+Species2 <- ggplot(DF_Species) + geom_col(aes(x = General_methods, y=n), fill="#d8b365") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +ylim(0,3)
+Species3 <- ggplot(DF_Species) + geom_col(aes(x = General_object, y=n), fill="#5ab4ac") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 0, vjust = 1, hjust=0.5)) 
+(Species1 + Species2)/Species3 + plot_annotation(tag_levels = 'A')
+```
 
+### Archaeology and Paleoecology	
 
+```{r Paleo, fig.height=7, fig.width=10, fig.cap="Articles classified as Archaeology and Paleoecology studies. A, study areas. B, Methodologies applied. C, study objects."}
+DF_Paleo <- DF %>%  group_by(Area.of.study2, Process, General_methods, General_object) %>% summarise(n = n()) %>% ungroup() %>%
+  dplyr::filter(Area.of.study2== "Archaeology and Paleoecology") %>% mutate(Process= str_wrap(Process, 20)) %>% mutate(General_methods= str_wrap(General_methods, 15)) 
+  
+Paleo1 <- ggplot(DF_Paleo) + geom_col(aes(x = Process, y=n), fill="#d8b365") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
+Paleo2 <- ggplot(DF_Paleo) + geom_col(aes(x = General_methods, y=n), fill="#d8b365") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +ylim(0,1)
+Paleo3 <- ggplot(DF_Paleo) + geom_col(aes(x = General_object, y=n), fill="#5ab4ac") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 0, vjust = 1, hjust=0.5)) 
+(Paleo1 + Paleo2)/Paleo3 + plot_annotation(tag_levels = 'A')
+```
 
 ## Conservation priorization -Climate change
 
@@ -423,6 +434,36 @@ A Multiscale Method for AssessingVegetation Baseline of Environmental [@Pauchard
 
 
 The regions that were most affected byfire (i.e., total area burned) duringthe MD were Maule, Bıo-Bıo, and Araucanıa (35–39°S) that concentrate>75% of forest plantations in Chile.Although both maximum temperatures and precipitation are drivers offire activity, a simple attributionanalysis indicates that the sustained rainfall deficit during 2010–2015 was the most critical factor in theenhancedfire activity. Future climate change predictions indicate more recurrent, intense, and temporallyextended droughts for central and south-central Chile. Under this scenario, land-use planning andfire andforest management strategies must promote a more diverse and lessflammable landscape mosaic limitinghigh load, homogenous, and continuous exotic plantations. 2010-2015 drought [@Gonzalez2018Mega]
+
+extras:
+
+Spectral characterrization and comparison among lakes in @delosRiosSpectral We show that annual runoffis highly sensitive to the relative area of FPto NF: ratios of FP to NF areas of 10%, 50% and 90% would lead to 3%,−18% and−40% changes inmean annual runoff, respectively.(Alvarez-Garreton et al 2019)
+.
+Chusquea fenology in @delaFuenteChusquea 
+Improvements for the study of volcanic activity [@AmoebaeTephra]
+Steam radious of F. cupressoides and the determination of environmental variables that affect its growth... with projections in climate change [@Stem_F]
+SUcculence in rain forest [@GodoySucculence]
+Key results – We show that leaves from sun conditions, the environment with higher water demand, have lower SLA (specific leaf area), thicker epidermis and store more water due to a thicker spongy parenchyma, than leaves from shade conditions. Conclusions  –  We  found  high  phenotypic  variation  in  S.  repens at intraspecific level in response to contrasting environmental conditions. This variation reflects a two-fold strategy common in epiphytes: increase water storage and reduce water loss. Furthermore, it suggests that leaf succulence has an adaptive value even in a temperate cold rainforest. We discuss that the occurrence of succulence on a cold rainforest might be explained by a combination of ecological, biogeographic and phylogenetic factors.
+
+macropytes  and  riparian  assemblages  are  not  random,  that means  that  the  regulator  factors  are  deterministic. 
+
+They reconstructed stand development on sites affected by these disturbances (complex mosaic of disturbance patterns, including the effects of the strong 1960 earthquake as well as fire and wind disturbance), and compared these patterns with the structure of old-growth forests along an elevation gradient from species-rich montane rain forest to mono-typic subalpine Nothofagusforests
+
+.
+Turism and peoples movement in @SozaAmigoTurism
+
+conection with PNP with thre cities valdivia, Osorno y Puerto Montt (154.716, 147.826, and 220.143 of urban population respectibly, according to 2017 Census, Chile )
+The results show that the chang-es in the economic structure had improve the main sectors of the centers, weakening the potential development of the Park. Especially the lacks of connectivity development and the small supply of good and services of the Park are the main constraint that arise from the analysis to increase the number and length of visits. 
+
+
+Social actors in AANP and LLNR buffer in @mardones_social
+
+The study was focused in the buffer zone 
+El estudio combina el análisis cualitativo del mapeo de actores (MDA) con el mé-todo cuantitativo del análisis de redes sociales (ARS).
+La inves-tigación utiliza una aproximación sociométrica al análisis de redes sociales, el cual se refiere al estudio de las propiedades estructurales de una red, tales como densidad y cohesión (Marín, Gelcich, Castilla, & Berkes, 2012). 
+Social studies mention haigh fragmentations of social network according to economic sectors (agriculture, artisal fisheries, turism, among others ). 
+Low participation and separation from the protected area which has not incorporated the community 
+
 
 
 
