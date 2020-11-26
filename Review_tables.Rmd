@@ -12,50 +12,38 @@ library(kableExtra)
 
 ```
 
-
 ```{r}
 DF <- read_csv("WebScience_Ref.csv")
 colnames(DF) <- make.names(colnames(DF))
 ```
 
 ```{r}
-DF_object <- DF %>%  group_by(Study.object) %>% summarise(n = n()) %>% ungroup() %>% dplyr::filter(!is.na(Study.object))
-
-DF_object <- DF_object %>% 
+DF1 <- DF %>% 
   mutate(`General object` = case_when(
-    Study.object %in% c("Household combution","People", "Regional subdivision", "Urban areas")~"Humans",  
+    Study.object %in% c("Household combution","People",  "Urban areas")~"Humans",  
     
     Study.object %in% c("Aegorhinus",  "Bird species", "Craspedacusta", "Crustacean", "Dromiciops","Fishes","Herpetofauna", "Salmonids", "Liolaemus", "Wild boar", "Woodwasp")~"Animals",
     
-    Study.object %in% c("Aegorhinus", "Cyanobacteria","Craspedacusta","Didymosphenia",  "Lichen", "Protozoa")~"Algae, bacterias, and protozoa",
+    Study.object %in% c("Cyanobacteria","Didymosphenia",  "Lichen", "Protozoa")~"Other organims",
     
     Study.object %in% c("Aquatic plants", "Chusquea","Embothrium","Ferns" ,"Lichen", "Native vegetation", "Pollen", "Proteaceae", "Sarmienta" )~"Plants",
     
     Study.object %in% c("Austrocedrus","Coihue-Rauli-Tepa forest" ,"F. cupressoides", "Forest","Native forest", "Evergreen trees", "Nothofagus", "Coihue-Rauli-Tepa")~"Forest communities",
     
-    Study.object %in% c("Basins", "Groundwater Storage", "Lakes", "runoff", "Soil","Streams", "watershed")~"Geographic elements", 
+    Study.object %in% c("Basins", "Groundwater Storage", "Lakes", "runoff", "Soil","Streams", "watershed", "Regional subdivision")~"Geographic elements", 
     
     Study.object %in% c("Fires","Particulate matter","Precipitation", "Rock art")~"Physical conditions",
-    Study.object %in% c("Database records", "Spatial proyection")~"Data bases"
-    )) %>%
-  rename(`Study object`=Study.object, `No of articles`=n) %>% 
-  select(`General object`, `Study object`, `No of articles`) 
-
+    Study.object %in% c("Database records", "Spatial proyection", "Temperature records", "Fire database")~"Data bases"
+    ))
   
-
-kable(DF_object)
-                        
-
-
- # pack_rows(  index = c("Algae,\nbacterias,\nand protozoa" = 4,
-  #          "Animals"  = 11, 
-   #         "Data bases" = 2,
-    #         "Forest\ncommunities"= 7, 
-     #       "Geographic\nelements"= 7,            
-      #      "Humans"= 4,                          
-       #     "Physical\nconditions" =4,            
-        #     "Plants"=  8))
+ DF_objectTable <- DF1 %>%  
+  group_by(`General object`, Study.object) %>% summarise(n = n()) %>% ungroup() %>% dplyr::filter(!is.na(Study.object)) %>%
+  rename(`Study object`=Study.object, `No of articles`=n) %>% 
+  select(`General object`, `Study object`, `No of articles`)
 
 
+kable(DF_objectTable, booktabs = T, caption = "Study objects in detail", align = "l") %>% 
+  collapse_rows(columns = 1, latex_hline = "major", valign = "middle")
+  
 
 ```

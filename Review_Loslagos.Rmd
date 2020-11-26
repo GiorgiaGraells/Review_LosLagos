@@ -97,18 +97,15 @@ We focus our findings in Los Lagos región research and andean studies, leaving 
 
 2. General overview of results
 
-
+A total of  `r nrow(DF)` articles were selected in this review. From those `r (DF %>% dplyr::filter(Keywords.used=="Name of parks") %>% nrow())` articles were find from the three National Parks and `r (DF %>% dplyr::filter(Keywords.used =="Close area") %>%  nrow())` articles from searching nearby areas of them. 
 
 ```{r Years, fig.cap="Temporal distribution of articles according to keywords used in this review of literature", fig.width=8}
 Pub_year <-ggplot(DF) + geom_bar(aes(x = Publication.Year, fill=Keywords.used))+  labs(y="Number of articles", x="Publication year")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ scale_fill_manual(values = c('#d8b365','#5ab4ac'))
 Pub_year
 ```
 
-A total of  `r nrow(DF)` articles were selected in this review. From those `r (DF %>% dplyr::filter(Keywords.used=="Name of parks") %>% nrow())` articles were find from the three National Parks and `r (DF %>% dplyr::filter(Keywords.used =="Close area") %>%  nrow())` articles from searching nearby areas of them. 
-In general terms, number of articles have been increasing during the years, however there are a few years that clearly show a striking decrease in publications (Fig \@ref(fig:Years)). 
 
-
-
+In general terms, number of articles have been increasing during the years. However there are a few years, such as 2003, 2006, 2014, and 2020 that show a striking decrease in publications (Fig \@ref(fig:Years)). Studies in NP do not show a pattern during the years, only two picks in publications: in 2001 and 2015.
 
 
 
@@ -133,19 +130,20 @@ Location2
 
 
 From the articules carry out in the NP of interest, only `r (DF %>% dplyr::filter(Study.location == "PNP") %>% nrow())` articles were carry out in PNP, `r (DF %>% dplyr::filter(Study.location == "AANP") %>% nrow())` in AAPN and `r (DF %>% dplyr::filter(Study.location == "VPRNP") %>% nrow())` in VPRPN.
-Adjacents areas to NP comprehended a `r ((DF %>% dplyr::filter(Study.location %in%  c("Adjacent to PNP", "Adjacent to AANP", "Adjacent to VPRNP")) %>% nrow())/nrow(DF)*100) %>% round(2)` % of the studies. Most of the articles studied larger areas that comprises Los lagos Region and in particular some of these NP (`r (DF %>% dplyr::filter(Study.location %in% c("Los Lagos Region", "2 regions","3 regions", "4 regions", "5 regions", "More than 5 regions")) %>% nrow())`). 
+Adjacents areas to these three NP comprehended `r DF %>% dplyr::filter(Study.location %in%  c("Adjacent to PNP", "Adjacent to AANP", "Adjacent to VPRNP")) %>% nrow()` studies. Similar ecosystems, as those found in Andes of Los Ríos Region and Neuquén Province in Argentina, also showed high number of publications `r (DF %>% dplyr::filter(Study.location %in% c("Andes of Los Rios Region", "Neuquen, Argentina", "Argentinian andes")) %>% nrow())`. However, most of the articles (`r (DF %>% dplyr::filter(Study.location %in% c("Los Lagos Region", "2 regions","3 regions", "4 regions", "5 regions", "More than 5 regions")) %>% nrow())`) studied larger areas that comprises Los lagos Region and the three NP (Fig \@ref(fig:Locations)).
 
 
 
 ```{r Areas, fig.height=10, fig.width=8, fig.cap="Areas of study. A, study areas for all articles. B, study areas for articles focused in the three NP."}
-DF_Area <- DF %>% 
+DF <- DF %>% 
   mutate(Area.of.study2= case_when(Area.of.study %in% c("Arqueological","Paleoecology" )~"Archaeology and Paleoecology",
                                           Area.of.study %in% c("Climate","Environmental conditions", "Seismiology" )~ "Climate and environment",
                                           Area.of.study %in% c("Biogeography","Species", "Exotic species" )~ "Species and distribution",
                                           Area.of.study %in%  "Ecosystem functioning and services" ~ "Ecosystem func. & servic.",
                                           Area.of.study %in% "Freshwater biodiversity" ~ "Freshwater biodiversity",
                                           Area.of.study %in% "Hydrology" ~ "Hydrology",
-                                          Area.of.study %in% "Social-ecological" ~ "Social-ecology")) %>% 
+                                          Area.of.study %in% "Social-ecological" ~ "Social-ecology")) 
+DF_Area <- DF%>% 
   mutate(Area.of.study2= str_wrap(Area.of.study2, 15)) %>% 
   group_by(Area.of.study2) %>% summarise(n = n()) %>% ungroup() %>%
    dplyr::filter(!is.na(Area.of.study2))
@@ -171,8 +169,8 @@ p2 <- ggplot(DF_Area2) + geom_col(aes(x = fct_reorder(Area.of.study2, desc(n)), 
 p1/p2+ plot_annotation(tag_levels = 'A')
 ```
 
-According to study areas, almost half of the studies are focus on ecosystem functionning and services with `r (DF_Area %>% dplyr::filter(Area.of.study2=="Ecosystem functioning and services") %>% nrow())` articles. The rest of the studies does not exced the 20 articles, decresing in number are Climate and environmet, Hydrology, and freshwater biodiversity studies. The rest of the areas have less than 10 articles published (Fig \@ref(fig:Areas)).
-In addition, Ecosystem functionning and services has been studied in the three NP, however its proportion in PNP is notably higher than the other NP. This NP is the only one that shows several areas of study, even with only a few articles. In terms of area of study, Hydrology is the next area to be mention in NP with mention in AANP and PNP.
+According to study areas, half of the studies are focus on ecosystem functioning and services (`r ((((DF %>% dplyr::filter(Area.of.study=="Ecosystem functioning and services") %>% nrow()))/nrow(DF) )*100) %>% round(2)`%). The rest of the studies does not exceed the 20 articles each. They are in decreasing number: Climate and environment, Hydrology, and freshwater biodiversity studies. The rest of the areas have less than 10 articles published (Fig \@ref(fig:Areas)).
+In addition, Ecosystem functionning and services has been studied in the three NP, however its proportion in PNP is notably higher than the other NP. Additionally, PNP is the only NP that shows several areas of study, even with only a few articles. In terms of area of study, Hydrology is the next area with more studies in NP with mention in AANP and PNP.
 
 
 
@@ -188,10 +186,6 @@ DF <- DF %>%
     Methodology %in% c("Isotopes","Genetic analysis", "Reconstruction of mtDNA")~"Molecular analysis",
     Methodology %in% c("Review of literature")~"Review of literature"))
 
-#DF_Methodology <- DF %>%  group_by(Methodology, General_methods) %>% summarise(n = n()) %>% ungroup() %>% dplyr::filter(!is.na(Methodology)) %>% mutate(Methodology=fct_reorder(Methodology, -n)) %>% mutate(General_methods= str_wrap(General_methods, 13))
-
-#p1 <-ggplot(DF_Methodology, aes(x = fct_reorder(General_methods, n, .desc=TRUE), y = n, group = Methodology)) + geom_col(aes(fill=General_methods), position="dodge", color="black") + geom_text(aes(label =Methodology), size=4, position=position_dodge(0.9), angle=90,vjust=0.5, hjust=-0.04 ) + labs(y="Number of articles", x="Study locations")  + theme_classic()+ ylim(c(0,66))+theme(legend.position = "none")+ scale_fill_brewer(palette = "Dark2") + theme(text=element_text(size=18,  family="Times"), axis.text.x = element_text(angle = 90, vjust = 1, hjust=1))
-#p1
 DF_Methodology2 <- DF %>%  group_by(General_methods) %>% summarise(n = n()) %>% ungroup() %>% dplyr::filter(!is.na(General_methods)) %>% mutate(General_methods=fct_reorder(General_methods, -n)) %>% mutate(General_methods= str_wrap(General_methods, 10))
 
 p2 <-ggplot(DF_Methodology2, aes(x = fct_reorder(General_methods, n, .desc=TRUE), y = n)) + geom_col(position="dodge", fill="#d8b365") + labs(y="Number of articles", x="Study methods")  + theme_classic()+ ylim(c(0,35))+theme(legend.position = "none") + theme(text=element_text(size=18,  family="Times"), axis.text.x = element_text(angle = 0, vjust = 1, hjust=0.5)) 
@@ -201,27 +195,33 @@ p2
 
 ```
 
-Data collected from the field is abundant and represents a ` r (((DF %>% dplyr::filter(General_methods %in% c("Field survey", "Field collection", "Field experiment")) %>% nrow() )/nrow(DF) )*100) %>% round(2)` % of the studies. Among field collection, it highlights some studies were there is some collection of data through methods such as dendrochronology (`r DF %>% dplyr::filter(Methodology =="dendrochronology") %>% nrow()` articles) and electric fishing (`r DF %>% dplyr::filter(Methodology =="Electric fishing") %>% nrow()`),  (Fig \@ref(fig:Methods)).
-Modeling category and review of litereature included both 10 articles. Modeling category included correlational, multivariate , and spatially explicit models.
-Social methods that encompases communicational strategies, discussion articles, both quantitative and qualitative methods, surveys, and interviews comprehended only 9 articles.
-The less method used in this review is molecular analysis (only 3 articles), and included isotopes, genetic analysis, and reconstruction of mtDNA.
+Data collected from the field is abundant and represents a `r (((DF %>% dplyr::filter(General_methods %in% c("Field survey", "Field collection", "Field experiment")) %>% nrow())/nrow(DF))*100) %>% round(2)` % of the studies. Among field collection, it highlights some studies where there is some specific collection of data through methods such as dendrochronology (`r DF %>% dplyr::filter(Methodology =="dendrochronology") %>% nrow()` articles) or electric fishing (`r DF %>% dplyr::filter(Methodology =="Electric fishing") %>% nrow()`), (Fig \@ref(fig:Methods)).
+Modeling category included `r DF %>% dplyr::filter(General_methods == "Modeling") %>% nrow()` articles taking into account correlational, multivariate , and spatially explicit models.
+Review of literature was mention in `r DF %>% dplyr::filter(General_methods == "Review of literature") %>% nrow()` articles and social methods that encompases communicational strategies, discussion articles, both quantitative and qualitative methods, surveys, and interviews comprehended only in `r DF %>% dplyr::filter(General_methods == "Social methods") %>% nrow()`. 
+The least used method in this review is molecular analysis (only `r DF %>% dplyr::filter(General_methods == "Molecular analysis") %>% nrow()`), and included isotopes, genetic analysis, and reconstruction of mtDNA.
 
 
 
 ```{r Objects, fig.width=8}
-DF_object <- DF %>%  group_by(Study.object) %>% summarise(n = n()) %>% ungroup() %>% dplyr::filter(!is.na(Study.object)) 
-
-DF_object <- DF_object %>% 
+DF <- DF %>% 
   mutate(General_object = case_when(
-    Study.object %in% c("Household combution","People", "Regional subdivision", "Urban areas")~"Humans",  
+    Study.object %in% c("Household combution","People",  "Urban areas")~"Humans",  
+    
     Study.object %in% c("Aegorhinus",  "Bird species", "Craspedacusta", "Crustacean", "Dromiciops","Fishes","Herpetofauna", "Salmonids", "Liolaemus", "Wild boar", "Woodwasp")~"Animals",
-    Study.object %in% c("Aegorhinus", "Cyanobacteria","Craspedacusta","Didymosphenia",  "Lichen", "Protozoa")~"Algae, bacterias, and protozoa",
-    Study.object %in% c("Aquatic plants", "Chusquea","Embothrium","Ferns" ,"Lichen", "Native vegetation", "Pollen", "Proteaceae", "Sarmienta" )~ "Non-forestry plants",
+    
+    Study.object %in% c("Cyanobacteria","Didymosphenia",  "Lichen", "Protozoa")~"Other organims",
+    
+    Study.object %in% c("Aquatic plants", "Chusquea","Embothrium","Ferns" ,"Lichen", "Native vegetation", "Pollen", "Proteaceae", "Sarmienta" )~"Plants",
+    
     Study.object %in% c("Austrocedrus","Coihue-Rauli-Tepa forest" ,"F. cupressoides", "Forest","Native forest", "Evergreen trees", "Nothofagus", "Coihue-Rauli-Tepa")~"Forest communities",
-    Study.object %in% c("Basins", "Groundwater Storage", "Lakes", "runoff", "Soil","Streams", "watershed")~"Geographic elements", 
+    
+    Study.object %in% c("Basins", "Groundwater Storage", "Lakes", "runoff", "Soil","Streams", "watershed", "Regional subdivision")~"Geographic elements", 
+    
     Study.object %in% c("Fires","Particulate matter","Precipitation", "Rock art")~"Physical conditions",
-    Study.object %in% c("Database records", "Spatial proyection")~"Data bases")) %>%
- mutate(General_object= str_wrap(General_object, 8))
+    Study.object %in% c("Database records", "Spatial proyection", "Temperature records", "Fire database")~"Data base"))
+
+DF_object <- DF %>%  group_by(General_object, Study.object) %>% summarise(n = n()) %>% ungroup()   %>%
+    mutate(General_object= str_wrap(General_object, 8)) %>% dplyr::filter(!is.na(Study.object))  
 
 p1 <-ggplot(DF_object, aes(x = fct_reorder(General_object, n, .desc=TRUE), y = n, group = Study.object)) + geom_col(aes(fill=General_object), position="stack") + #geom_text(aes(label =Study.object), size=4, position=position_dodge(0.9), angle=90,vjust=0.5, hjust=-0.04 ) +
 labs(y="Number of articles", x="Study object")  + theme_classic()+ ylim(c(0,45))+theme(legend.position = "none")+ scale_fill_brewer(palette = "Dark2") + theme(text=element_text(size=18,  family="Times"), axis.text.x = element_text(angle =0 , vjust = 1, hjust=0.5))+
@@ -231,86 +231,98 @@ p1
 
 ```
 
-Living elements are the most frecuent object of study (). From those, most of the studies are centred in forest communities, where **xx** articles that studies Nothofagus (**xx** articles) and Native forest (**xx** articles) are the mayority. 
-Human elements studied only represent **x**% of the total of research. This included objects such as people (), urban areas (), and specific interest of the area as household combustion studies.
-(Fig \@ref(fig:Objects) and Table 1)
+Living elements from nature are the most frequent object of study in this review (`r (DF %>% dplyr::filter(General_object%in% c("Animals","Algae, bacterias, and protozoa","Plants", "Forest communities"))%>%  nrow())/nrow(DF)*100 ` %) (Fig \@ref(fig:Objects)). From those, most of the studies are centred in forest communities (`r DF %>% dplyr::filter(General_object=="Forest communities")%>%  nrow()` articles), where articles that studies Nothofagus (20) and Native forest (15) are the mayority (Table 1).
 
+Studies in species and communities are mention in three groups: 1. animal with a `r (DF %>% dplyr::filter(General_object == "Animals")%>%  nrow())/nrow(DF)*100`% of the articles, 2. plants with a `r (DF %>% dplyr::filter(General_object == "Plants")%>%  nrow())/nrow(DF)*100`%  and 3. other organisms with a `r (DF %>% dplyr::filter(General_object == "Animals")%>%  nrow())/nrow(DF)*100`% 
 
+Human elements studied only represent `r (DF %>% dplyr::filter(General_object == "Humans")%>%  nrow())/nrow(DF)*100 `% of the total of research. This included studies in people (9) and specific interests such as household combustion, and urban areas (only 2 articles)
 
-4. Specific/key results in details
+Geographic objects of study are centered in hydrological elements such as basins, watersheed, basins, groundwater storage, runoff, and streams (14 of 16 artciles), most of them studied lakes (8 articles).
+Physiscal conditions reunited study objects in a variety from envvironmental conditions sucha as precipitation and fire, passing throght particlar matter and rock art.
+  
 
+## Key components
 
-## Hydrology
-
+### Hydrology
 
 
 ```{r Hydrology, fig.height=7, fig.width=10, fig.cap="Articles classified as Hydrological studies. A, study areas. B, Methodologies applied. C, study objects."}
-DF_Hydro <- DF %>%  group_by(Area.of.study, Process, General_methods, Study.object) %>% summarise(n = n()) %>% ungroup() %>%
-  dplyr::filter(Area.of.study== "Hydrology")
-#%>% mutate(Area.of.study= str_wrap(Area.of.study, 24)) %>% dplyr::filter(!is.na(Area.of.study))
+DF_Hydro <- DF %>%  group_by(Area.of.study2, Process, General_methods, General_object) %>% summarise(n = n()) %>% ungroup() %>%
+  dplyr::filter(Area.of.study2== "Hydrology") #%>% dplyr::filter(!is.na(General_methods))
 
 Hydro1 <- ggplot(DF_Hydro) + geom_col(aes(x = Process, y=n), fill="#d8b365") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
 Hydro2 <- ggplot(DF_Hydro) + geom_col(aes(x = General_methods, y=n), fill="#d8b365") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
-Hydro3 <- ggplot(DF_Hydro) + geom_col(aes(x = Study.object, y=n), fill="#5ab4ac") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 0, vjust = 1, hjust=0.5)) 
+Hydro3 <- ggplot(DF_Hydro) + geom_col(aes(x = General_object, y=n), fill="#5ab4ac") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 0, vjust = 1, hjust=0.5)) + ylim(c(0,8))
 (Hydro1 + Hydro2)/Hydro3 + plot_annotation(tag_levels = 'A')
 ```
 
-From the total of articles centered on hydrology, (Fig \@ref(fig:Hydrology)
+From the total of articles focused on hydrology (Fig \@ref(fig:Hydrology)), most of the processes studied are related to water flows (flow prediction, infiltration, and runoff with a total of 5 articles) and landscape (forest characterization, LULC and topography with 4 articles).
+Data from the field (including both field collection and experiments) reaches 5 articles, same as modeling as a methodological resources.
+In terms of objects of study, they are mostly greographic elements (8 articles), where half of them studied lakes. Physical conditions where anly mentionedd in 3 articles, all of them studied precipitations.
 
-Spectral characterrization and comparison among lakes in @delosRiosSpectral
-We show that annual runoffis highly sensitive to the relative area of FPto NF: ratios of FP to NF areas of 10%, 50% and 90% would lead to 3%,−18% and−40% changes inmean annual runoff, respectively.(Alvarez-Garreton et al 2019)
+**Spectral characterrization and comparison among lakes in @delosRiosSpectral We show that annual runoffis highly sensitive to the relative area of FPto NF: ratios of FP to NF areas of 10%, 50% and 90% would lead to 3%,−18% and−40% changes inmean annual runoff, respectively.(Alvarez-Garreton et al 2019)**
 
 
-
-## Ecosystem functioning and services
-
-Field collection methods registered in ecosystem functioning and services included activities such as dendrochronological samples, 
-Field surveys methods area a lot
-Field experiment methods included seedling and transplant experiments.
-
+### Ecosystem functioning and services
 
 
 ```{r Ecosys, fig.height=7, fig.width=10, fig.width=9, fig.cap="Articles classified as Ecosystem functioning and services studies. A, study areas. B, Methodologies applied. C, study objects."}
-DF_Ecosys <- DF %>%  group_by(Area.of.study, Process, General_methods, Study.object) %>% summarise(n = n()) %>% ungroup() %>%
-  dplyr::filter(Area.of.study== "Ecosystem functioning and services")
-#%>% mutate(Area.of.study= str_wrap(Area.of.study, 24)) %>% dplyr::filter(!is.na(Area.of.study))
+DF_Ecosys <- DF %>%  group_by(Area.of.study2, Process, General_methods, General_object) %>% summarise(n = n()) %>% ungroup() %>%
+  dplyr::filter(Area.of.study2== "Ecosystem func. & servic.") %>% mutate(General_object= str_wrap(General_object,10)) 
+#%>% dplyr::filter(!is.na(Area.of.study))
 
 Ecosys1 <- ggplot(DF_Ecosys) + geom_col(aes(x = Process, y=n), fill="#d8b365") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
 Ecosys2 <- ggplot(DF_Ecosys) + geom_col(aes(x = General_methods, y=n), fill="#d8b365") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
-Ecosys3 <- ggplot(DF_Ecosys) + geom_col(aes(x = Study.object, y=n), fill="#5ab4ac") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
+Ecosys3 <- ggplot(DF_Ecosys) + geom_col(aes(x = General_object, y=n), fill="#5ab4ac") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 0, vjust = 1, hjust=0.5)) 
 (Ecosys1 + Ecosys2)/Ecosys3 + plot_annotation(tag_levels = 'A')
 ```
 
+Ecosystem functioning and services are very diverse in processes studied and aspects related to growth (21 articles), regeneration (9 articles), and succession (6 articles) were the most frecuent to find. In terms of methods used, most of the data comes from the field (90%), being the field survey the most adopted by researchers (25 articles), second field collection with 15 articles and third field experiment with 14 articles.
+Study objects in this area are mostly related to forest communities (40 articles). From those, higlights nothofagus forests and native forest (20 and 15 articles, respetibly). 
+
 Chusquea fenology in @delaFuenteChusquea 
-El área de estudio se ubica en el sector de Antillanca (40º78’S y 72º22’O,
-
 Improvements for the study of volcanic activity [@AmoebaeTephra]
-
 Steam radious of F. cupressoides and the determination of environmental variables that affect its growth... with projections in climate change [@Stem_F]
-
 SUcculence in rain forest [@GodoySucculence]
 Key results – We show that leaves from sun conditions, the environment with higher water demand, have lower SLA (specific leaf area), thicker epidermis and store more water due to a thicker spongy parenchyma, than leaves from shade conditions. Conclusions  –  We  found  high  phenotypic  variation  in  S.  repens at intraspecific level in response to contrasting environmental conditions. This variation reflects a two-fold strategy common in epiphytes: increase water storage and reduce water loss. Furthermore, it suggests that leaf succulence has an adaptive value even in a temperate cold rainforest. We discuss that the occurrence of succulence on a cold rainforest might be explained by a combination of ecological, biogeographic and phylogenetic factors.
 
 macropytes  and  riparian  assemblages  are  not  random,  that means  that  the  regulator  factors  are  deterministic. 
 
-
 They reconstructed stand development on sites affected by these disturbances (complex mosaic of disturbance patterns, including the effects of the strong 1960 earthquake as well as fire and wind disturbance), and compared these patterns with the structure of old-growth forests along an elevation gradient from species-rich montane rain forest to mono-typic subalpine Nothofagusforests
 
+### Freshwater biodiversity
 
-## Social-ecological
-Socio-ecological research included quantitative and qualitative social methods which includes people's surveys, interviews and articles of discission based on etnography.
+```{r Fresh, fig.height=7, fig.width=10, fig.cap="Articles classified as Freshwater biodiversity studies. A, study areas. B, Methodologies applied. C, study objects."}
+DF_Fresh <- DF %>%  group_by(Area.of.study2, Process, General_methods, General_object) %>% summarise(n = n()) %>% ungroup() %>%
+  dplyr::filter(Area.of.study2== "Freshwater biodiversity") %>% mutate(Process= str_wrap(Process, 20))
+# %>% dplyr::filter(!is.na(Area.of.study))
+
+Fresh1 <- ggplot(DF_Fresh) + geom_col(aes(x = Process, y=n), fill="#d8b365") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
+Fresh2 <- ggplot(DF_Fresh) + geom_col(aes(x = General_methods, y=n), fill="#d8b365") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
+Fresh3 <- ggplot(DF_Fresh) + geom_col(aes(x = General_object, y=n), fill="#5ab4ac") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 0, vjust = 1, hjust=0.5)) 
+(Fresh1 + Fresh2)/Fresh3 + plot_annotation(tag_levels = 'A')
+```
+Freshwater biodiversity studies focuses mostly in invasion processes (4 articles). Additionally, field collection is the most registered method used (6 articles), this category includes particular activities such as electric fishing and sampling stations. 
+Object of studies are centred in living orgganisms with a 90% of the articles, among them most of the articles studied animals (5 articles, mostly fishes), and other organisms (3 articles, including cyanobacterias, didymosphenia, and protozoa).
+
+
+
+### Social-ecological
 
 
 ```{r Social, fig.height=7, fig.width=10, fig.cap="Articles classified as Social-ecological studies. A, study areas. B, Methodologies applied. C, study objects."}
-DF_Social <- DF %>%  group_by(Area.of.study, Process, General_methods, Study.object) %>% summarise(n = n()) %>% ungroup() %>%
-  dplyr::filter(Area.of.study== "Social-ecological")
+DF_Social <- DF %>%  group_by(Area.of.study2, Process, General_methods, General_object) %>% summarise(n = n()) %>% ungroup() %>%
+  dplyr::filter(Area.of.study2== "Social-ecology") %>% mutate(Process= str_wrap(Process, 20)) %>% mutate(General_methods= str_wrap(General_methods, 15)) 
+  
 #%>% mutate(Area.of.study= str_wrap(Area.of.study, 24)) %>% dplyr::filter(!is.na(Area.of.study))
 
 Social1 <- ggplot(DF_Social) + geom_col(aes(x = Process, y=n), fill="#d8b365") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
 Social2 <- ggplot(DF_Social) + geom_col(aes(x = General_methods, y=n), fill="#d8b365") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
-Social3 <- ggplot(DF_Social) + geom_col(aes(x = Study.object, y=n), fill="#5ab4ac") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 0, vjust = 1, hjust=0.5)) 
+Social3 <- ggplot(DF_Social) + geom_col(aes(x = General_object, y=n), fill="#5ab4ac") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 0, vjust = 1, hjust=0.5)) 
 (Social1 + Social2)/Social3 + plot_annotation(tag_levels = 'A')
 ```
+
+Socio-ecological research included quantitative and qualitative social methods which includes people's surveys, interviews and articles of discission based on etnography.
 
 Turism and peoples movement in @SozaAmigoTurism
 
@@ -326,21 +338,6 @@ La inves-tigación utiliza una aproximación sociométrica al análisis de redes
 Social studies mention haigh fragmentations of social network according to economic sectors (agriculture, artisal fisheries, turism, among others ). 
 Low participation and separation from the protected area which has not incorporated the community 
 
-
-## Freshwater biodiversity
-
-Field collection methods registered in freshwater biodiversity included activities such as electric fishing and sampling stations.
-
-```{r Fresh, fig.height=7, fig.width=10, fig.cap="Articles classified as Freshwater biodiversity studies. A, study areas. B, Methodologies applied. C, study objects."}
-DF_Fresh <- DF %>%  group_by(Area.of.study, Process, General_methods, Study.object) %>% summarise(n = n()) %>% ungroup() %>%
-  dplyr::filter(Area.of.study== "Freshwater biodiversity")
-#%>% mutate(Area.of.study= str_wrap(Area.of.study, 24)) %>% dplyr::filter(!is.na(Area.of.study))
-
-Fresh1 <- ggplot(DF_Fresh) + geom_col(aes(x = Process, y=n), fill="#d8b365") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
-Fresh2 <- ggplot(DF_Fresh) + geom_col(aes(x = General_methods, y=n), fill="#d8b365") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
-Fresh3 <- ggplot(DF_Fresh) + geom_col(aes(x = Study.object, y=n), fill="#5ab4ac") +labs(y="Number of articles", x=" ")  + theme_classic()+   theme(text=element_text(size=18,  family="Times"))+ theme(axis.text.x = element_text(angle = 0, vjust = 1, hjust=0.5)) 
-(Fresh1 + Fresh2)/Fresh3 + plot_annotation(tag_levels = 'A')
-```
 
 
 ## Conservation priorization -Climate change
@@ -425,7 +422,7 @@ Comparative morphology of annual shoots in seedlings of five Nothofagus species 
 A Multiscale Method for AssessingVegetation Baseline of Environmental [@PauchardMultiscale]
 
 
-
+The regions that were most affected byfire (i.e., total area burned) duringthe MD were Maule, Bıo-Bıo, and Araucanıa (35–39°S) that concentrate>75% of forest plantations in Chile.Although both maximum temperatures and precipitation are drivers offire activity, a simple attributionanalysis indicates that the sustained rainfall deficit during 2010–2015 was the most critical factor in theenhancedfire activity. Future climate change predictions indicate more recurrent, intense, and temporallyextended droughts for central and south-central Chile. Under this scenario, land-use planning andfire andforest management strategies must promote a more diverse and lessflammable landscape mosaic limitinghigh load, homogenous, and continuous exotic plantations. 2010-2015 drought [@Gonzalez2018Mega]
 
 
 
