@@ -442,7 +442,7 @@ Future climate change predictions indicate more recurrent, intense, and temporal
 extras:
 
 Spectral characterization and comparison among lakes in @delosRiosSpectral We show that annual runoffis highly sensitive to the relative area of FPto NF: ratios of FP to NF areas of 10%, 50% and 90% would lead to 3%,18% and 40% changes inmean annual runoff, respectively.(Alvarez-Garreton et al 2019)
-.
+
 Improvements for the study of volcanic activity [@AmoebaeTephra]
 Steam radious of F. cupressoides and the determination of environmental variables that affect its growth... with projections in climate change [@Stem_F]
 SUcculence in rain forest [@GodoySucculence]
