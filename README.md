@@ -3,21 +3,25 @@ Revision Sistematica Los Lagos
 
 ### Systematic review
 
-Seleccion de los articulos realizados en los tres PN Seleccion
-pendiente: articulos realizados en la Region de los Lagos
+Revision bibliografica de los articulos de ecologia realizados en tres
+parques nacionales en la region de Los Lagos:
 
-#### WebScience\_Rev
+  - Puyehue NP
 
-Tiene la información de los articulos seleccionados del web of knowledge
-(exportación desdde la web) mas las siguientes clasificaciones:
+  - Vicente Perez Rozales NP
 
-  - Area Estudio (PN)
+  - Alerce Andino NP
 
-  - Objetivo
+#### Archivos
 
-  - Metodologia (objeto de estudio)
+El manuscrito del review se llama **Review\_Loslagos.Rmd** . Posee
+figuras, tablas y el escrito. Para poder correr se debe contar con:
 
-#### Coordenadas\_loc
+  - **WebScience\_Ref.csv** que es la base de datos con los articulos
+    seleccionados y las clasificaciones realizadas.
 
-Se obtienen las coordenadas de todos los sitios mencionados en los
-estudios
+  - **PACL\_LL.csv** que es la información de las areas protegidas de la
+    region de Los lagos, obtenidas de ProtectedWorld.
+
+  - **References.bib** que son las referencias obtenidas del Web of
+    Knowledge más las sacadas de scholar google tras armar la discusion.
