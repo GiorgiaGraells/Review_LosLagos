@@ -2,8 +2,8 @@
 title: "Review_Ms"
 author: "Giorgia Graells"
 output:
-  bookdown::word_document2:
-    reference_docx: "Para_Template.docx"
+  bookdown::pdf_document2:
+    toc: false
 bibliography: References.bib
 ---
 
@@ -12,6 +12,7 @@ knitr::opts_chunk$set(echo = FALSE, comment=FALSE, message=FALSE, warning=FALSE)
 library(tidyverse)
 library(patchwork)
 library(ggplot2)
+library(kableExtra)
 ```
 
 
@@ -32,48 +33,33 @@ This emphasizes not only that protected areas (PA) are one of the most effective
 This is why the last decades aspects such as economic limitations and the impact on local stakeholders are been taking into account in order to decrate news PA and not only its selection based in ecological knowledge [@borrini2004indigenous, Brown, 2002?].
 
 
-Sudamerica counts with more relative % of PA , that any other area in the world.
-In Chile, there are 211 PA in its extension, including 187 of them with national jurisdiction. There are only 24 PA international, incluiding two categories Ramsar Site, Wetland of International Importance and Biosphere Reserve, and UNESCO-MAB Biosphere Reserve. 
-In southern Chile, Los Lagos Region is named given this region has the largest proportion of lakes area in the country, with 52 lakes over 3Km2, and a total area of	2.850 Km2. It has a population of 828.708 (Censo 2017) and an extension of 48,583.60 Km2.
+Sudamerica counts with more relative % of PA , that any other area in the world. **(15.9%)**
+In Chile, there are 211 PA in its extensionFrom those, 187 have national jurisdiction and only 24 international. 
+In southern Chile, Los Lagos Region is named given this region has the largest proportion of lakes area in the country, with 52 lakes over 3 Km2, and a total area of	2.850 Km2. It has a population of 828.708 [@Censo2017] and an extension of 48,583.60 Km2.
 This region bases its economy in activities related to primary sectors: livestock, aquiculture and forestry industry [@BNC_LosLagos]. Even more, Los Lagos Region presents one of the bigest growth in fisheries an acuaculture growth in comparision with the rest of the country during the last 30 years [@Soto-alvaradoDesarrollo]. 
 
-Los Lagos Region has 21 PA that includes 37,529 Km2 of surface [@ProtectedAreas]. ojo dato
-An even when includes a large part of the territory and turims of nature is a growing activity (), there has been a disconection with local communities.
-This could be because from those 21 PA in the Region, `r LosLagos %>% dplyr::filter(DESIG %in% c("Monumento Natural", "Parque Nacional")) %>% nrow()` correspond to National parks and Natural Monuments which are IUCN categories that reinforce strict conservation (Brown, 2002). 
-Remoteness of PA can generate disconnection, given most of the PA are located in remote places, people from develped urban centers do not have, in most of the cases, nexux with the PA and their territory (Joppa & Pfaff, 2009). Or even a social phenomena, where cultural changes as a product of economic activities such as salmoniculture, where the dependency of international markets predominates, transform people in this region do not share a common notion of territory or a regional common agenda (Montecinos, 2009, p. 24)
+According to @ProtectedAreas, Los Lagos Region has 21 PA in 15.777 Km2 of surface.
+An even when includes a large part of the territory, there has been a disconection with local communities.
+This could be because from those 21 PA in the Region, `r LosLagos %>% dplyr::filter(DESIG %in% c("Monumento Natural", "Parque Nacional")) %>% nrow()` correspond to National Parks (NP) and Natural Monuments (NM) which are IUCN categories that reinforce strict conservation (Brown, 2002). 
+In addition to that, remoteness of PA can generate disconnection. Given most of the PA are located in remote places, people from develped urban centers do not have, in most of the cases, nexus with PA and their territory [@joppa2009high]
+Another factor could be a social phenomena, where cultural changes as a product of economic activities such as salmoniculture, where the dependency of international markets predominates, transform people in this region do not share a common notion of territory or a regional common agenda (Montecinos, 2009, p. 24)
 
+Among the PA in Los Lagos Region, there are three Andean National Parks: Puyehue National Park (PNP), Vicente Perez Rozales National Park (VPRNP), and Alerce Andino National Park (AANP). PNP, VPRNP, and AANP as all national PA in Chile are under the supervision and adminstration of the National Forestry Corporation CONAF). They count with management plans (2008, 2015, and 1997, respectibly), which provides a very carfull compilation of information. However, these documents have not been correctly updated and lack of the changes that have occurred in the last years. For example, between 1995 and 2016 native forests in this area have suffer important losses because of land use changes (mostly land modification to grassland and shrubs, and substitution). 
+The area presents an increment of vulnerability in front of climate change [@marquet2019biodiversidad]. 
 
-[Provide transition between the general problem area and the literature review]
-
-**Considering impacts of PA in local communities and the importance of the expansion of ecological knowledge to areas that resume the complexity of each PA in order to face specific and general perturbations (o considerando la configuracion de cada pa), should be a fundamental step in Chile to assure a correct management and projection of PA to the future.**
- 
-
-3. Locate the gap-describe the proble to address-present a prediction to be tested 
-
-[Provide brief overview of key research projects in this area]
-Among the PA in Los Lagos Region, there are three Andean National Parks: Puyehue National Park (PNP), Vicente Perez Rozales National Park (VPRNP), and Alerce Andino National Park (AANP). PNP, VPRNP, and AANP as all national PA in Chile are under the supervision and adminstration of the National Forestry Corporation CONAF). They count with management plans (2008, 2015, and 1997, respectibly), which provides a very carfull compilation of information. However, these documents have not been correctly updated and lack of the changes that have occurred in the last years. For example, between 1995-2016 native forests in this area have suffer important losses because of land use changes (mostly land modification to grassland and shrubs, and substitution). 
-The area presents an increment of vulnerability in front of climate change [@marquet2019biodiversidad]. Because of this, there is a need to incorporate different components of ecological knowledge as well the interaction with local communities in these PA in order to generet projections of climate chage to develop conservation plans to the future.
+Considering relations of PA and local communities, and the importance of the expansion of ecological knowledge to areas that resume the complexity of each PA in order to face specific perturbations or global problematics as climate change in the future, should be a fundamental step in Chile to assure a correct management and projection of PA to the future.
 This review revist the ecological literature carry out in these three protected areas and its surroundings in Los Lagos Region in order to generate a base line that allow to proyect scenarios of climate change to systematic conservation planning in PA.
-
-We made a systematic review of research in the Web of Knowledge database searching by the names of the three PA: PNP, VPRNP, and AANP; andby the greographical area of Southern Chile.
+We made a systematic review of research searching by the names of the three PA: PNP, VPRNP, and AANP; andby the greographical area of Southern Chile.
 Doing so, we were able to identified tendencies and gaps in research developed in these three National Parks. We could defined a vision on where to focus new studies that allow systematic conservation plans that includes information to deal with climate change and ensure the biological diversity in Southern Chile.
-
-incluir: possibility to generate a methodology to include climate Change into PAs planning, from their creation to their management and administration, assessing their value as well as their vulnerabilities at landscape scales
 
 
 # Methodology
 
-1. Overview-purpose of the work-give source of material/equipment used 
+In order to identify research developed in the focus area, a systematic review of literature was performed through the Web of Knowledge database. Information was categorized according to research areas presented in this project.
+Two eligibility criteria were performed: 1. including the name of the National Parks of interest, using keywords at topic level: "Puyehue National Park" or "Vicente Perez Rozales National Park" or "Alerce Andino National Park", and 2. Geographic areas surrounding the National Parks, using keywords at topic level: "South Central Chile" or "North Chilean Patagonia" or "Los Lagos Region". The period of the search included from 1975 until October 2020. Grey-literature was not incorporated in the selection.
 
-In order to identify research developed in the focus area, a systematic review of literature was performed through the Web of Science database. Information was categorized according to research areas presented in this project.
-Two eligibility criteria were performed: 1. including the name of the National Parks of interest, using keywords at topic level: "Puyehue National Park" or "Vicente Perez Rozales National Park" or "Alerce Andino National Park", and 2. Geographic areas surrounding the National Parks, using keywords at topic level: "South Central Chile" or "North Chilean Patagonia" or "Los Lagos Region". The period of the search included from 1975 until October 2020. Selection of articles followed prisma flow diagram. Grey-literature was not incorporated in the selection.
-
-2. Details about materials and methods- justify choices 
-
-[Provide details about what was done and used and shows that care was taken] 
 Articles selected were categorized by publication year, source title, keywords used, and categories created for the purpose of this review: key component, study location, methodology used, process involved, and study object.
-
-Key components categorised articles according to area of study. This classification included Archaeology & Paleoecology, Climate & environment (including studies in climate,environmental conditions, and seismiology), Ecosystem functioning & services, Freshwater biodiversity, Hydrology, Social-ecology, and Species & distribution (including biogeography,species, and exotic species).
+Key components categorised articles according to area of study. This classification included Archaeology & Paleoecology, Climate & environment (including studies in climate, environmental conditions, and seismiology), Ecosystem functioning & services, Freshwater biodiversity, Hydrology, Social-ecology, and Species & distribution (including biogeography, species description, and exotic species).
 
 Study location encompased categories such as the three National Parks of interest: AANP, PNP, and  VPRNP; adjacents areas to NP: Adjacent to AANP, Adjacent to PNP, Adjacent to VPRNP; similar ecosystems to NP:  Andes of Los Rios Region, Argentinian andes, and Neuquen in Argentina; Larger areas that comprise NP: Los Lagos Region, 2 regions, 3 regions, 4 regions,  5 regions, More than 5 regions; Global studies: Chile, Chile & Argentina; and Close urban centers: Valdivia
 
@@ -81,18 +67,18 @@ Methodology classified articles based in how data was collected and/or analysed.
 Methods included data from the field: field survey, field collection (similar a survey but with samples that need further processes to be analysed, such as dendrochronology or electric fishing), field experiment (that requieres modification to one or more conditions in a location, such as transplant or seedling experiments). 
 Other classifications were modeling (including data analysis such as simulations, correlatoinal and multivariate models, and spatial models), molecular analysis (reconstruction of mtDNA, isotopes, and genetic analysys), and reviews of literature.
 There is a category of social methods, that include both quantitative (suurveys an questtionaries) and qualitative (interviews and discussion articles).
+Proccess category makes reference to the question behind the articles and implies which is the mechanism studied (a list of of 47 options in Table  \@ref(tab:tabProcess).
 
-Proccess category makes reference to the question behind the articles and implies which is the mechanism studied and resummed a list of 47 options (Table x).  
 
-Study object classification was prepared based onf what is the minimun element studied in each article. This included categories such as 
-humans (household combution, people, and urban areas)
-animals (communities of birds, crustacean, fishes,and herpetofauna; species of aegorhinus, craspedacusta, dromiciops, liolaemus, wild boar, and woodwasp) 
-plants (aquatic plants, chusquea, embothrium, ferns, native vegetation, pollen, proteaceae, sarmienta),   
-other organims (such as cyanobacteria, didymosphenia,  lichens, and protozoa), and 
-forest communities (with focus in one species austrocedrus, F. cupressoides, and Nothofagus; or in more diverse environments as coihue-Rauli-Tepa, forest, native forest, and evergreen trees )
+```{r tabProcess}
+Process <- DF$Process %>% unique() %>% sort() 
+kable(Process, booktabs = T, caption = "Processes mentioned in studies")
+```
 
-Also included    
-geographic elements (basins, groundwater Storage, lakes, runoff, streams, watershed, and also soil and regional subdivision), physical conditions (fires, precipitation, particulate matter, rock art), and data bases.
+
+Study object classification was prepared based onf what is the minimun element studied in each article. This included living organisms such as humans (household combution, people, and urban areas), animals (communities of birds, crustacean, fishes,and herpetofauna; species of aegorhinus, craspedacusta, dromiciops, liolaemus, wild boar, and woodwasp), plants (aquatic plants, chusquea, embothrium, ferns, native vegetation, pollen, proteaceae, sarmienta), other organims (such as cyanobacteria, didymosphenia,  lichens, and protozoa), and a particular living category given its abundance of publications is forest communities (with focus in one species austrocedrus, F. cupressoides, and Nothofagus; or in more diverse environments as coihue-Rauli-Tepa, forest, native forest, and evergreen trees).
+
+Study objects also included non-living organisms, focusing in geographic elements (basins, groundwater Storage, lakes, runoff, streams, watershed, and also soil and regional subdivision), physical conditions (fires, precipitation, particulate matter, rock art), and data bases.
     
 
 
@@ -112,7 +98,7 @@ We focus our findings in Los Lagos región research and andean studies, leaving 
 
 1. Revisting the research aim/existing research
 
-2. General overview of results
+There is a large amount of research related to Southern Chile. Isi Web of Knowledge database identified 874 records that fitted keywords, of those 520 articles were screened, and  441 full-text articles were assessed for eligibility.
 
 A total of  `r nrow(DF)` articles were selected in this review. From those `r (DF %>% dplyr::filter(Keywords.used=="Name of parks") %>% nrow())` articles were find from the three National Parks and `r (DF %>% dplyr::filter(Keywords.used =="Close area") %>%  nrow())` articles from searching nearby areas of them. 
 
@@ -248,8 +234,38 @@ p1
 
 ```
 
-Living elements from nature are the most frequent object of study in this review (`r (DF %>% dplyr::filter(General_object%in% c("Animals","Algae, bacterias, and protozoa","Plants", "Forest communities"))%>%  nrow())/nrow(DF)*100 ` %) (Fig \@ref(fig:Objects)). From those, most of the studies are centred in forest communities (`r DF %>% dplyr::filter(General_object=="Forest communities")%>%  nrow()` articles), where articles that studies Nothofagus (20) and Native forest (15) are the mayority (Table 1).
+Living elements from nature are the most frequent object of study in this review (`r (DF %>% dplyr::filter(General_object%in% c("Animals","Algae, bacterias, and protozoa","Plants", "Forest communities"))%>%  nrow())/nrow(DF)*100 ` %) (Fig \@ref(fig:Objects)). From those, most of the studies are centred in forest communities (`r DF %>% dplyr::filter(General_object=="Forest communities")%>%  nrow()` articles), where articles that studies Nothofagus (20) and Native forest (15) are the mayority (Table \@ref(tab:GeneralObject)).
 
+```{r GeneralObject}
+DF1 <- DF %>% 
+  mutate(`General object` = case_when(
+    Study.object %in% c("Household combution","People",  "Urban areas")~"Humans",  
+    
+    Study.object %in% c("Aegorhinus",  "Bird species", "Craspedacusta", "Crustacean", "Dromiciops","Fishes","Herpetofauna", "Salmonids", "Liolaemus", "Wild boar", "Woodwasp")~"Animals",
+    
+    Study.object %in% c("Cyanobacteria","Didymosphenia",  "Lichen", "Protozoa")~"Other organims",
+    
+    Study.object %in% c("Aquatic plants", "Chusquea","Embothrium","Ferns" , "Native vegetation", "Pollen", "Proteaceae", "Sarmienta" )~"Plants",
+    
+    Study.object %in% c("Austrocedrus","Coihue-Rauli-Tepa forest" ,"F. cupressoides", "Forest","Native forest", "Evergreen trees", "Nothofagus", "Coihue-Rauli-Tepa")~"Forest communities",
+    
+    Study.object %in% c("Basins", "Groundwater Storage", "Lakes", "runoff", "Soil","Streams", "watershed", "Regional subdivision")~"Geographic elements", 
+    
+    Study.object %in% c("Fires","Particulate matter","Precipitation", "Rock art")~"Physical conditions",
+    Study.object %in% c("Database records", "Spatial proyection", "Temperature records", "Fire database")~"Data bases"
+    ))
+  
+ DF_objectTable <- DF1 %>%  
+  group_by(`General object`, Study.object) %>% summarise(n = n()) %>% ungroup() %>% dplyr::filter(!is.na(Study.object)) %>%
+  rename(`Study object`=Study.object, `No of articles`=n) %>% 
+  select(`General object`, `Study object`, `No of articles`)
+
+
+kable(DF_objectTable, booktabs = T, caption = "Study objects in detail", align = "l") %>% 
+  collapse_rows(columns = 1, latex_hline = "major", valign = "middle")
+  
+
+```
 Studies in species and communities are mention in three groups: 1. animal with a `r (DF %>% dplyr::filter(General_object == "Animals")%>%  nrow())/nrow(DF)*100`% of the articles, 2. plants with a `r (DF %>% dplyr::filter(General_object == "Plants")%>%  nrow())/nrow(DF)*100`%  and 3. other organisms with a `r (DF %>% dplyr::filter(General_object == "Animals")%>%  nrow())/nrow(DF)*100`% 
 
 Human elements studied only represent `r (DF %>% dplyr::filter(General_object == "Humans")%>%  nrow())/nrow(DF)*100 `% of the total of research. This included studies in people (9) and specific interests such as household combustion, and urban areas (only 2 articles)
@@ -370,86 +386,63 @@ Paleo3 <- ggplot(DF_Paleo) + geom_col(aes(x = General_object, y=n), fill="#5ab4a
 Species and distribution area focussed mostly in distribution of species, phylogeography ans genetic variability (67% of the articles). More than a half used data from the field and all of the studies found centred in animals. In contrats, archeaology and paleoecology area presented only two articles, one focused in iconography (rock art) and the other centred in past distributions of native forest.
 
 
-
 # Discussion 
 
-1. Revisting previous research- summarise 
-[Revisit previous research] 
-The area of study that includes the tree national parks has been modified by continuos natural events such as volcanic activity, with  volcanic centers such as Puyehue (2,240 m in PNP), Cordón Caulle (2,236 m; in PNP), Tronador (3,565 m; in VPRNP), Osorno (2,661 m; López-Escober et al., 1992; Petit-Breuilh, 1999) [@SternVolcanism], and earthquakes as Valdivia in 1960.  (https://www.nature.com/articles/s41467-018-05989-6)
+This review provides insight into in ecological studies carry out in three PA: PNP, VPRNP, and AANP, that allow to create a baseline of ecological knowledge. Doing so, we were able to identified tendencies and gaps in research developed in these area, in order gather the information needed to generate climate change projections and create systematic conservation plans that ensure the biological diversity in Southern Chile.
 
-
-[Revisit Introduction to recall specific weakness in methodology used in previous studies]
-no hay estudios en cambio climatico y se ncesesita saber que hay para poder preparse para el cambio climatico
-
-
-2. Mapping 
-[Revisit methodology used in this study] 
-Review of literature in 
-
-[Revisit and summarise the results] 
-Studies were focussed in ecosystems functioning and services with special developed in forestry aspects such as growth, sucession and regeneration, showing a bias in forestry economical potential of native forest.
-there is a gap in social-ecological studies that includes local comunities perceptions of national parks and their relationship in terms of interactions.
-
-[Show where and how the present work fits into the research “map” in this field]
+The review of literature based in the three PA and their surounded greographical areas in Southern Chile, allowed the classification of the study areas of interest and the analysis of tendencies. the results indicated that most of the studies were focussed in ecosystems functioning and services with special developed in forestry aspects such as growth, sucession and regeneration, showing a bias in forestry economical potential of native forest.
+There is a gap in social-ecological studies that includes local comunities perceptions of NP and their relationship in terms of interactions.
+Climate change have been mentioned, but mostly considering aspects of the past and related to local perturbations. This is becasuse the area of study has been continously modified by natural events such as volcanic activity, with  volcanic centers such as Puyehue (2,240 m in PNP), Cordón Caulle (2,236 m; in PNP), Tronador (3,565 m; in VPRNP), Osorno (2,661 m; adjacent to VPRNP) [@petit1999cronologia; @SternVolcanism], and earthquakes as Valdivia in 1960 [@melnick2018back]. 
 
 
 3. Achivements/contributions- refining implications 
 COSAS ENCONTRADAS EN EL REVIEW POR AREA: QUE SE HA HECHO Y LO BUENO DE ESO
 
+
 [Recall an aspect of the results that represents a postitive achievement or contribution of this work] 
-This review allow to recognize the studies carry out in these three national parks and the research in the area in theirs surroundings
+This review allow to recognize the studies carry out in these three NP and the research in the area in theirs surroundings. 
 
-[Focus in the meaning and implications of the achievements in this work]
 
-[Note if one of the achievement or contributions of the work is a novelty] 
+There is robust researcharea focused in ecosystem functioning and services. These studies are mostly centred in native forest, where Nothofagus regeneration dynamics is an important point of reference [@VEBLEN1979nothofagus, @Pollmann2004Nothofagus, @Soto2017nothofagus]. 
+The increment of this studies are important given the development of silviculture in southern Chile. 
+Although high intensive silviculture is centred in plantations of exotic species such as Pinus radiata and Eucalyptus. New approaches are considering changes in silviculture and landscape management of forest plantations, including recovery of native forest patches [@salas2016forest] and there is also growing silviculture activity applied to natural forests.
 
-[Describe implications of the results, including possible applications]
-These knowledge allow to generate a baseline to work in the future
 
-4. Limitations-current and future work-applications 
-COSAS QUE FALTAN EN CADA AREA Y QUE LIMITA ESA FALTA DE CONOCIMINETO
-TOMANDO EN CONSIDDERACION ESTA INFORMACION SE PUEDE ARMAR UNA PROYECCION MAS CABAL DE LOS EFECTOS DEL CAMBIO CLIMATICO
+However, there is a gap in fire studies even when the region present an important area in forestry plantations.
+This generate a gap in what is releveant to the area of study because the structure and composition of forest plantations promotes more fires than native forest of Nothofagus [@Gonzalez2018Mega; McWethy2018fire]. Fire events in similar areas (low access, topography, and climate) have covered large areas and affected native ecosystems. Fires in Parque Nacional Torres del Paine en 2012 (cerca de 17.000 ha), Reserva Nacional China Muerta de 2015 (cerca de 3.700 ha) y Colonia Sur, Cochrane en 2019 (cerca de 15.000 ha) were registerd as very difficult to control [@Arroyo2019COP]. 
+
+The regions that were most affected by fire (i.e., total area burned) during the MD were Maule, Biobio, and Araucania (3539°S) that concentrate 75% of forest plantations in Chile. Although both maximum temperatures and precipitation are drivers of fire activity, a simple attribution analysis indicates that the sustained rainfall deficit during 2010 and 2015 was the most critical factor in the enhanced fire activity [@Gonzalez2018Mega]. 
+
+
 
 [Describe limitations which should direct future research] 
-Socio-ecological studies should contemplate that there is a sentiment described in local sociology studies describing provinces in this region do not share a common notion of territory or a regional common agenda. This has been explain as cultural changes as a product of economic activities such as salmoniculture, where the dependency of international markets predominates (Montecinos, 2009, p.24).
-
+from the little research found in social-ecological area, there are some characterizations of local actors and their relation with NP. 
+ @SozaAmigoTurism studied the movement of people between urban centers and PNP. Here, researchers evaluated the
+conection with PNP with three nearby cities: Valdivia, Osorno, and Puerto Montt (154.716, 147.826, and 220.143 of urban population respectibly, according to @Censo2017).
+The results show that the changes in the economic structure had improve the main sectors of the centers, weakening the potential development of the Park. Especially the lacks of connectivity development and the small supply of good and services of the NP are the main constraint that arise from the analysis to increase the number and length of visits. 
+A map of local actors developed by @mardones_social and their network prooerties showed high fragmentation of social network according to economic sectors (agriculture, artisal fisheries, turism, among others) and low participation and separation from the protected area which has not incorporated the community.
+Both studies seems to demonstrate a sentiment described in local sociology, that provinces in this region do not share a common notion of territory or a regional common agenda. This has been explain as cultural changes as a product of economic activities such as salmoniculture, where the dependency of international markets predominates (Montecinos, 2009, p.24). The lack of participation is also a reflexion of a bad distribution of equity. 
 
 [Suggest a specific area to be addressed in future work]
+**This refers to the fair distribution of benefits of PA [@zafra2019progress] and is one of the AICHI targets for **
 
 
-Latitudinal patterns in plant biodiversity [@BanisterLatitudinal] shows 
-at 40°S there are more than 800 species, based on a bibliographic review of existing floristic studies at 2012.
-
-There is a gap in fire studies even when the region present an important area in forestry plantations.
-this is important because the structure and composistion of forest plantations promotes more fires than native forest of Nothofagus (Gómez-González et al., 2019; McWethy et al., 2018).
-
-Fire events in similar areas (low access, topography, and climate) have covered large areas and affected native ecosystems. Fires in Parque Nacional Torres del Paine en 2012 (cerca de 17.000 ha), Reserva Nacional China Muerta de 2015 (cerca de 3.700 ha) y Colonia Sur, Cochrane en 2019 (cerca de 15.000 ha) were very difficult to control [@Arroyo2019COP]
-
-
-
+In order to fulfill the needs in ecological knowleddge, there sould be more research in areas such as: freshwater diversity, hidrology, and ...
+Doing that we'll be allowed not only to comprehend biodiversity and ecosystems today, also to gather information that allows projections to be made in order to face climate change and
 
 There are just a few studies in hydrology in the region, although there are some more characterization including the valdivian forest [@LittleWatershed].
-
 freshwater: we did not consider dideases in in chilean salmon industry [@RozasAmoebic]
-
-Although we contemplate andean studies here, volcanic activity could create microhabitats more similar to areas in another region or with another climate ???
-Remarkably consistent thermal state [@RotmanThermal]
-
-plantas de embotrium y actividad volcanica [@DelgadoEmbothrium]
-plant invasion in Climatic and socio-economic factors determine thelevel of invasion by alien plants in Chile [@FuentesInvasion]
-
-Comparative morphology of annual shoots in seedlings of five Nothofagus species from Argentinian patagonia [@RaffaeleMorphology]
-
+Latitudinal patterns in plant biodiversity [@BanisterLatitudinal] shows 
+at 40°S there are more than 800 species, based on a bibliographic review of existing floristic studies at 2012.
 A Multiscale Method for AssessingVegetation Baseline of Environmental [@PauchardMultiscale]
+plant invasion in Climatic and socio-economic factors determine the level of invasion by alien plants in Chile [@FuentesInvasion]
 
-
-The regions that were most affected byfire (i.e., total area burned) duringthe MD were Maule, Bıo-Bıo, and Araucanıa (35–39°S) that concentrate>75% of forest plantations in Chile.Although both maximum temperatures and precipitation are drivers offire activity, a simple attributionanalysis indicates that the sustained rainfall deficit during 2010–2015 was the most critical factor in theenhancedfire activity. Future climate change predictions indicate more recurrent, intense, and temporallyextended droughts for central and south-central Chile. Under this scenario, land-use planning andfire andforest management strategies must promote a more diverse and lessflammable landscape mosaic limitinghigh load, homogenous, and continuous exotic plantations. 2010-2015 drought [@Gonzalez2018Mega]
+Future climate change predictions indicate more recurrent, intense, and temporally extended droughts for central and southcentral Chile. Under this scenario, landuse planning andfire and forest management strategies must promote a more diverse and less flammable landscape mosaic limiting high load, homogenous, and continuous exotic plantations [@Gonzalez2018Mega]
 
 extras:
 
-Spectral characterrization and comparison among lakes in @delosRiosSpectral We show that annual runoffis highly sensitive to the relative area of FPto NF: ratios of FP to NF areas of 10%, 50% and 90% would lead to 3%,−18% and−40% changes inmean annual runoff, respectively.(Alvarez-Garreton et al 2019)
+Spectral characterization and comparison among lakes in @delosRiosSpectral We show that annual runoffis highly sensitive to the relative area of FPto NF: ratios of FP to NF areas of 10%, 50% and 90% would lead to 3%,18% and 40% changes inmean annual runoff, respectively.(Alvarez-Garreton et al 2019)
 .
-Chusquea fenology in @delaFuenteChusquea 
 Improvements for the study of volcanic activity [@AmoebaeTephra]
 Steam radious of F. cupressoides and the determination of environmental variables that affect its growth... with projections in climate change [@Stem_F]
 SUcculence in rain forest [@GodoySucculence]
@@ -457,22 +450,9 @@ Key results – We show that leaves from sun conditions, the environment with hi
 
 macropytes  and  riparian  assemblages  are  not  random,  that means  that  the  regulator  factors  are  deterministic. 
 
-They reconstructed stand development on sites affected by these disturbances (complex mosaic of disturbance patterns, including the effects of the strong 1960 earthquake as well as fire and wind disturbance), and compared these patterns with the structure of old-growth forests along an elevation gradient from species-rich montane rain forest to mono-typic subalpine Nothofagusforests
+They reconstructed stand development on sites affected by these disturbances (complex mosaic of disturbance patterns, including the effects of the strong 1960 earthquake as well as fire and wind disturbance), and compared these patterns with the structure of oldgrowth forests along an elevation gradient from species-rich montane rain forest to mono-typic subalpine Nothofagusforests
 
 .
-Turism and peoples movement in @SozaAmigoTurism
-
-conection with PNP with thre cities valdivia, Osorno y Puerto Montt (154.716, 147.826, and 220.143 of urban population respectibly, according to 2017 Census, Chile )
-The results show that the chang-es in the economic structure had improve the main sectors of the centers, weakening the potential development of the Park. Especially the lacks of connectivity development and the small supply of good and services of the Park are the main constraint that arise from the analysis to increase the number and length of visits. 
-
-
-Social actors in AANP and LLNR buffer in @mardones_social
-
-The study was focused in the buffer zone 
-El estudio combina el análisis cualitativo del mapeo de actores (MDA) con el mé-todo cuantitativo del análisis de redes sociales (ARS).
-La inves-tigación utiliza una aproximación sociométrica al análisis de redes sociales, el cual se refiere al estudio de las propiedades estructurales de una red, tales como densidad y cohesión (Marín, Gelcich, Castilla, & Berkes, 2012). 
-Social studies mention haigh fragmentations of social network according to economic sectors (agriculture, artisal fisheries, turism, among others ). 
-Low participation and separation from the protected area which has not incorporated the community 
 
 
 
