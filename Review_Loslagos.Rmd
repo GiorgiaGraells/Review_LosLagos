@@ -28,28 +28,28 @@ LosLagos <-read_csv("PACL_LL.csv")
 
 # Introduction
 
-One of the strategic targets of the Convention of Biological Conservation is "By 2020, at least 17% of terrestrial and inland water, and 10% of coastal and marine areas, especially areas of particular importance for biodiversity and ecosystem services, are conserved through effectively and equitably managed, ecologically representative and well connected systems of protected areas...". 
+One of the strategic targets of the Convention of Biological Conservation is "By 2020, at least 17% of terrestrial and inland water, and 10% of coastal and marine areas, especially areas of particular importance for biodiversity and ecosystem services, are conserved through effectively and equitably managed, ecologically representative and well connected systems of protected areas..." 
 This emphasizes not only that protected areas (PA) are one of the most effective elements to prevent extinctions hence conserve biological diversity, also future of biological and landscape conservation need planned increment in the number of PA and effectiveness in terms of strategic allocation of management and economic efforts [@le2013protected; @watson2014performance].
-This is why the last decades aspects such as economic limitations and the impact on local stakeholders are been taking into account in order to decrate news PA and not only its selection based in ecological knowledge [@borrini2004indigenous, Brown, 2002?].
+This is why the last decades aspects such as economic limitations and the impact on local stakeholders are been taking into account in order to declare news PA and not only its selection based in ecological knowledge [@borrini2004indigenous, Brown, 2002?].
 
 
-Sudamerica counts with more relative % of PA , that any other area in the world. **(15.9%)**
-In Chile, there are 211 PA in its extensionFrom those, 187 have national jurisdiction and only 24 international. 
-In southern Chile, Los Lagos Region is named given this region has the largest proportion of lakes area in the country, with 52 lakes over 3 Km2, and a total area of	2.850 Km2. It has a population of 828.708 [@Censo2017] and an extension of 48,583.60 Km2.
-This region bases its economy in activities related to primary sectors: livestock, aquiculture and forestry industry [@BNC_LosLagos]. Even more, Los Lagos Region presents one of the bigest growth in fisheries an acuaculture growth in comparision with the rest of the country during the last 30 years [@Soto-alvaradoDesarrollo]. 
+South America has one of the highest proportions of pa area in the world (15.9%, @ProtectedAreas).
+In Chile, there are 211 PA in its extension. From those, 187 have national jurisdiction and only 24 international. 
+In southern Chile, Los Lagos Region is named given this region has the largest proportion of lake's area in the country, with 52 lakes over 3 Km2, and a total area of	2,850 Km2. It has a population of 828,708 [@Censo2017] and an extension of 48,583.60 Km2.
+This region bases its economy in activities related to primary sectors: livestock, aquaculture and forestry industry [@BNC_LosLagos]. Even more, Los Lagos Region presents one of the biggest growth in fisheries and aquaculture growth in comparison with the rest of the country during the last 30 years [@Soto-alvaradoDesarrollo]. 
 
-According to @ProtectedAreas, Los Lagos Region has 21 PA in 15.777 Km2 of surface.
-An even when includes a large part of the territory, there has been a disconection with local communities.
+According to @ProtectedAreas, Los Lagos Region has 21 PA in 15,777 Km2 of surface.
+An even when includes a large part of the territory, there has been a disconnection with local communities.
 This could be because from those 21 PA in the Region, `r LosLagos %>% dplyr::filter(DESIG %in% c("Monumento Natural", "Parque Nacional")) %>% nrow()` correspond to National Parks (NP) and Natural Monuments (NM) which are IUCN categories that reinforce strict conservation (Brown, 2002). 
-In addition to that, remoteness of PA can generate disconnection. Given most of the PA are located in remote places, people from develped urban centers do not have, in most of the cases, nexus with PA and their territory [@joppa2009high]
-Another factor could be a social phenomena, where cultural changes as a product of economic activities such as salmoniculture, where the dependency of international markets predominates, transform people in this region do not share a common notion of territory or a regional common agenda (Montecinos, 2009, p. 24)
+In addition to that, remoteness of PA can generate disconnection. Given most of the PA are located in remote places, people from developed urban centers do not have, in most of the cases, nexus with PA and their territory [@joppa2009high]
+Another factor could be a social phenomena, where cultural changes as a product of economic activities such as salmon farming, where the dependency of international markets predominates, transform people in this region do not share a common notion of territory or a regional common agenda (Montecinos, 2009, p. 24)
 
-Among the PA in Los Lagos Region, there are three Andean National Parks: Puyehue National Park (PNP), Vicente Perez Rozales National Park (VPRNP), and Alerce Andino National Park (AANP). PNP, VPRNP, and AANP as all national PA in Chile are under the supervision and adminstration of the National Forestry Corporation CONAF). They count with management plans (2008, 2015, and 1997, respectibly), which provides a very carfull compilation of information. However, these documents have not been correctly updated and lack of the changes that have occurred in the last years. For example, between 1995 and 2016 native forests in this area have suffer important losses because of land use changes (mostly land modification to grassland and shrubs, and substitution). 
-The area presents an increment of vulnerability in front of climate change [@marquet2019biodiversidad]. 
+Among the PA in Los Lagos Region, there are three Andean National Parks: Puyehue National Park (PNP), Vicente Perez Rozales National Park (VPRNP), and Alerce Andino National Park (AANP). PNP, VPRNP, and AANP as all national PA in Chile are under the supervision and administration of the National Forestry Corporation (CONAF). They count with management plans (2008, 2015, and 1997, respectively), which provides a very careful compilation of data. However, these documents have not been correctly updated and they have a lack of information with the changes that have occurred in the last years. For example, between 1995 and 2016 native forests in this area have suffer important losses because of land use changes (mostly land modification to grassland and shrubs, and substitution). 
+Hence, the area presents an increment of vulnerability in front of climate change [@marquet2019biodiversidad]. 
 
-Considering relations of PA and local communities, and the importance of the expansion of ecological knowledge to areas that resume the complexity of each PA in order to face specific perturbations or global problematics as climate change in the future, should be a fundamental step in Chile to assure a correct management and projection of PA to the future.
-This review revist the ecological literature carry out in these three protected areas and its surroundings in Los Lagos Region in order to generate a base line that allow to proyect scenarios of climate change to systematic conservation planning in PA.
-We made a systematic review of research searching by the names of the three PA: PNP, VPRNP, and AANP; andby the greographical area of Southern Chile.
+Considering relations of PA and local communities, and the importance of the expansion of ecological knowledge to areas that resume the complexity of each PA in order to face specific perturbations or global problematic as climate change in the future, should be a fundamental step in Chile to assure a correct management and projection of PA to the future.
+This review revise the ecological literature carry out in these three protected areas and its surroundings in Los Lagos Region in order to generate a base line that allow to project scenarios of climate change to systematic conservation planning in PA.
+We made a systematic review of research searching by the names of the three PA: PNP, VPRNP, and AANP; and by the geographical area of Southern Chile.
 Doing so, we were able to identified tendencies and gaps in research developed in these three National Parks. We could defined a vision on where to focus new studies that allow systematic conservation plans that includes information to deal with climate change and ensure the biological diversity in Southern Chile.
 
 
@@ -59,15 +59,15 @@ In order to identify research developed in the focus area, a systematic review o
 Two eligibility criteria were performed: 1. including the name of the National Parks of interest, using keywords at topic level: "Puyehue National Park" or "Vicente Perez Rozales National Park" or "Alerce Andino National Park", and 2. Geographic areas surrounding the National Parks, using keywords at topic level: "South Central Chile" or "North Chilean Patagonia" or "Los Lagos Region". The period of the search included from 1975 until October 2020. Grey-literature was not incorporated in the selection.
 
 Articles selected were categorized by publication year, source title, keywords used, and categories created for the purpose of this review: key component, study location, methodology used, process involved, and study object.
-Key components categorised articles according to area of study. This classification included Archaeology & Paleoecology, Climate & environment (including studies in climate, environmental conditions, and seismiology), Ecosystem functioning & services, Freshwater biodiversity, Hydrology, Social-ecology, and Species & distribution (including biogeography, species description, and exotic species).
+Key components categorized articles according to area of study. This classification included Archaeology & Paleoecology, Climate & environment (including studies in climate, environmental conditions, and seismology), Ecosystem functioning & services, Freshwater biodiversity, Hydrology, Social-ecology, and Species & distribution (including biogeography, species description, and exotic species).
 
-Study location encompased categories such as the three National Parks of interest: AANP, PNP, and  VPRNP; adjacents areas to NP: Adjacent to AANP, Adjacent to PNP, Adjacent to VPRNP; similar ecosystems to NP:  Andes of Los Rios Region, Argentinian andes, and Neuquen in Argentina; Larger areas that comprise NP: Los Lagos Region, 2 regions, 3 regions, 4 regions,  5 regions, More than 5 regions; Global studies: Chile, Chile & Argentina; and Close urban centers: Valdivia
+Study location encompassed categories such as the three National Parks of interest: AANP, PNP, and  VPRNP; adjacent areas to NP: Adjacent to AANP, Adjacent to PNP, Adjacent to VPRNP; similar ecosystems to NP:  Andes of Los Rios Region, Argentinian Andes, and Neuquen in Argentina; Larger areas that comprise NP: Los Lagos Region, 2 regions, 3 regions, 4 regions,  5 regions, More than 5 regions; Global studies: Chile, Chile & Argentina; and Close urban centers: Valdivia.
 
 Methodology classified articles based in how data was collected and/or analysed. 
-Methods included data from the field: field survey, field collection (similar a survey but with samples that need further processes to be analysed, such as dendrochronology or electric fishing), field experiment (that requieres modification to one or more conditions in a location, such as transplant or seedling experiments). 
-Other classifications were modeling (including data analysis such as simulations, correlatoinal and multivariate models, and spatial models), molecular analysis (reconstruction of mtDNA, isotopes, and genetic analysys), and reviews of literature.
-There is a category of social methods, that include both quantitative (suurveys an questtionaries) and qualitative (interviews and discussion articles).
-Proccess category makes reference to the question behind the articles and implies which is the mechanism studied (a list of of 47 options in Table  \@ref(tab:tabProcess).
+Methods included data from the field: field survey, field collection (similar a survey but with samples that need further processes to be analysed, such as dendrochronology or electric fishing), field experiment (that requires modification to one or more conditions in a location, such as transplant or seedling experiments). 
+Other classifications were modeling (including data analysis such as simulations, correlational and multivariate models, and spatial models), molecular analysis (reconstruction of mt-DNA, isotopes, and genetic analysis), and reviews of literature.
+There is a category of social methods, that include both quantitative (surveys an questionnaires) and qualitative (interviews and discussion articles).
+Process category makes reference to the question behind the articles and implies which is the mechanism studied (a list of of 47 options in Table  \@ref(tab:tabProcess).
 
 
 ```{r tabProcess}
@@ -76,27 +76,14 @@ kable(Process, booktabs = T, caption = "Processes mentioned in studies")
 ```
 
 
-Study object classification was prepared based onf what is the minimun element studied in each article. This included living organisms such as humans (household combution, people, and urban areas), animals (communities of birds, crustacean, fishes,and herpetofauna; species of aegorhinus, craspedacusta, dromiciops, liolaemus, wild boar, and woodwasp), plants (aquatic plants, chusquea, embothrium, ferns, native vegetation, pollen, proteaceae, sarmienta), other organims (such as cyanobacteria, didymosphenia,  lichens, and protozoa), and a particular living category given its abundance of publications is forest communities (with focus in one species austrocedrus, F. cupressoides, and Nothofagus; or in more diverse environments as coihue-Rauli-Tepa, forest, native forest, and evergreen trees).
+Study object classification was prepared based on what is the minimum element studied in each article. This included living organisms such as humans (household combustion, people, and urban areas), animals (communities of birds, crustacean, fishes, and herpetofauna; species of Aegorhinus, craspedacusta, Dromiciops, Liolaemus, wild boar, and woodwasp), plants (aquatic plants, Chusquea, Embothrium, ferns, native vegetation, pollen, Proteaceae, Sarmienta), other organims (such as cyanobacteria, Didymosphenia,  lichens, and protozoa), and a particular living category given its abundance of publications is forest communities (with focus in one species Austrocedrus, *F. cupressoides*, and Nothofagus; or in more diverse environments as coihue-Rauli-Tepa, forest, native forest, and evergreen trees).
 
 Study objects also included non-living organisms, focusing in geographic elements (basins, groundwater Storage, lakes, runoff, streams, watershed, and also soil and regional subdivision), physical conditions (fires, precipitation, particulate matter, rock art), and data bases.
     
+In order to centered this review in ecological knowledge carry out in the area of study, we focus our search in Los Lagos region research and Andean studies in surrounded areas. We left out coastal systems within the region, specially research based on Chiloé island because local communities keep a traditional way of life  and agricultural systems. This was even proposed as Global Importance Agricultural Heritage System (GIAHS) by the Food and Agricultural Organization [@FAO2003Chiloe, @FAO2008Chiloe].
 
-
-3. Relate to other studies 
-
-[Describe what was done by referring to existing mehods in the literature] 
-
-We focus our findings in Los Lagos región research and andean studies, leaving out coastal systems and in particular Chiloe island.
-
-[Provide more detailed information about the method and show that was a good choice]
-
-4. Indicate where problems occurred
-
-[Mention possible difficulty in the methodology]
 
 # Results
-
-1. Revisting the research aim/existing research
 
 There is a large amount of research related to Southern Chile. Isi Web of Knowledge database identified 874 records that fitted keywords, of those 520 articles were screened, and  441 full-text articles were assessed for eligibility.
 
@@ -132,8 +119,8 @@ Location2
 
 
 
-From the articules carry out in the NP of interest, only `r (DF %>% dplyr::filter(Study.location == "PNP") %>% nrow())` articles were carry out in PNP, `r (DF %>% dplyr::filter(Study.location == "AANP") %>% nrow())` in AAPN and `r (DF %>% dplyr::filter(Study.location == "VPRNP") %>% nrow())` in VPRPN.
-Adjacents areas to these three NP comprehended `r DF %>% dplyr::filter(Study.location %in%  c("Adjacent to PNP", "Adjacent to AANP", "Adjacent to VPRNP")) %>% nrow()` studies. Similar ecosystems, as those found in Andes of Los Ríos Region and Neuquén Province in Argentina, also showed high number of publications `r (DF %>% dplyr::filter(Study.location %in% c("Andes of Los Rios Region", "Neuquen, Argentina", "Argentinian andes")) %>% nrow())`. However, most of the articles (`r (DF %>% dplyr::filter(Study.location %in% c("Los Lagos Region", "2 regions","3 regions", "4 regions", "5 regions", "More than 5 regions")) %>% nrow())`) studied larger areas that comprises Los lagos Region and the three NP (Fig \@ref(fig:Locations)).
+From the articles carry out in the NP of interest, only `r (DF %>% dplyr::filter(Study.location == "PNP") %>% nrow())` articles were carry out in PNP, `r (DF %>% dplyr::filter(Study.location == "AANP") %>% nrow())` in AAPN and `r (DF %>% dplyr::filter(Study.location == "VPRNP") %>% nrow())` in VPRPN.
+Adjacent areas to these three NP comprehended `r DF %>% dplyr::filter(Study.location %in%  c("Adjacent to PNP", "Adjacent to AANP", "Adjacent to VPRNP")) %>% nrow()` studies. Similar ecosystems, as those found in Andes of Los Ríos Region and Neuquén Province in Argentina, also showed high number of publications `r (DF %>% dplyr::filter(Study.location %in% c("Andes of Los Rios Region", "Neuquen, Argentina", "Argentinian andes")) %>% nrow())`. However, most of the articles (`r (DF %>% dplyr::filter(Study.location %in% c("Los Lagos Region", "2 regions","3 regions", "4 regions", "5 regions", "More than 5 regions")) %>% nrow())`) studied larger areas that comprises Los Lagos Region and the three NP (Fig \@ref(fig:Locations)).
 
 
 
@@ -173,7 +160,7 @@ p1/p2+ plot_annotation(tag_levels = 'A')
 ```
 
 According to study areas, half of the studies are focus on ecosystem functioning and services (`r ((((DF %>% dplyr::filter(Area.of.study=="Ecosystem functioning and services") %>% nrow()))/nrow(DF) )*100) %>% round(2)`%). The rest of the studies does not exceed the 20 articles each. They are in decreasing number: Climate and environment, Hydrology, and freshwater biodiversity studies. The rest of the areas have less than 10 articles published (Fig \@ref(fig:Areas)).
-In addition, Ecosystem functionning and services has been studied in the three NP, however its proportion in PNP is notably higher than the other NP. Additionally, PNP is the only NP that shows several areas of study, even with only a few articles. In terms of area of study, Hydrology is the next area with more studies in NP with mention in AANP and PNP.
+In addition, Ecosystem functioning and services has been studied in the three NP, however its proportion in PNP is notably higher than the other NP. Additionally, PNP is the only NP that shows several areas of study, even with only a few articles. In terms of area of study, Hydrology is the next area with more studies in NP with mention in AANP and PNP.
 
 
 
@@ -200,8 +187,8 @@ p2
 
 Data collected from the field is abundant and represents a `r (((DF %>% dplyr::filter(General_methods %in% c("Field survey", "Field collection", "Field experiment")) %>% nrow())/nrow(DF))*100) %>% round(2)` % of the studies. Among field collection, it highlights some studies where there is some specific collection of data through methods such as dendrochronology (`r DF %>% dplyr::filter(Methodology =="dendrochronology") %>% nrow()` articles) or electric fishing (`r DF %>% dplyr::filter(Methodology =="Electric fishing") %>% nrow()`), (Fig \@ref(fig:Methods)).
 Modeling category included `r DF %>% dplyr::filter(General_methods == "Modeling") %>% nrow()` articles taking into account correlational, multivariate , and spatially explicit models.
-Review of literature was mention in `r DF %>% dplyr::filter(General_methods == "Review of literature") %>% nrow()` articles and social methods that encompases communicational strategies, discussion articles, both quantitative and qualitative methods, surveys, and interviews comprehended only in `r DF %>% dplyr::filter(General_methods == "Social methods") %>% nrow()`. 
-The least used method in this review is molecular analysis (only `r DF %>% dplyr::filter(General_methods == "Molecular analysis") %>% nrow()`), and included isotopes, genetic analysis, and reconstruction of mtDNA.
+Review of literature was mention in `r DF %>% dplyr::filter(General_methods == "Review of literature") %>% nrow()` articles and social methods that encompasses communicational strategies, discussion articles, both quantitative and qualitative methods, surveys, and interviews comprehended only in `r DF %>% dplyr::filter(General_methods == "Social methods") %>% nrow()`. 
+The least used method in this review is molecular analysis (only `r DF %>% dplyr::filter(General_methods == "Molecular analysis") %>% nrow()`), and included isotopes, genetic analysis, and reconstruction of mt-DNA.
 
 
 
@@ -234,7 +221,7 @@ p1
 
 ```
 
-Living elements from nature are the most frequent object of study in this review (`r (DF %>% dplyr::filter(General_object%in% c("Animals","Algae, bacterias, and protozoa","Plants", "Forest communities"))%>%  nrow())/nrow(DF)*100 ` %) (Fig \@ref(fig:Objects)). From those, most of the studies are centred in forest communities (`r DF %>% dplyr::filter(General_object=="Forest communities")%>%  nrow()` articles), where articles that studies Nothofagus (20) and Native forest (15) are the mayority (Table \@ref(tab:GeneralObject)).
+Living elements from nature are the most frequent object of study in this review (`r (DF %>% dplyr::filter(General_object%in% c("Animals","Algae, bacterias, and protozoa","Plants", "Forest communities"))%>%  nrow())/nrow(DF)*100 ` %) (Fig \@ref(fig:Objects)). From those, most of the studies are centered in forest communities (`r DF %>% dplyr::filter(General_object=="Forest communities")%>%  nrow()` articles), where articles that studies Nothofagus (20) and Native forest (15) are the majority (Table \@ref(tab:GeneralObject)).
 
 ```{r GeneralObject}
 DF1 <- DF %>% 
@@ -270,8 +257,8 @@ Studies in species and communities are mention in three groups: 1. animal with a
 
 Human elements studied only represent `r (DF %>% dplyr::filter(General_object == "Humans")%>%  nrow())/nrow(DF)*100 `% of the total of research. This included studies in people (9) and specific interests such as household combustion, and urban areas (only 2 articles)
 
-Geographic objects of study are centered in hydrological elements such as basins, watersheed, basins, groundwater storage, runoff, and streams (14 of 16 artciles), most of them studied lakes (8 articles).
-Physiscal conditions reunited study objects in a variety from envvironmental conditions sucha as precipitation and fire, passing throght particlar matter and rock art.
+Geographic objects of study are centered in hydrological elements such as basins, watershed, basins, groundwater storage, runoff, and streams (14 of 16 articles), most of them studied lakes (8 articles).
+Physical conditions reunited study objects in a variety from environmental conditions such as precipitation and fire, passing through particular matter and rock art.
   
 
 ## Key components
@@ -291,7 +278,7 @@ Hydro3 <- ggplot(DF_Hydro) + geom_col(aes(x = General_object, y=n), fill="#5ab4a
 
 From the total of articles focused on hydrology (Fig \@ref(fig:Hydrology)), most of the processes studied are related to water flows (flow prediction, infiltration, and runoff with a total of 5 articles) and landscape (forest characterization, LULC and topography with 4 articles).
 Data from the field (including both field collection and experiments) reaches 5 articles, same as modeling as a methodological resources.
-In terms of objects of study, they are mostly greographic elements (8 articles), where half of them studied lakes. Physical conditions where anly mentionedd in 3 articles, all of them studied precipitations.
+In terms of objects of study, they are mostly geographic elements (8 articles), where half of them studied lakes. Physical conditions where only mentioned in 3 articles, all of them studied precipitations.
 
 
 ### Ecosystem functioning and services
@@ -308,8 +295,8 @@ Ecosys3 <- ggplot(DF_Ecosys) + geom_col(aes(x = General_object, y=n), fill="#5ab
 (Ecosys1 + Ecosys2)/Ecosys3 + plot_annotation(tag_levels = 'A')
 ```
 
-Ecosystem functioning and services are very diverse in processes studied and aspects related to growth (21 articles), regeneration (9 articles), and succession (6 articles) were the most frecuent to find. In terms of methods used, most of the data comes from the field (90%), being the field survey the most adopted by researchers (25 articles), second field collection with 15 articles and third field experiment with 14 articles.
-Study objects in this area are mostly related to forest communities (40 articles). From those, higlights nothofagus forests and native forest (20 and 15 articles, respetibly). 
+Ecosystem functioning and services are very diverse in processes studied and aspects related to growth (21 articles), regeneration (9 articles), and succession (6 articles) were the most frequent to find. In terms of methods used, most of the data comes from the field (90%), being the field survey the most adopted by researchers (25 articles), second field collection with 15 articles and third field experiment with 14 articles.
+Study objects in this area are mostly related to forest communities (40 articles). From those, it highlights Nothofagus forests and native forest (20 and 15 articles, respectively). 
 
 
 ### Freshwater biodiversity
@@ -325,7 +312,7 @@ Fresh3 <- ggplot(DF_Fresh) + geom_col(aes(x = General_object, y=n), fill="#5ab4a
 (Fresh1 + Fresh2)/Fresh3 + plot_annotation(tag_levels = 'A')
 ```
 Freshwater biodiversity studies focuses mostly in invasion processes (4 articles). Additionally, field collection is the most registered method used (6 articles), this category includes particular activities such as electric fishing and sampling stations. 
-Object of studies are centred in living orgganisms with a 90% of the articles, among them most of the articles studied animals (5 articles, mostly fishes), and other organisms (3 articles, including cyanobacterias, didymosphenia, and protozoa).
+Object of studies are centered in living organisms with a 90% of the articles, among them most of the articles studied animals (5 articles, mostly fishes), and other organisms (3 articles, including cyanobacterias, Didymosphenia, and protozoa).
 
 
 
@@ -344,7 +331,7 @@ Social3 <- ggplot(DF_Social) + geom_col(aes(x = General_object, y=n), fill="#5ab
 (Social1 + Social2)/Social3 + plot_annotation(tag_levels = 'A')
 ```
 
-Socio-ecological research is scarse and processes studied are diverse. However there is a notable environmental concern reflected in aspects as collective action, conservation, participation and political-ecology that involve more than a half of the studies. Methodology involved in this studies are mostly social methods (5 articles), which included quantitative and qualitative such as people's surveys, interviews and articles of discission based on etnography, and they are all based in research on people.
+Social-ecological research is scarce and processes studied are diverse. However there is a notable environmental concern reflected in aspects as collective action, conservation, participation and political-ecology that involve more than a half of the studies. Methodology involved in this studies are mostly social methods (5 articles), which included quantitative and qualitative such as people's surveys, interviews and articles of discussion based on ethnography, and they are all based in research on people.
 
 ### Climate and environment	
 
@@ -358,7 +345,7 @@ Climate3 <- ggplot(DF_Climate) + geom_col(aes(x = General_object, y=n), fill="#5
 (Climate1 + Climate2)/Climate3 + plot_annotation(tag_levels = 'A')
 ```
 
-Climate and environmental area is diverse and showed focus in studies related to pollution with a component of social studies and climate in different scales and times. Among the processes studied, pollution is the most mentioned (6 articles), however the amount of publications centred in climate is not less (current climate 2 artricles, climate change 1 article, past climate change 3 articles). Methods used are mostly collections from the field and modeling (41 and 29%, respectibly). Study objects are diverse and involved data bases (5 articles with fire and temperature records or spatial proyections), geographic elements (4 articles, including regional subdivision, lakes and soil), humans (3 articles including people and household combustion), physical conditions (3 articles, including precipitation, fires and particuulate matter)
+Climate and environmental area is diverse and showed focus in studies related to pollution with a component of social studies and climate in different scales and times. Among the processes studied, pollution is the most mentioned (6 articles), however the amount of publications centered in climate is not less (current climate 2 articles, climate change 1 article, past climate change 3 articles). Methods used are mostly collections from the field and modeling (41 and 29%, respectively). Study objects are diverse and involved data bases (5 articles with fire and temperature records or spatial projections), geographic elements (4 articles, including regional subdivision, lakes and soil), humans (3 articles including people and household combustion), physical conditions (3 articles, including precipitation, fires and particulate matter)
 
 ### Other key components 
 
@@ -383,16 +370,16 @@ Paleo3 <- ggplot(DF_Paleo) + geom_col(aes(x = General_object, y=n), fill="#5ab4a
 ```
 
 
-Species and distribution area focussed mostly in distribution of species, phylogeography ans genetic variability (67% of the articles). More than a half used data from the field and all of the studies found centred in animals. In contrats, archeaology and paleoecology area presented only two articles, one focused in iconography (rock art) and the other centred in past distributions of native forest.
+Species and distribution area focused mostly in distribution of species, phylogeography ans genetic variability (67% of the articles). More than a half used data from the field and all of the studies found centered in animals. In contrast, archaeology and paleoecology area presented only two articles, one focused in iconography (rock art) and the other centered in past distributions of native forest.
 
 
 # Discussion 
 
 This review provides insight into in ecological studies carry out in three PA: PNP, VPRNP, and AANP, that allow to create a baseline of ecological knowledge. Doing so, we were able to identified tendencies and gaps in research developed in these area, in order gather the information needed to generate climate change projections and create systematic conservation plans that ensure the biological diversity in Southern Chile.
 
-The review of literature based in the three PA and their surounded greographical areas in Southern Chile, allowed the classification of the study areas of interest and the analysis of tendencies. the results indicated that most of the studies were focussed in ecosystems functioning and services with special developed in forestry aspects such as growth, sucession and regeneration, showing a bias in forestry economical potential of native forest.
-There is a gap in social-ecological studies that includes local comunities perceptions of NP and their relationship in terms of interactions.
-Climate change have been mentioned, but mostly considering aspects of the past and related to local perturbations. This is becasuse the area of study has been continously modified by natural events such as volcanic activity, with  volcanic centers such as Puyehue (2,240 m in PNP), Cordón Caulle (2,236 m; in PNP), Tronador (3,565 m; in VPRNP), Osorno (2,661 m; adjacent to VPRNP) [@petit1999cronologia; @SternVolcanism], and earthquakes as Valdivia in 1960 [@melnick2018back]. 
+The review of literature based in the three PA and their surrounded geographical areas in Southern Chile, allowed the classification of the study areas of interest and the analysis of tendencies. the results indicated that most of the studies were focused in ecosystems functioning and services with special developed in forestry aspects such as growth, succession and regeneration, showing a bias in forestry economical potential of native forest.
+There is a gap in social-ecological studies that includes local communities perceptions of NP and their relationship in terms of interactions.
+Climate change have been mentioned, but mostly considering aspects of the past and related to local perturbations. This is because the area of study has been continuously modified by natural events such as volcanic activity, with  volcanic centers such as Puyehue (2,240 m in PNP), Cordón Caulle (2,236 m; in PNP), Tronador (3,565 m; in VPRNP), Osorno (2,661 m; adjacent to VPRNP) [@petit1999cronologia; @SternVolcanism], and earthquakes as Valdivia in 1960 [@melnick2018back]. 
 
 
 3. Achivements/contributions- refining implications 
@@ -451,8 +438,6 @@ Key results – We show that leaves from sun conditions, the environment with hi
 macropytes  and  riparian  assemblages  are  not  random,  that means  that  the  regulator  factors  are  deterministic. 
 
 They reconstructed stand development on sites affected by these disturbances (complex mosaic of disturbance patterns, including the effects of the strong 1960 earthquake as well as fire and wind disturbance), and compared these patterns with the structure of oldgrowth forests along an elevation gradient from species-rich montane rain forest to mono-typic subalpine Nothofagusforests
-
-.
 
 
 
